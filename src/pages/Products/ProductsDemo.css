@@ -1,0 +1,649 @@
+/* =========================================================
+   PRODUCTS DEMO
+========================================================= */
+
+.products-demo {
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.products-demo-hero {
+  position: relative;
+
+  padding: 200px 0 75px;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(5, 20, 30, 0.78) 0%,
+      rgba(5, 20, 30, 0.62) 45%,
+      rgba(5, 20, 30, 0.30) 100%
+    ),
+    url("../../assets/images/prod-solar-plant.webp");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   HERO EYEBROW
+========================================================= */
+
+.products-demo-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 14px;
+
+  color: #ff9a4a;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HERO H1
+========================================================= */
+
+.products-demo-hero h1 {
+  max-width: 850px;
+
+  margin: 0 0 18px;
+
+  color: #ffffff;
+
+  font-size: 50px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.products-demo-hero p {
+  max-width: 680px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+
+  opacity: 0.92;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.products-demo-breadcrumb {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 27px;
+
+  font-size: 14px;
+}
+
+
+.products-demo-breadcrumb a {
+  color: #ffffff;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease,
+              opacity 0.2s ease;
+}
+
+
+.products-demo-breadcrumb a:hover {
+  color: #ff9a4a;
+
+  opacity: 1;
+}
+
+
+.products-demo-breadcrumb span {
+  color: #ffffff;
+
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   CATEGORY SECTION
+========================================================= */
+
+.products-demo-categories {
+  padding: 90px 0;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   CATEGORY HEADING
+========================================================= */
+
+.products-demo-heading {
+  max-width: 720px;
+
+  margin-bottom: 45px;
+}
+
+
+.products-demo-heading > span {
+  color: #12715b;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+
+.products-demo-heading h2 {
+  margin: 12px 0;
+
+  color: #18232d;
+
+  font-size: 36px;
+
+  line-height: 1.2;
+}
+
+
+.products-demo-heading p {
+  margin: 0;
+
+  color: #68727c;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   PRODUCT GRID
+========================================================= */
+
+.products-demo-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.products-demo-card {
+  position: relative;
+
+  min-height: 300px;
+
+  padding: 30px;
+
+  overflow: hidden;
+
+  border: 1px solid #f1d8c2;
+
+  border-radius: 18px;
+
+  background: #fffaf5;
+
+  color: #18232d;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+
+/* Orange top accent */
+
+.products-demo-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: #f47b20;
+}
+
+
+/* Soft orange glow */
+
+.products-demo-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 130px;
+  height: 130px;
+
+  top: -65px;
+  right: -65px;
+
+  border-radius: 50%;
+
+  background: rgba(244, 123, 32, 0.08);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.products-demo-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #f47b20;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 18px 45px rgba(244, 123, 32, 0.14);
+}
+
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
+
+.products-demo-number {
+  position: absolute;
+
+  top: 20px;
+
+  right: 24px;
+
+  color: #efd9c7;
+
+  font-size: 32px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  transition: color 0.25s ease;
+}
+
+
+.products-demo-card:hover .products-demo-number {
+  color: #f6c8a5;
+}
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+.products-demo-card-icon {
+  width: 52px;
+
+  height: 52px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin-bottom: 25px;
+
+  border: 1px solid #f4d0b0;
+
+  border-radius: 13px;
+
+  background: #fff0e2;
+
+  color: #f47b20;
+
+  font-size: 23px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.products-demo-card:hover .products-demo-card-icon {
+  background: #f47b20;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.products-demo-card h3 {
+  margin: 0 0 12px;
+
+  color: #18232d;
+
+  font-size: 23px;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+========================================================= */
+
+.products-demo-card p {
+  margin: 0;
+
+  color: #69747e;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CARD LINK
+========================================================= */
+
+.products-demo-link {
+  display: inline-block;
+
+  margin-top: 24px;
+
+  color: #f47b20;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.products-demo-card:hover .products-demo-link {
+  color: #d95f08;
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   CTA / NOTE
+========================================================= */
+
+.products-demo-note {
+  padding: 80px 0;
+
+  background: #f4f7f8;
+}
+
+
+.products-demo-note-inner {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+
+.products-demo-note-inner > div {
+  max-width: 700px;
+}
+
+
+.products-demo-note-inner span {
+  color: #12715b;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+
+.products-demo-note-inner h2 {
+  margin: 12px 0;
+
+  color: #18232d;
+
+  font-size: 34px;
+
+  line-height: 1.2;
+}
+
+
+.products-demo-note-inner p {
+  margin: 0;
+
+  color: #68727c;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.products-demo-contact {
+  flex-shrink: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 15px 22px;
+
+  border-radius: 8px;
+
+  background: #ff9a4a;
+
+  color: #ffffff;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.products-demo-contact:hover {
+  background: #0e604d;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .products-demo-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .products-demo-hero {
+    padding: 95px 0 60px;
+
+    background-position: center;
+  }
+
+
+  .products-demo-hero h1 {
+    font-size: 34px;
+
+    line-height: 1.2;
+
+    white-space: normal;
+  }
+
+
+  .products-demo-hero p {
+    font-size: 16px;
+  }
+
+
+  .products-demo-categories {
+    padding: 65px 0;
+  }
+
+
+  .products-demo-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+
+  .products-demo-card {
+    min-height: auto;
+
+    padding: 26px;
+  }
+
+
+  .products-demo-heading {
+    margin-bottom: 32px;
+  }
+
+
+  .products-demo-heading h2 {
+    font-size: 32px;
+  }
+
+
+  .products-demo-note {
+    padding: 60px 0;
+  }
+
+
+  .products-demo-note-inner {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 28px;
+  }
+
+
+  .products-demo-note-inner h2 {
+    font-size: 30px;
+  }
+
+
+  .products-demo-contact {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .products-demo-hero {
+    padding: 85px 0 55px;
+  }
+
+
+  .products-demo-hero h1 {
+    font-size: 30px;
+  }
+
+
+  .products-demo-eyebrow {
+    font-size: 11px;
+  }
+
+
+  .products-demo-card {
+    padding: 24px;
+  }
+
+
+  .products-demo-card h3 {
+    font-size: 21px;
+  }
+
+
+  .products-demo-heading h2 {
+    font-size: 29px;
+  }
+
+}

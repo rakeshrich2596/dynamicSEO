@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Main Pages -->
+  <url>
+    <loc>https://dynamicsolar.in/</loc>
+  </url>
+
+  <url>
+    <loc>https://dynamicsolar.in/about/</loc>
+  </url>
+
+  <url>
+    <loc>https://dynamicsolar.in/contact/</loc>
+  </url>
+
+  <url>
+    <loc>https://dynamicsolar.in/blog/</loc>
+  </url>
+
+  <url>
+    <loc>https://dynamicsolar.in/products/</loc>
+  </url>
+
+  <url>
+    <loc>https://dynamicsolar.in/solar-calculator/</loc>
+  </url>
+
+
+  <!-- Product Categories -->
+  <url>
+    <loc>https://dynamicsolar.in/products/solar-power-plant/</loc>
+  </url>
+
+  <url>
+    <loc>https://dynamicsolar.in/products/solar-panels/</loc>
+  </url>
+
+  <url>
+    <loc>https://dynamicsolar.in/products/solar-water-heater/</loc>
+  </url>
+
+  <url>
+    <loc>https://dynamicsolar.in/products/solar-water-pumping/</loc>
+  </url>
+
+  <url>
+    <loc>https://dynamicsolar.in/products/solar-street-light/</loc>
+  </url>
+
+  <url>
+    <loc>https://dynamicsolar.in/products/solar-home-ups/</loc>
+  </url>
+
+  <url>
+    <loc>https://dynamicsolar.in/products/solar-inverter-battery/</loc>
+  </url>
+
+
+  <!-- Service Pages -->
+  <url>
+    <loc>https://dynamicsolar.in/services/</loc>
+  </url>
+
+  <url>
+    <loc>https://dynamicsolar.in/services/solar-panel-installation/</loc>
+  </url>
+
+  <url>
+    <loc>https://dynamicsolar.in/services/solar-power-plant/</loc>
+  </url>
+
+  <url>
+    <loc>https://dynamicsolar.in/services/solar-water-heater/</loc>
+  </url>
+
+  <url>
+    <loc>https://dynamicsolar.in/services/solar-water-pumping-systems/</loc>
+  </url>
+
+  <url>
+    <loc>https://dynamicsolar.in/services/solar-street-lights/</loc>
+  </url>
+
+
+  <!-- Location Pages -->
+  <url>
+    <loc>https://dynamicsolar.in/solar-panel-installation-tambaram/</loc>
+  </url>
+
+  <url>
+    <loc>https://dynamicsolar.in/solar-panel-installation-perungalathur/</loc>
+  </url>
+
+  <url>
+    <loc>https://dynamicsolar.in/solar-panel-installation-guduvanchery/</loc>
+  </url>
+
+  <url>
+    <loc>https://dynamicsolar.in/solar-panel-installation-urapakkam/</loc>
+  </url>
+
+</urlset>
