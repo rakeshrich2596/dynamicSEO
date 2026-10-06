@@ -2,26 +2,31 @@
 // PRODUCT IMAGE IMPORTS
 // ============================================================
 
+// EASTMAN
 import eastman1 from "../assets/images/eastman/eastman1.webp";
 import eastman2 from "../assets/images/eastman/eastman2.webp";
 import eastman3 from "../assets/images/eastman/eastman3.webp";
 import eastman4 from "../assets/images/eastman/eastman4.webp";
 import eastman5 from "../assets/images/eastman/eastman5.webp";
 
+// ASHA POWER
 import asha1 from "../assets/images/asha/asha1.webp";
 import asha2 from "../assets/images/asha/asha2.webp";
 import asha3 from "../assets/images/asha/asha3.webp";
 
+// HAVELLS
 import havells30 from "../assets/images/havells/havells30.webp";
 import havells40 from "../assets/images/havells/havells40.webp";
 
+// V-GUARD
 import vguard5 from "../assets/images/vguard/vguard5.webp";
 import vguard6 from "../assets/images/vguard/vguard6.webp";
 
+// RACOLD
 import racold1 from "../assets/images/racold/racold1.webp";
 import racold2 from "../assets/images/racold/racold2.webp";
 
-
+// GENERIC PRODUCT IMAGES
 import imgPlant from "../assets/images/prod-solar-plant.webp";
 import imgPump from "../assets/images/prod-water-pump.webp";
 import imgPump1 from "../assets/images/prod-water-pump1.webp";
@@ -29,7 +34,6 @@ import imgPump2 from "../assets/images/prod-water-pump2.webp";
 import imgStreet from "../assets/images/prod-street-light.webp";
 import imgStreet1 from "../assets/images/prod-street-light1.webp";
 import imgStreet2 from "../assets/images/prod-street-light2.webp";
-
 
 // ============================================================
 // PRODUCT CATEGORIES
@@ -41,7 +45,7 @@ export const PRODUCT_CATEGORIES = [
     name: "Solar Power Plant",
     shortName: "Solar Power Plant",
     description:
-      "Solar power plant solutions for suitable residential, commercial and industrial solar power generation requirements.",
+      "Solar power plant solutions for residential, commercial and industrial power generation requirements.",
     status: "active",
   },
 
@@ -50,7 +54,7 @@ export const PRODUCT_CATEGORIES = [
     name: "Solar Panels",
     shortName: "Solar Panels",
     description:
-      "High-efficiency solar panels for suitable rooftop and solar power generation applications.",
+      "Solar panels from leading brands for suitable rooftop and solar power generation applications.",
     status: "active",
   },
 
@@ -59,7 +63,7 @@ export const PRODUCT_CATEGORIES = [
     name: "Solar Water Heater",
     shortName: "Solar Water Heater",
     description:
-      "Solar water heating solutions for residential and commercial hot-water requirements.",
+      "Solar water heating solutions from leading brands for residential and commercial hot-water requirements.",
     status: "active",
   },
 
@@ -68,7 +72,7 @@ export const PRODUCT_CATEGORIES = [
     name: "Solar Water Pumping",
     shortName: "Solar Water Pumping",
     description:
-      "Solar water pumping solutions for suitable agricultural, residential and other water-pumping requirements.",
+      "Solar water pumping solutions for agricultural, residential and other water-pumping applications.",
     status: "active",
   },
 
@@ -77,7 +81,7 @@ export const PRODUCT_CATEGORIES = [
     name: "Solar Street Light",
     shortName: "Solar Street Light",
     description:
-      "Solar street-light solutions for suitable outdoor, residential, commercial and public lighting requirements.",
+      "Solar street-light solutions for outdoor, residential, commercial and public lighting requirements.",
     status: "active",
   },
 
@@ -86,7 +90,7 @@ export const PRODUCT_CATEGORIES = [
     name: "Solar Home UPS",
     shortName: "Home UPS",
     description:
-      "Solar home UPS solutions for residential backup and suitable solar power requirements.",
+      "Solar and home UPS solutions from leading brands for residential backup power requirements.",
     status: "active",
   },
 
@@ -95,60 +99,129 @@ export const PRODUCT_CATEGORIES = [
     name: "Solar Inverter & Battery",
     shortName: "Inverter & Battery",
     description:
-      "Solar inverter and battery solutions including grid-tie, hybrid, off-grid and energy-storage configurations.",
+      "Solar inverter, battery and energy-storage solutions including grid-tie, hybrid and off-grid configurations.",
     status: "active",
   },
 ];
-
 
 // ============================================================
 // PRODUCT DATA
 // ============================================================
 
 export const PRODUCT_DRAFTS = {
-  
   // ==========================================================
   // SOLAR POWER PLANT
   // ==========================================================
 
   "solar-power-plant": [
     {
-      id: "solar-power-plant-solution",
-      brand: "Dynamic Solar",
-      name: "Solar Power Plant Solutions",
+      id: "eastman-solar-power-system",
+      brand: "Eastman",
+      name: "Solar Power System",
       image: imgPlant,
       type: "Solar Power Plant",
-      badge: "Solar Solution",
-      range: "Site Specific",
+      badge: "Available Brand",
+      range: "On-grid / Off-grid / Hybrid",
       warranty: null,
 
       description:
-        "Solar power plant solutions for suitable residential, commercial and industrial applications. System configuration depends on site conditions, electrical requirements, available area and project objectives.",
+        "Eastman solar power solutions for on-grid, off-grid and hybrid solar power system applications.",
 
       highlights: [
-        "Residential, commercial and industrial applications",
-        "Site-specific system design",
-        "Solar power generation solution",
-        "System configuration based on project requirements",
+        "On-grid solar power systems",
+        "Off-grid solar power systems",
+        "Hybrid solar power systems",
+        "Suitable residential and commercial applications",
       ],
 
       specs: [
         {
-          label: "Application",
-          value: "Residential, Commercial & Industrial",
+          label: "Brand",
+          value: "Eastman",
         },
         {
           label: "System Type",
-          value: "Solar Power Plant",
+          value: "On-grid / Off-grid / Hybrid",
         },
         {
-          label: "Configuration",
-          value: "Site Specific",
+          label: "Application",
+          value: "Solar Power Generation",
+        },
+      ],
+    },
+
+    {
+      id: "vguard-solar-power-system",
+      brand: "V-Guard",
+      name: "Solar Power System",
+      image: imgPlant,
+      type: "Solar Power Plant",
+      badge: "Available Brand",
+      range: "On-grid / Off-grid",
+      warranty: null,
+
+      description:
+        "V-Guard solar power system solutions for on-grid and off-grid solar applications.",
+
+      highlights: [
+        "On-grid solar power systems",
+        "Off-grid solar power systems",
+        "Solar power generation",
+        "Suitable residential and other applications",
+      ],
+
+      specs: [
+        {
+          label: "Brand",
+          value: "V-Guard",
+        },
+        {
+          label: "System Type",
+          value: "On-grid / Off-grid",
+        },
+        {
+          label: "Application",
+          value: "Solar Power Generation",
+        },
+      ],
+    },
+
+    {
+      id: "crompton-solar-rooftop",
+      brand: "Crompton",
+      name: "Solar Rooftop Solutions",
+      image: imgPlant,
+      type: "Solar Power Plant",
+      badge: "Available Brand",
+      range: "Rooftop Solar",
+      warranty: null,
+
+      description:
+        "Crompton solar rooftop solutions for suitable solar power generation applications.",
+
+      highlights: [
+        "Solar rooftop solution",
+        "Solar power generation",
+        "Suitable rooftop applications",
+        "Residential and commercial applications",
+      ],
+
+      specs: [
+        {
+          label: "Brand",
+          value: "Crompton",
+        },
+        {
+          label: "Product",
+          value: "Solar Rooftop Solutions",
+        },
+        {
+          label: "Application",
+          value: "Rooftop Solar",
         },
       ],
     },
   ],
-
 
   // ==========================================================
   // SOLAR PANELS
@@ -156,76 +229,113 @@ export const PRODUCT_DRAFTS = {
 
   "solar-panels": [
     {
-      id: "havells-monoperc-550wp",
-      brand: "Havells",
-      name: "MonoPERC Solar Panel – 550 Wp",
-      image: havells30,
+      id: "eastman-solar-panels",
+      brand: "Eastman",
+      name: "Solar Panels",
+      image: eastman1,
       type: "Solar Panel",
-      badge: "Draft Product",
-      range: "550 Wp",
+      badge: "Available Brand",
+      range: "Mono / Bifacial / TOPCon",
+      warranty: null,
 
       description:
-        "Havells MonoPERC solar panel suitable for rooftop and solar power generation applications.",
+        "Eastman solar panels including Mono, Bifacial and TOPCon technologies for suitable solar power applications.",
 
       highlights: [
-        "MonoPERC solar panel technology",
-        "550 Wp power rating",
-        "Suitable for rooftop solar applications",
-        "Designed for solar power generation",
+        "Mono solar panels",
+        "Bifacial solar panels",
+        "TOPCon solar panels",
+        "Suitable rooftop solar applications",
       ],
 
       specs: [
         {
           label: "Brand",
-          value: "Havells",
+          value: "Eastman",
         },
         {
           label: "Technology",
-          value: "MonoPERC",
+          value: "Mono / Bifacial / TOPCon",
         },
         {
-          label: "Power",
-          value: "550 Wp",
+          label: "Product Type",
+          value: "Solar Panel",
         },
       ],
     },
 
     {
-      id: "havells-topcon-595wp",
-      brand: "Havells",
-      name: "TOPCon Solar Panel – 595 Wp",
-      image: havells40,
+      id: "vguard-solar-panels",
+      brand: "V-Guard",
+      name: "Solar PV Panels",
+      image: havells30,
       type: "Solar Panel",
-      badge: "Draft Product",
-      range: "595 Wp",
+      badge: "Available Brand",
+      range: "Solar PV",
+      warranty: null,
 
       description:
-        "Havells TOPCon solar panel suitable for rooftop and solar power generation applications.",
+        "V-Guard solar PV panels for suitable solar power generation applications.",
 
       highlights: [
-        "TOPCon solar panel technology",
-        "595 Wp power rating",
-        "Suitable for rooftop solar applications",
-        "Designed for solar power generation",
+        "Solar PV panels",
+        "Solar power generation",
+        "Suitable rooftop applications",
+        "Suitable solar power systems",
       ],
 
       specs: [
         {
           label: "Brand",
-          value: "Havells",
+          value: "V-Guard",
         },
         {
-          label: "Technology",
-          value: "TOPCon",
+          label: "Product Type",
+          value: "Solar PV Panel",
         },
         {
-          label: "Power",
-          value: "595 Wp",
+          label: "Application",
+          value: "Solar Power Generation",
+        },
+      ],
+    },
+
+    {
+      id: "crompton-solar-panels",
+      brand: "Crompton",
+      name: "Solar Panels",
+      image: havells40,
+      type: "Solar Panel",
+      badge: "Available Brand",
+      range: "Solar Rooftop",
+      warranty: null,
+
+      description:
+        "Crompton solar panels included as part of its solar rooftop solutions.",
+
+      highlights: [
+        "Solar panel solution",
+        "Solar rooftop applications",
+        "Solar power generation",
+        "Suitable rooftop installations",
+      ],
+
+      specs: [
+        {
+          label: "Brand",
+          value: "Crompton",
+        },
+        {
+          label: "Product Type",
+          value: "Solar Panel",
+        },
+        {
+          label: "Application",
+          value: "Solar Rooftop",
         },
       ],
     },
   ],
-
 
   // ==========================================================
   // SOLAR WATER HEATER
@@ -233,20 +343,23 @@ export const PRODUCT_DRAFTS = {
 
   "solar-water-heater": [
     {
-      id: "vguard-truhot-daf",
+      id: "vguard-solar-water-heater",
       brand: "V-Guard",
-      name: "TRU-HOT DAF",
+      name: "Solar Water Heater",
       image: vguard5,
       type: "Solar Water Heater",
-      badge: "Draft Product",
+      badge: "Available Brand",
+      range: "Solar Water Heating",
+      warranty: null,
 
       description:
-        "V-Guard solar water heating solution for residential and suitable hot-water requirements.",
+        "V-Guard solar water heater solutions for residential and suitable hot-water requirements.",
 
       highlights: [
-        "Solar water heating solution",
+        "Solar water heating",
         "Suitable residential applications",
         "Hot-water generation using solar energy",
+        "Solar thermal solution",
       ],
 
       specs: [
@@ -255,85 +368,34 @@ export const PRODUCT_DRAFTS = {
           value: "V-Guard",
         },
         {
-          label: "Product",
-          value: "TRU-HOT DAF",
+          label: "Product Type",
+          value: "Solar Water Heater",
+        },
+        {
+          label: "Application",
+          value: "Hot-Water Generation",
         },
       ],
     },
 
     {
-      id: "vguard-truhot-pro",
-      brand: "V-Guard",
-      name: "TRU-HOT PRO",
-      image: vguard6,
-      type: "Solar Water Heater",
-      badge: "Draft Product",
-
-      description:
-        "V-Guard TRU-HOT PRO solar water heating solution for suitable residential applications.",
-
-      highlights: [
-        "Solar water heating solution",
-        "Suitable residential applications",
-        "Efficient hot-water generation",
-      ],
-
-      specs: [
-        {
-          label: "Brand",
-          value: "V-Guard",
-        },
-        {
-          label: "Product",
-          value: "TRU-HOT PRO",
-        },
-      ],
-    },
-
-    {
-      id: "vguard-vhot-al8-pr",
-      brand: "V-Guard",
-      name: "V-HOT AL-8 PR",
-      image: vguard5,
-      type: "Solar Water Heater",
-      badge: "Draft Product",
-
-      description:
-        "V-Guard V-HOT AL-8 PR solar water heating solution.",
-
-      highlights: [
-        "Solar water heating solution",
-        "Suitable hot-water applications",
-        "Residential solar water heating",
-      ],
-
-      specs: [
-        {
-          label: "Brand",
-          value: "V-Guard",
-        },
-        {
-          label: "Product",
-          value: "V-HOT AL-8 PR",
-        },
-      ],
-    },
-
-    {
-      id: "racold-heat-pump-2024",
+      id: "racold-solar-water-heater",
       brand: "Racold",
-      name: "Heat Pump 2024",
+      name: "Solar Water Heaters",
       image: racold1,
-      type: "Heat Pump",
-      badge: "Draft Product",
+      type: "Solar Water Heater",
+      badge: "Available Brand",
+      range: "Solar Water Heating",
+      warranty: null,
 
       description:
-        "Racold heat pump solution for suitable hot-water requirements.",
+        "Racold solar water heating solutions for suitable residential hot-water requirements.",
 
       highlights: [
-        "Hot-water heating solution",
+        "Solar water heating solution",
         "Suitable residential applications",
-        "Heat pump technology",
+        "Hot-water generation",
+        "Solar thermal technology",
       ],
 
       specs: [
@@ -342,42 +404,52 @@ export const PRODUCT_DRAFTS = {
           value: "Racold",
         },
         {
-          label: "Product",
-          value: "Heat Pump 2024",
+          label: "Product Type",
+          value: "Solar Water Heater",
+        },
+        {
+          label: "Application",
+          value: "Residential Hot Water",
         },
       ],
     },
 
     {
-      id: "racold-heat-pump-2025",
-      brand: "Racold",
-      name: "Heat Pump 2025",
+      id: "crompton-solar-water-heater",
+      brand: "Crompton",
+      name: "Solar Water Heater",
       image: racold2,
-      type: "Heat Pump",
-      badge: "Draft Product",
+      type: "Solar Water Heater",
+      badge: "Available Brand",
+      range: "Solar Water Heating",
+      warranty: null,
 
       description:
-        "Racold heat pump solution for suitable hot-water requirements.",
+        "Crompton solar water heater solutions for suitable hot-water applications.",
 
       highlights: [
-        "Hot-water heating solution",
+        "Solar water heating",
+        "Hot-water generation",
         "Suitable residential applications",
-        "Heat pump technology",
+        "Solar thermal solution",
       ],
 
       specs: [
         {
           label: "Brand",
-          value: "Racold",
+          value: "Crompton",
         },
         {
-          label: "Product",
-          value: "Heat Pump 2025",
+          label: "Product Type",
+          value: "Solar Water Heater",
+        },
+        {
+          label: "Application",
+          value: "Hot-Water Generation",
         },
       ],
     },
   ],
-
 
   // ==========================================================
   // SOLAR WATER PUMPING
@@ -385,42 +457,45 @@ export const PRODUCT_DRAFTS = {
 
   "solar-water-pumping": [
     {
-      id: "solar-water-pumping-solution",
-      brand: "Dynamic Solar",
-      name: "Solar Water Pumping Solutions",
+      id: "crompton-solar-water-pumps",
+      brand: "Crompton",
+      name: "Solar Water Pumps",
       image: imgPump,
-      type: "Solar Water Pumping",
-      badge: "Solar Solution",
-      range: "Site Specific",
+      type: "Solar Water Pump",
+      badge: "Available Brand",
+      range: "2HP – 10HP",
       warranty: null,
 
       description:
-        "Solar water pumping solutions for suitable agricultural, residential and other water-pumping requirements.",
+        "Crompton solar water pumps including AC and DC models for suitable agricultural and water-pumping applications.",
 
       highlights: [
+        "AC solar water pumps",
+        "DC solar water pumps",
+        "2HP to 10HP models",
         "Suitable agricultural applications",
-        "Solar-powered water pumping",
-        "Site-specific system configuration",
-        "Suitable for water-pumping requirements",
       ],
 
       specs: [
         {
+          label: "Brand",
+          value: "Crompton",
+        },
+        {
+          label: "Pump Type",
+          value: "AC & DC",
+        },
+        {
+          label: "Capacity",
+          value: "2HP – 10HP",
+        },
+        {
           label: "Application",
-          value: "Agricultural, Residential & Other",
-        },
-        {
-          label: "System Type",
           value: "Solar Water Pumping",
-        },
-        {
-          label: "Configuration",
-          value: "Site Specific",
         },
       ],
     },
   ],
-
 
   // ==========================================================
   // SOLAR STREET LIGHT
@@ -428,42 +503,77 @@ export const PRODUCT_DRAFTS = {
 
   "solar-street-light": [
     {
-      id: "solar-street-light-solution",
-      brand: "Dynamic Solar",
-      name: "Solar Street Light Solutions",
+      id: "crompton-solar-street-light",
+      brand: "Crompton",
+      name: "Solar Street Lights",
       image: imgStreet,
       type: "Solar Street Light",
-      badge: "Solar Solution",
-      range: "Site Specific",
+      badge: "Available Brand",
+      range: "Outdoor Lighting",
       warranty: null,
 
       description:
-        "Solar street-light solutions for suitable outdoor, residential, commercial and public lighting requirements.",
+        "Crompton solar street light solutions for suitable outdoor, residential, commercial and public lighting applications.",
 
       highlights: [
+        "Solar-powered street lighting",
         "Outdoor lighting applications",
         "Residential and commercial applications",
         "Public lighting applications",
-        "Solar-powered lighting solution",
       ],
 
       specs: [
         {
-          label: "Application",
-          value: "Outdoor, Residential, Commercial & Public",
+          label: "Brand",
+          value: "Crompton",
         },
         {
-          label: "System Type",
+          label: "Product Type",
           value: "Solar Street Light",
         },
         {
-          label: "Configuration",
-          value: "Site Specific",
+          label: "Application",
+          value: "Outdoor Lighting",
+        },
+      ],
+    },
+
+    {
+      id: "havells-solar-street-light",
+      brand: "Havells",
+      name: "Solar Street Light",
+      image: imgStreet1,
+      type: "Solar Street Light",
+      badge: "Available Brand",
+      range: "Outdoor Lighting",
+      warranty: null,
+
+      description:
+        "Havells solar street light solutions for suitable outdoor lighting applications.",
+
+      highlights: [
+        "Solar-powered lighting",
+        "Outdoor lighting application",
+        "Suitable street-light installations",
+        "Solar energy based lighting",
+      ],
+
+      specs: [
+        {
+          label: "Brand",
+          value: "Havells",
+        },
+        {
+          label: "Product Type",
+          value: "Solar Street Light",
+        },
+        {
+          label: "Application",
+          value: "Outdoor Lighting",
         },
       ],
     },
   ],
-
 
   // ==========================================================
   // SOLAR HOME UPS
@@ -471,53 +581,124 @@ export const PRODUCT_DRAFTS = {
 
   "solar-home-ups": [
     {
-      id: "asha-lander-home-ups",
-      brand: "Asha Power",
-      name: "DSP Sine Wave Home UPS – LANDER Series",
-      image: asha1,
-      type: "Home UPS",
-      badge: "Draft Product",
-      range: "850VA – 5kVA",
-      warranty: "2 Years",
+      id: "eastman-solar-home-ups",
+      brand: "Eastman",
+      name: "Solar Off-Grid Inverter / Home Backup",
+      image: eastman3,
+      type: "Solar Home UPS",
+      badge: "Available Brand",
+      range: "Off-Grid / Backup",
+      warranty: null,
 
       description:
-        "DSP sine wave home UPS solution designed for residential and suitable backup applications.",
+        "Eastman solar off-grid inverter and home backup solutions for suitable residential solar and backup applications.",
 
       highlights: [
-        "DSP based sine wave technology",
-        "Suitable for homes and offices",
-        "850VA to 5kVA range",
-        "Designed for backup power applications",
+        "Solar off-grid inverter",
+        "Home backup applications",
+        "Solar power backup",
+        "Suitable residential applications",
       ],
 
       specs: [
         {
+          label: "Brand",
+          value: "Eastman",
+        },
+        {
           label: "Product Type",
-          value: "Home UPS",
+          value: "Solar Off-Grid Inverter / Home Backup",
         },
         {
-          label: "Capacity",
-          value: "850VA – 5kVA",
+          label: "Application",
+          value: "Residential Backup",
+        },
+      ],
+    },
+
+    {
+      id: "asha-power-solar-home-ups",
+      brand: "Asha Power",
+      name: "Solar & Home UPS",
+      image: asha1,
+      type: "Solar Home UPS",
+      badge: "Available Brand",
+      range: "Home Backup",
+      warranty: null,
+
+      description:
+        "Asha Power solar and home UPS solutions for suitable residential backup power requirements.",
+
+      highlights: [
+        "Solar UPS solution",
+        "Home UPS solution",
+        "Residential backup",
+        "Suitable solar power applications",
+      ],
+
+      specs: [
+        {
+          label: "Brand",
+          value: "Asha Power",
         },
         {
-          label: "Waveform",
-          value: "DSP Sine Wave",
+          label: "Product Type",
+          value: "Solar / Home UPS",
         },
         {
-          label: "Warranty",
-          value: "2 Years",
+          label: "Application",
+          value: "Residential Backup",
+        },
+      ],
+    },
+
+    {
+      id: "vguard-solar-ups",
+      brand: "V-Guard",
+      name: "Solar UPS / Solsmart",
+      image: vguard6,
+      type: "Solar Home UPS",
+      badge: "Available Brand",
+      range: "Solar Backup",
+      warranty: null,
+
+      description:
+        "V-Guard solar UPS and solar inverter solutions for suitable residential backup and solar power applications.",
+
+      highlights: [
+        "Solar UPS solution",
+        "Solar inverter solution",
+        "Residential backup applications",
+        "Suitable solar power systems",
+      ],
+
+      specs: [
+        {
+          label: "Brand",
+          value: "V-Guard",
+        },
+        {
+          label: "Product Type",
+          value: "Solar UPS / Solar Inverter",
+        },
+        {
+          label: "Application",
+          value: "Solar Backup",
         },
       ],
     },
   ],
 
-
   // ==========================================================
   // SOLAR INVERTER & BATTERY
   // ==========================================================
+  //
+  // Your supplied source did not provide a new detailed list
+  // for this category, so keep the currently configured
+  // products here rather than inventing new models.
+  // ==========================================================
 
   "solar-inverter-battery": [
-
     {
       id: "eastman-grid-tie",
       brand: "Eastman",
@@ -525,14 +706,17 @@ export const PRODUCT_DRAFTS = {
       image: eastman1,
       type: "Solar Inverter",
       badge: "Draft Product",
+      range: "Grid Tie",
+      warranty: null,
 
       description:
         "Eastman grid-tie solar inverter solution for suitable solar power generation applications.",
 
       highlights: [
         "Grid-tie solar inverter",
-        "Suitable solar power systems",
-        "Designed for grid-connected applications",
+        "Grid-connected solar applications",
+        "Solar power generation",
+        "Suitable rooftop solar systems",
       ],
 
       specs: [
@@ -554,6 +738,8 @@ export const PRODUCT_DRAFTS = {
       image: eastman2,
       type: "Solar Inverter",
       badge: "Draft Product",
+      range: "Hybrid",
+      warranty: null,
 
       description:
         "Eastman hybrid solar inverter solution for suitable solar and backup applications.",
@@ -561,7 +747,8 @@ export const PRODUCT_DRAFTS = {
       highlights: [
         "Hybrid solar inverter",
         "Solar and backup applications",
-        "Suitable energy management applications",
+        "Energy management",
+        "Suitable hybrid solar systems",
       ],
 
       specs: [
@@ -583,6 +770,8 @@ export const PRODUCT_DRAFTS = {
       image: eastman3,
       type: "Solar Inverter",
       badge: "Draft Product",
+      range: "Off-Grid",
+      warranty: null,
 
       description:
         "Eastman off-grid solar inverter solution for suitable standalone solar applications.",
@@ -590,7 +779,8 @@ export const PRODUCT_DRAFTS = {
       highlights: [
         "Off-grid solar inverter",
         "Standalone solar applications",
-        "Suitable backup power requirements",
+        "Solar backup power",
+        "Suitable off-grid systems",
       ],
 
       specs: [
@@ -612,6 +802,8 @@ export const PRODUCT_DRAFTS = {
       image: asha2,
       type: "Solar Inverter",
       badge: "Draft Product",
+      range: "Solar Inverter",
+      warranty: null,
 
       description:
         "Asha Power ROVER solar inverter solution for suitable solar applications.",
@@ -620,6 +812,7 @@ export const PRODUCT_DRAFTS = {
         "Solar inverter solution",
         "Suitable solar applications",
         "Backup power applications",
+        "Solar power system integration",
       ],
 
       specs: [
@@ -641,14 +834,17 @@ export const PRODUCT_DRAFTS = {
       image: havells30,
       type: "Solar Inverter",
       badge: "Draft Product",
+      range: "Grid Tie",
+      warranty: null,
 
       description:
-        "Havells Enviro GTi G3 solar inverter solution.",
+        "Havells Enviro GTi G3 solar inverter solution for suitable grid-connected solar systems.",
 
       highlights: [
         "Grid-tie solar inverter",
         "Solar power application",
-        "Suitable grid-connected systems",
+        "Grid-connected system",
+        "Solar power generation",
       ],
 
       specs: [
@@ -670,6 +866,8 @@ export const PRODUCT_DRAFTS = {
       image: eastman4,
       type: "Solar Battery",
       badge: "Draft Product",
+      range: "Energy Storage",
+      warranty: null,
 
       description:
         "Eastman LiFePO4 battery solution for suitable solar energy-storage and backup applications.",
@@ -677,7 +875,8 @@ export const PRODUCT_DRAFTS = {
       highlights: [
         "LiFePO4 battery technology",
         "Solar energy storage",
-        "Suitable backup applications",
+        "Backup applications",
+        "Energy-storage solution",
       ],
 
       specs: [
@@ -699,6 +898,8 @@ export const PRODUCT_DRAFTS = {
       image: eastman5,
       type: "Solar Battery",
       badge: "Draft Product",
+      range: "Energy Storage",
+      warranty: null,
 
       description:
         "Eastman tubular battery solution for suitable solar backup and energy-storage applications.",
@@ -707,6 +908,7 @@ export const PRODUCT_DRAFTS = {
         "Tubular battery",
         "Solar backup applications",
         "Energy-storage solution",
+        "Suitable backup systems",
       ],
 
       specs: [
@@ -728,6 +930,8 @@ export const PRODUCT_DRAFTS = {
       image: asha3,
       type: "Energy Storage",
       badge: "Draft Product",
+      range: "Energy Storage",
+      warranty: null,
 
       description:
         "Asha Power ESS1548 energy-storage solution for suitable solar backup and storage applications.",
@@ -735,7 +939,8 @@ export const PRODUCT_DRAFTS = {
       highlights: [
         "Energy-storage solution",
         "Solar backup application",
-        "Suitable energy-storage requirements",
+        "Energy-storage requirements",
+        "Solar power backup",
       ],
 
       specs: [
@@ -749,6 +954,5 @@ export const PRODUCT_DRAFTS = {
         },
       ],
     },
-
   ],
 };
