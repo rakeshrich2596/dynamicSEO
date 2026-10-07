@@ -45,7 +45,7 @@ function Services() {
       <SEO
         title="Solar Services in Tambaram | Dynamic Solar"
         description="Explore Dynamic Solar services including solar panel installation, solar power plants, solar water heaters, solar pumping systems and solar street lights."
-        canonical="https://www.dynamicsolar.in/services/"
+        canonical="https://dynamicsolar.in/services/"
       />
 
       <Navbar />

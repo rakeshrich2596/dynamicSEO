@@ -36,7 +36,7 @@ export default function ProductsDemo() {
       <SEO
         title="Solar Products & Power Solutions | Dynamic Solar"
         description="Explore Dynamic Solar products including solar power plants, solar panels, solar water heaters, solar water pumping systems, solar street lights, solar home UPS and solar inverter and battery solutions."
-        canonical="https://www.dynamicsolar.in/products/"
+        canonical="https://dynamicsolar.in/products/"
       />
 
       <Navbar />

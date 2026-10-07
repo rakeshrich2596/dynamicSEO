@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SITE_URL = "https://www.dynamicsolar.in";
+const SITE_URL = "https://dynamicsolar.in";
 
 function SEO({
   title,

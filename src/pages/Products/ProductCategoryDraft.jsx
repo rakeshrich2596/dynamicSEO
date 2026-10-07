@@ -438,7 +438,7 @@ const ProductCategoryDraft = () => {
         description={
           categoryData.description
         }
-        canonical={`https://www.dynamicsolar.in/products/${categoryData.slug}/`}
+        canonical={`https://dynamicsolar.in/products/${categoryData.slug}/`}
       />
 
 
