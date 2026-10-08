@@ -1,4 +1,4 @@
-import SEO from "../../components/SEO/SEO";
+
 import Seo, { businessSchema, websiteSchema } from "../../seo/Seo";
 
 import Navbar from "../../components/Navbar/Navbar";

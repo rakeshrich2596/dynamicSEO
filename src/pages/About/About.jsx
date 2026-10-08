@@ -16,7 +16,7 @@ import { useInView } from "../../hooks/useInView";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import CTA from "../../components/CTA/CTA";
-import SEO from "../../components/SEO/SEO";
+
 import "./About.css";
 
 import Seo, { businessSchema, breadcrumbSchema } from "../../seo/Seo";

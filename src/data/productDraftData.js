@@ -29,11 +29,10 @@ import racold2 from "../assets/images/racold/racold2.webp";
 // GENERIC PRODUCT IMAGES
 import imgPlant from "../assets/images/prod-solar-plant.webp";
 import imgPump from "../assets/images/prod-water-pump.webp";
-import imgPump1 from "../assets/images/prod-water-pump1.webp";
-import imgPump2 from "../assets/images/prod-water-pump2.webp";
+
 import imgStreet from "../assets/images/prod-street-light.webp";
 import imgStreet1 from "../assets/images/prod-street-light1.webp";
-import imgStreet2 from "../assets/images/prod-street-light2.webp";
+
 
 // ============================================================
 // PRODUCT CATEGORIES
