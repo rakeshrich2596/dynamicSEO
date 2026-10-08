@@ -255,14 +255,14 @@ const Footer = () => {
                   ))}
 
                 </div>
-
+                
 
                 {/* =================================================
                     SALES / WHATSAPP
                 ================================================= */}
 
                 <a
-                  href="tel:+917299985357"
+                  href="tel:+919841582874"
                   className="brand-contact-row"
                 >
 
@@ -282,7 +282,7 @@ const Footer = () => {
 
                   <span className="brand-contact-text">
                     <strong>
-                      +91 72999 85357
+                      +91 98415 82874
                     </strong>
                   </span>
 
@@ -294,7 +294,7 @@ const Footer = () => {
                 ================================================= */}
 
                 <a
-                  href="mailto:Enquiry@dynamicsolar.in"
+                  href="mailto:info@dynamicsolar.in"
                   className="brand-contact-row"
                 >
 
@@ -302,7 +302,7 @@ const Footer = () => {
 
                   <span className="brand-contact-text">
                     <strong>
-                      Enquiry@dynamicsolar.in
+                      info@dynamicsolar.in
                     </strong>
                   </span>
 
