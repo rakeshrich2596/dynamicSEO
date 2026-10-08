@@ -42,64 +42,64 @@ import imgStreet2 from "../assets/images/prod-street-light2.webp";
 export const PRODUCT_CATEGORIES = [
   {
     slug: "solar-power-plant",
-    name: "Solar Power Plant",
+    name: "Solar Power Plant Solutions",
     shortName: "Solar Power Plant",
     description:
-      "Solar power plant solutions for residential, commercial and industrial power generation requirements.",
+      "Explore solar power plant solutions from Dynamic Solar for suitable residential, commercial or other applications. Contact us for project assessment.",
     status: "active",
   },
 
   {
     slug: "solar-panels",
-    name: "Solar Panels",
+    name: "Solar Panels Solutions",
     shortName: "Solar Panels",
     description:
-      "Solar panels from leading brands for suitable rooftop and solar power generation applications.",
+      "Explore solar panel solutions from Dynamic Solar for suitable residential, commercial or other applications. Contact us for project assessment.",
     status: "active",
   },
-
+  
   {
     slug: "solar-water-heater",
-    name: "Solar Water Heater",
+    name: "Solar Water Heater Solutions",
     shortName: "Solar Water Heater",
     description:
-      "Solar water heating solutions from leading brands for residential and commercial hot-water requirements.",
+      "Explore solar water heater solutions from Dynamic Solar for suitable residential, commercial or other applications. Contact us for project assessment.",
     status: "active",
   },
 
   {
     slug: "solar-water-pumping",
-    name: "Solar Water Pumping",
+    name: "Solar Water Pumping Solutions",
     shortName: "Solar Water Pumping",
     description:
-      "Solar water pumping solutions for agricultural, residential and other water-pumping applications.",
+      "Explore solar water pumping solutions for agricultural, residential and other water-pumping applications. Contact us for a site-specific assessment.",
     status: "active",
   },
 
   {
     slug: "solar-street-light",
-    name: "Solar Street Light",
+    name: "Solar Street Light Solutions",
     shortName: "Solar Street Light",
     description:
-      "Solar street-light solutions for outdoor, residential, commercial and public lighting requirements.",
+      "Explore solar street-light solutions for outdoor, residential, commercial and public lighting requirements. Contact us for a site-specific assessment.",
     status: "active",
   },
 
   {
     slug: "solar-home-ups",
-    name: "Solar Home UPS",
+    name: "Solar Home UPS Solutions",
     shortName: "Home UPS",
     description:
-      "Solar and home UPS solutions from leading brands for residential backup power requirements.",
+      "Explore solar home UPS solutions from Dynamic Solar. Contact us to discuss backup and solar power requirements for your property.",
     status: "active",
   },
 
   {
     slug: "solar-inverter-battery",
-    name: "Solar Inverter & Battery",
+    name: "Solar Inverter & Battery Solutions",
     shortName: "Inverter & Battery",
     description:
-      "Solar inverter, battery and energy-storage solutions including grid-tie, hybrid and off-grid configurations.",
+      "Explore solar inverter & Battery solutions from Dynamic Solar. Contact us to identify an inverter option suitable for your solar system.",
     status: "active",
   },
 ];

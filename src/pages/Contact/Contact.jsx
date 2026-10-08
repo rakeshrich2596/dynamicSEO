@@ -280,7 +280,7 @@ function Contact() {
     <>
       <Seo
         title="Contact Dynamic Solar | Solar Company in Tambaram"
-        description="Contact Dynamic Solar for solar panel installation, solar power systems, solar water heaters, and renewable energy solutions in Tambaram, Chennai and across Tamil Nadu."
+        description="Contact Dynamic Solar in West Tambaram for solar panel installation and solar power solutions. Call 9841582874 or email info@dynamicsolar.in."
         path="/contact/"
         jsonLd={[
           businessSchema,

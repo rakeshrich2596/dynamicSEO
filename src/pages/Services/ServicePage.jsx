@@ -19,7 +19,7 @@ const SERVICE_DATA = {
     title: "Solar Panel Installation | Dynamic Solar",
 
     description:
-      "Learn about Dynamic Solar's solar panel installation service for homes and businesses. Contact us for a site-specific solar assessment and quote.",
+      "Explore Dynamic Solar's solar panel installation service for suitable homes and businesses. Contact us for a site-specific solar assessment and quote.",
 
     h1: "Solar Panel Installation",
 
@@ -183,31 +183,31 @@ const RELATED_SERVICES = [
     title: "Solar Panel Installation",
     path: "/services/solar-panel-installation/",
     description:
-      "Solar panel installation for homes and businesses with system selection based on site and electricity requirements.",
+      "Explore Dynamic Solar's solar panel installation service for suitable homes and businesses. Contact us for a site-specific solar assessment and quote.",
   },
   {
-    title: "Solar Power Plant",
+    title: "Solar Power Plant Solutions",
     path: "/services/solar-power-plant/",
     description:
-      "Solar power plant solutions for suitable project requirements, subject to site assessment and system design.",
+      "Explore solar power plant solutions from Dynamic Solar for suitable residential, commercial or other applications. Contact us for project assessment.",
   },
   {
-    title: "Solar Water Heater",
+    title: "Solar Water Heater Solutions",
     path: "/services/solar-water-heater/",
     description:
-      "Solar water-heating solutions for suitable hot-water requirements.",
+      "Explore solar water heater solutions from Dynamic Solar. Contact our team to discuss your hot-water requirements and suitable system.",
   },
   {
     title: "Solar Water Pumping Systems",
     path: "/services/solar-water-pumping-systems/",
     description:
-      "Solar water pumping solutions for suitable water-pumping applications.",
+      "Explore solar water pumping system solutions from Dynamic Solar for suitable water-pumping requirements. Request a site-specific consultation.",
   },
   {
-    title: "Solar Street Lights",
+    title: "Solar Street Lights Solutions",
     path: "/services/solar-street-lights/",
     description:
-      "Solar street-light solutions for suitable outdoor and lighting applications.",
+      "Explore solar street light solutions from Dynamic Solar for suitable residential, commercial and outdoor applications. Contact us for details.",
   },
 ];
 

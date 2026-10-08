@@ -21,7 +21,7 @@ function Home() {
     <>
       <Seo
         title="Solar Company in Tambaram | Solar Panel Installation | Dynamic Solar"
-        description="Dynamic Solar provides solar panel installation and solar energy solutions for homes, businesses, and industries in Tambaram, Chennai and across Tamil Nadu."
+        description="Dynamic Solar provides solar panel installation and power solutions from West Tambaram for homes and businesses in Tambaram and nearby areas."
         path="/"
         jsonLd={[businessSchema, websiteSchema]}
       />
