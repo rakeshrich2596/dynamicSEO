@@ -301,13 +301,13 @@ const ProductCategoryDraft = () => {
         jsonLd={[
           businessSchema,
 
-          itemListSchema(
-            `${categoryData.name} Products`,
-            products.map((product) => ({
-              name: product.name,
-              path: `/products/${categoryData.slug}/`,
-            })),
-          ),
+          // itemListSchema(
+          //   `${categoryData.name} Products`,
+          //   products.map((product) => ({
+          //     name: product.name,
+          //     path: `/products/${categoryData.slug}/`,
+          //   })),
+          // ),
 
           breadcrumbSchema([
             {
