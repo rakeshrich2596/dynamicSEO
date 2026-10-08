@@ -4,6 +4,11 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
 import SEO from "../../components/SEO/SEO";
+import Seo, {
+  businessSchema,
+  breadcrumbSchema,
+  itemListSchema,
+} from "../../seo/Seo";
 
 import { PRODUCT_CATEGORIES } from "../../data/productDraftData";
 
@@ -33,11 +38,33 @@ const CATEGORY_ICONS = [
 export default function ProductsDemo() {
   return (
     <>
-      <SEO
-        title="Solar Products & Power Solutions | Dynamic Solar"
-        description="Explore Dynamic Solar products including solar power plants, solar panels, solar water heaters, solar water pumping systems, solar street lights, solar home UPS and solar inverter and battery solutions."
-        canonical="https://dynamicsolar.in/products/"
-      />
+      <Seo
+  title="Solar Products & Power Solutions | Dynamic Solar"
+  description="Explore Dynamic Solar products including solar power plants, solar panels, solar water heaters, solar water pumping systems, solar street lights, solar home UPS and solar inverter and battery solutions."
+  path="/products/"
+  jsonLd={[
+    businessSchema,
+
+    itemListSchema(
+      "Dynamic Solar Product Categories",
+      PRODUCT_CATEGORIES.map((category) => ({
+        name: category.name,
+        path: `/products/${category.slug}/`,
+      }))
+    ),
+
+    breadcrumbSchema([
+      {
+        name: "Home",
+        path: "/",
+      },
+      {
+        name: "Products",
+        path: "/products/",
+      },
+    ]),
+  ]}
+/>
 
       <Navbar />
 

@@ -163,6 +163,24 @@ export function breadcrumbSchema(items) {
   };
 }
 
+export function itemListSchema(name, items) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name,
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      url: `${SITE_URL}${
+        item.path === "/"
+          ? "/"
+          : item.path.replace(/\/$/, "") + "/"
+      }`,
+    })),
+  };
+}
+
 export function serviceSchema(name, description, path) {
   return {
     "@context": "https://schema.org",
