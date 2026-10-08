@@ -113,9 +113,11 @@ function WhyChooseUs() {
         <div className="container">
           {/* Header */}
           <div className="wcu-header fade-in-up">
+            
             <h2 className="wcu-title">
               25+ Years of <span>Proven Expertise</span>
             </h2>
+            <h1 className="wcu-seo-h1">Solar Company in Tambaram</h1>
             <p className="wcu-subtitle">
               Trusted since 1995 across residential, commercial, industrial, and
               agricultural projects.

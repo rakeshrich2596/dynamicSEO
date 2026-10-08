@@ -38,6 +38,7 @@ function CTA() {
                 <h2 className="cta-heading fade-in-up delay-1">
                     Start Saving with <span>Solar Energy</span> Today
                 </h2>
+                
                 <p className="cta-sub fade-in-up delay-2">
                     Get a free, no-obligation consultation from our certified solar experts.
                     We'll assess your property, calculate your savings, and handle every step —

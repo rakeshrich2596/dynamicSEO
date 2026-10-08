@@ -112,15 +112,9 @@ const testimonials = [
 
 function StarRating({ count }) {
   return (
-    <div
-      className="testi-stars"
-      aria-label={`${count} out of 5 stars`}
-    >
+    <div className="testi-stars" aria-label={`${count} out of 5 stars`}>
       {Array.from({ length: 5 }, (_, i) => (
-        <span
-          key={i}
-          className={i < count ? "star star--filled" : "star"}
-        >
+        <span key={i} className={i < count ? "star star--filled" : "star"}>
           ★
         </span>
       ))}
@@ -150,13 +144,11 @@ function VideoCollage() {
 
   return (
     <div className="testi-video-panel">
-
       {/* ───────────────
           VIDEO PLAYER
       ─────────────── */}
       {playing ? (
         <div className="testi-video-player">
-
           <video
             autoPlay
             controls
@@ -165,28 +157,19 @@ function VideoCollage() {
             className="testi-video-el"
             onEnded={handleVideoEnd}
           >
-            <source
-              src={dynamicWebsiteVideo}
-              type="video/mp4"
-            />
-
+            <source src={dynamicWebsiteVideo} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-
         </div>
       ) : (
-
         /* ───────────────
            LIGHTWEIGHT PREVIEW
         ─────────────── */
 
         <div className="testi-collage">
-
           {/* Preview background */}
           <div className="testi-video-placeholder">
-
             <div className="testi-preview-content">
-
               <div className="testi-preview-play-circle">
                 <svg
                   viewBox="0 0 24 24"
@@ -202,9 +185,7 @@ function VideoCollage() {
               <span className="testi-preview-text">
                 Watch Our Customer Stories
               </span>
-
             </div>
-
           </div>
 
           {/* Orange overlay */}
@@ -212,13 +193,9 @@ function VideoCollage() {
 
           {/* Brand */}
           <div className="testi-collage-brand">
-            <span className="testi-brand-dot">
-              ●
-            </span>
+            <span className="testi-brand-dot">●</span>
 
-            <span className="testi-brand-text">
-              DYNAMIC&nbsp;SOLAR
-            </span>
+            <span className="testi-brand-text">DYNAMIC&nbsp;SOLAR</span>
           </div>
 
           {/* Main Play Button */}
@@ -239,10 +216,8 @@ function VideoCollage() {
               <path d="M8 5v14l11-7z" />
             </svg>
           </button>
-
         </div>
       )}
-
     </div>
   );
 }
@@ -277,7 +252,7 @@ function Testimonials() {
         setAnimDir(null);
       }, 350);
     },
-    [animating, total]
+    [animating, total],
   );
 
   /* ───────────────
@@ -314,11 +289,9 @@ function Testimonials() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-
-          const elements =
-            entry.target.querySelectorAll(
-              ".fade-in-up, .fade-in-left, .fade-in-right"
-            );
+          const elements = entry.target.querySelectorAll(
+            ".fade-in-up, .fade-in-left, .fade-in-right",
+          );
 
           if (entry.isIntersecting) {
             elements.forEach((element) => {
@@ -329,12 +302,11 @@ function Testimonials() {
               element.classList.remove("visible");
             });
           }
-
         });
       },
       {
         threshold: 0.1,
-      }
+      },
     );
 
     if (sectionRef.current) {
@@ -347,34 +319,23 @@ function Testimonials() {
   const testimonial = testimonials[current];
 
   return (
-    <section
-      className="testimonials-sr"
-      ref={sectionRef}
-      id="testimonials"
-    >
-
+    <section className="testimonials-sr" ref={sectionRef} id="testimonials">
       <div className="container">
-
         {/* ─────────────────────────
             HEADER
         ───────────────────────── */}
 
         <div className="sr-header fade-in-up">
-
-          <span className="sr-tag">
-            Testimonials
-          </span>
+          <span className="sr-tag">Testimonials</span>
 
           <h2 className="sr-title">
-            90% of customers{" "}
-            <span>recommend us!</span>
+            90% of customers <span>recommend us!</span>
           </h2>
 
+          
           <p className="sr-subtitle">
-            Don&apos;t just believe us, see the reviews
-            for yourself.
+            Don&apos;t just believe us, see the reviews for yourself.
           </p>
-
         </div>
 
         {/* ─────────────────────────
@@ -382,15 +343,12 @@ function Testimonials() {
         ───────────────────────── */}
 
         <div className="sr-body">
-
           {/* ───────────────
               LEFT VIDEO
           ─────────────── */}
 
           <div className="sr-left fade-in-left delay-1">
-
             <VideoCollage />
-
           </div>
 
           {/* ───────────────
@@ -398,7 +356,6 @@ function Testimonials() {
           ─────────────── */}
 
           <div className="sr-right fade-in-right delay-2">
-
             {/* Previous button */}
             <button
               type="button"
@@ -434,15 +391,11 @@ function Testimonials() {
               }`}
               key={current}
             >
-
               {/* Card Header */}
 
               <div className="sr-card-header">
-
                 <div className="sr-card-header-left">
-
                   <span className="sr-thumb-icon">
-
                     <svg
                       viewBox="0 0 24 24"
                       fill="currentColor"
@@ -452,17 +405,12 @@ function Testimonials() {
                     >
                       <path d="M2 20h2c.55 0 1-.45 1-1v-9c0-.55-.45-1-1-1H2v11zm19.83-7.12c.11-.25.17-.52.17-.8V11c0-1.1-.9-2-2-2h-5.5l.92-4.65c.05-.22.02-.46-.08-.66-.23-.45-.52-.86-.88-1.22L14 2 7.59 8.41C7.21 8.79 7 9.3 7 9.83V19c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.08-.2.14-.42.14-.65v-.08l-.01-.01.84-.11z" />
                     </svg>
-
                   </span>
 
-                  <span className="sr-card-label">
-                    Testimonial
-                  </span>
-
+                  <span className="sr-card-label">Testimonial</span>
                 </div>
 
                 <span className="sr-card-ext-icon">
-
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
@@ -474,22 +422,14 @@ function Testimonials() {
                   >
                     <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
                     <polyline points="15 3 21 3 21 9" />
-                    <line
-                      x1="10"
-                      y1="14"
-                      x2="21"
-                      y2="3"
-                    />
+                    <line x1="10" y1="14" x2="21" y2="3" />
                   </svg>
-
                 </span>
-
               </div>
 
               {/* White body */}
 
               <div className="sr-card-body">
-
                 {/* Avatar */}
 
                 <div
@@ -504,38 +444,26 @@ function Testimonials() {
 
                 {/* Stars */}
 
-                <StarRating
-                  count={testimonial.rating}
-                />
+                <StarRating count={testimonial.rating} />
 
                 {/* Quote */}
 
                 <div className="sr-quote-wrap">
-
                   <p className="sr-quote">
                     &ldquo;
                     {testimonial.quote}
                     &rdquo;
                   </p>
-
                 </div>
 
                 {/* Reviewer */}
 
                 <div className="sr-reviewer">
+                  <div className="sr-reviewer-name">{testimonial.name}</div>
 
-                  <div className="sr-reviewer-name">
-                    {testimonial.name}
-                  </div>
-
-                  <div className="sr-reviewer-time">
-                    {testimonial.timeAgo}
-                  </div>
-
+                  <div className="sr-reviewer-time">{testimonial.timeAgo}</div>
                 </div>
-
               </div>
-
             </div>
 
             {/* Next button */}
@@ -563,36 +491,19 @@ function Testimonials() {
             {/* Dot indicators */}
 
             <div className="sr-dots">
-
               {testimonials.map((_, i) => (
                 <button
                   type="button"
                   key={i}
-                  className={`sr-dot ${
-                    i === current
-                      ? "sr-dot--active"
-                      : ""
-                  }`}
-                  onClick={() =>
-                    goTo(
-                      i,
-                      i > current ? "down" : "up"
-                    )
-                  }
-                  aria-label={`Go to testimonial ${
-                    i + 1
-                  }`}
+                  className={`sr-dot ${i === current ? "sr-dot--active" : ""}`}
+                  onClick={() => goTo(i, i > current ? "down" : "up")}
+                  aria-label={`Go to testimonial ${i + 1}`}
                 />
               ))}
-
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }

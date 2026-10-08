@@ -14,6 +14,8 @@ import Footer from "../../components/Footer/Footer";
 import SEO from "../../components/SEO/SEO";
 import "./Contact.css";
 
+import Seo, { businessSchema, breadcrumbSchema } from "../../seo/Seo";
+
 /* =========================================================
    ADDRESS DETAILS
 ========================================================= */
@@ -276,12 +278,18 @@ function Contact() {
 
   return (
     <>
-
-      <SEO
-            title="Contact Dynamic Solar | Solar Company in Tambaram"
-            description="Contact Dynamic Solar for solar panel installation, solar power systems, solar water heaters, and renewable energy solutions in Tambaram, Chennai and across Tamil Nadu."
-            canonical="https://www.dynamicsolar.in/contact/"
-        />
+      <Seo
+        title="Contact Dynamic Solar | Solar Company in Tambaram"
+        description="Contact Dynamic Solar for solar panel installation, solar power systems, solar water heaters, and renewable energy solutions in Tambaram, Chennai and across Tamil Nadu."
+        path="/contact/"
+        jsonLd={[
+          businessSchema,
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Contact", path: "/contact/" },
+          ]),
+        ]}
+      />
       <Navbar />
 
       {/* ===================================================

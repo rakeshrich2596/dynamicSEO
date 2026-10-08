@@ -19,6 +19,8 @@ import CTA from "../../components/CTA/CTA";
 import SEO from "../../components/SEO/SEO";
 import "./About.css";
 
+import Seo, { businessSchema, breadcrumbSchema } from "../../seo/Seo";
+
 const values = [
   {
     Icon: Target,
@@ -141,10 +143,17 @@ function About() {
 
   return (
     <>
-      <SEO
+      <Seo
         title="About Dynamic Solar | Solar Company in Tambaram"
         description="Learn about Dynamic Solar, a trusted solar energy company providing solar panel installation and renewable energy solutions for homes, businesses, and industries in Tamil Nadu."
-        canonical="https://www.dynamicsolar.in/about/"
+        path="/about/"
+        jsonLd={[
+          businessSchema,
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "About Us", path: "/about/" },
+          ]),
+        ]}
       />
       <Navbar />
 

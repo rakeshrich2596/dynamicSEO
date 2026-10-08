@@ -1,4 +1,5 @@
 import SEO from "../../components/SEO/SEO";
+import Seo, { businessSchema, websiteSchema } from "../../seo/Seo";
 
 import Navbar from "../../components/Navbar/Navbar";
 import Hero from "../../components/Hero/Hero";
@@ -16,34 +17,35 @@ import WhatsAppWidget from "../../components/WhatsAppWidget/WhatsAppWidget";
 import HomePopup from "../../components/HomePopup/HomePopup";
 
 function Home() {
-    return (
-        <>
-            <SEO
-                title="Solar Company in Tambaram | Solar Panel Installation | Dynamic Solar"
-                description="Dynamic Solar provides solar panel installation and solar energy solutions for homes, businesses, and industries in Tambaram, Chennai and across Tamil Nadu."
-                canonical="https://www.dynamicsolar.in/"
-            />
+  return (
+    <>
+      <Seo
+        title="Solar Company in Tambaram | Solar Panel Installation | Dynamic Solar"
+        description="Dynamic Solar provides solar panel installation and solar energy solutions for homes, businesses, and industries in Tambaram, Chennai and across Tamil Nadu."
+        path="/"
+        jsonLd={[businessSchema, websiteSchema]}
+      />
 
-            <Navbar />
+      <Navbar />
 
-            <div className="home-page">
-                <HomePopup />
-                <Hero />
-                <EnquiryCalculator />
-                <BookHomeVisit />
-                <WhyChooseUs />
-                <ProductCards />
-                <Clients />
-                <Testimonials />
-                <MapSection />
-                <BlogPreview />
-                <CTA />
-            </div>
+      <div className="home-page">
+        <HomePopup />
+        <Hero />
+        <EnquiryCalculator />
+        <BookHomeVisit />
+        <WhyChooseUs />
+        <ProductCards />
+        <Clients />
+        <Testimonials />
+        <MapSection />
+        <BlogPreview />
+        <CTA />
+      </div>
 
-            <WhatsAppWidget />
-            <Footer />
-        </>
-    );
+      <WhatsAppWidget />
+      <Footer />
+    </>
+  );
 }
 
 export default Home;

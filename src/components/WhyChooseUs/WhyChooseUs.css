@@ -90,6 +90,13 @@
     z-index: 2;
 }
 
+.wcu-seo-h1 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: var(--text-main);
+}
+
 .wcu-title {
     font-family: var(--font-heading, "Inter", sans-serif);
     font-size: clamp(1.8rem, 4vw, 2.6rem);

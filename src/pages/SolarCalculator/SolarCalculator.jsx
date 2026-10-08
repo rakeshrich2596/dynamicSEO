@@ -5,6 +5,7 @@ import enquiryBg from "../../assets/images/hero/hero2.webp";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import SEO from "../../components/SEO/SEO";
+import Seo, { businessSchema, breadcrumbSchema } from "../../seo/Seo";
 const TARIFFS = {
   Residential: {
     "Tamil Nadu": 6.5,
@@ -491,13 +492,35 @@ const SolarCalculator = () => {
 
   return (
     <div className="solar-calculator-page">
-      
       <Navbar />
 
-      <SEO
+      <Seo
         title="Solar Savings Calculator | Dynamic Solar"
         description="Use the Dynamic Solar savings calculator to estimate your solar system size, electricity generation, savings, investment and payback based on your electricity usage."
-        canonical="https://www.dynamicsolar.in/solar-calculator/"
+        path="/solar-calculator/"
+        jsonLd={[
+          businessSchema,
+          {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "Dynamic Solar Savings Calculator",
+            description:
+              "Estimate solar system size, electricity generation, savings, investment and payback based on electricity usage.",
+            url: "https://dynamicsolar.in/solar-calculator/",
+            applicationCategory: "BusinessApplication",
+            operatingSystem: "Web",
+            publisher: {
+              "@type": "Organization",
+              "@id": "https://dynamicsolar.in/#organization",
+              name: "Dynamic Solar",
+              url: "https://dynamicsolar.in/",
+            },
+          },
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Solar Calculator", path: "/solar-calculator/" },
+          ]),
+        ]}
       />
 
       {/* =====================================================

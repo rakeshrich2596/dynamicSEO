@@ -639,9 +639,10 @@ const EnquiryCalculator = () => {
               SOLAR SAVINGS CALCULATOR
             </span>
 
-            <h1>
+            <h2>
               Interested in <span>going solar?</span>
-            </h1>
+            </h2>
+ 
 
             <p className="solar-description">
               Use the calculator to estimate your solar requirement,
