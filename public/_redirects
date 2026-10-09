@@ -1,10 +1,6 @@
 /about.php    /about/    301
 /contact.php  /contact/  301
 
-/about    /about/    301
-/contact  /contact/  301
-/products    /products/    301
-/solar-calculator    /solar-calculator/    301
-/blog    /blog/    301
+
 
 /*    /index.html    200
