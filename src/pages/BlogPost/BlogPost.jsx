@@ -1,4 +1,3 @@
-
 import { useParams, Link } from "react-router-dom";
 import { allPosts } from "../../data/blogPosts";
 
@@ -21,10 +20,11 @@ function getAbsoluteUrl(imagePath) {
     return imagePath;
   }
 
-  return `${SITE_URL}${imagePath.startsWith("/") ? "" : "/"}${imagePath}`;
+  return `${SITE_URL}${
+    imagePath.startsWith("/") ? "" : "/"
+  }${imagePath}`;
 }
 
-// Escape HTML before applying the supported Markdown formatting.
 function formatArticleContent(content = "") {
   return String(content)
     .replace(/&/g, "&amp;")
@@ -36,12 +36,126 @@ function formatArticleContent(content = "") {
     .replace(/\*(.*?)\*/g, "<em>$1</em>");
 }
 
+function ArticleLinkButton({ link }) {
+  if (!link?.text || !link?.url) return null;
+
+  return (
+    <div className="blogpost-content-action">
+      <Link
+        to={link.url}
+        className="blogpost-action-btn"
+      >
+        {link.text}
+        <span aria-hidden="true"> →</span>
+      </Link>
+    </div>
+  );
+}
+
+function ArticleContentBlock({
+  block,
+  index,
+  post,
+  articleImage,
+}) {
+  // Support existing blogs that use string paragraphs.
+  if (typeof block === "string") {
+    return (
+      <>
+        {index === 3 && articleImage && (
+          <figure className="blogpost-inline-image">
+            <img
+              src={articleImage}
+              alt={
+                post.articleImageAlt ||
+                `${post.title} - solar energy`
+              }
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        )}
+
+        <p
+          className="blogpost-paragraph"
+          dangerouslySetInnerHTML={{
+            __html: formatArticleContent(block),
+          }}
+        />
+      </>
+    );
+  }
+
+  if (!block || typeof block !== "object") {
+    return null;
+  }
+
+  if (block.type === "heading") {
+    return (
+      <h2 className="blogpost-section-heading">
+        {block.text}
+      </h2>
+    );
+  }
+
+  if (block.type === "list") {
+    return (
+      <ul className="blogpost-list">
+        {(Array.isArray(block.items) ? block.items : []).map(
+          (item, itemIndex) => (
+            <li
+              key={`${post.slug}-${index}-${itemIndex}`}
+              dangerouslySetInnerHTML={{
+                __html: formatArticleContent(item),
+              }}
+            />
+          )
+        )}
+      </ul>
+    );
+  }
+
+  if (block.type === "paragraph") {
+    return (
+      <>
+        {index === 3 && articleImage && (
+          <figure className="blogpost-inline-image">
+            <img
+              src={articleImage}
+              alt={
+                post.articleImageAlt ||
+                `${post.title} - solar energy`
+              }
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        )}
+
+        <p
+          className="blogpost-paragraph"
+          dangerouslySetInnerHTML={{
+            __html: formatArticleContent(block.text || ""),
+          }}
+        />
+
+        {block.link && (
+          <ArticleLinkButton link={block.link} />
+        )}
+      </>
+    );
+  }
+
+  return null;
+}
+
 function BlogPost() {
   const { slug } = useParams();
 
-  const post = allPosts.find((item) => item.slug === slug);
+  const post = allPosts.find(
+    (item) => item.slug === slug
+  );
 
-  // Handle invalid or missing blog URLs.
   if (!post) {
     return (
       <>
@@ -62,11 +176,14 @@ function BlogPost() {
             <h1>Article Not Found</h1>
 
             <p>
-              The article you're looking for doesn't exist or may
-              have been moved.
+              The article you're looking for doesn't exist
+              or may have been moved.
             </p>
 
-            <Link to="/blog/" className="blogpost-back-btn">
+            <Link
+              to="/blog/"
+              className="blogpost-back-btn"
+            >
               ← Back to Blog
             </Link>
           </div>
@@ -83,53 +200,61 @@ function BlogPost() {
     post.metaTitle || `${post.title} | Dynamic Solar`;
 
   const articleDescription =
-    post.metaDescription || post.excerpt;
+    post.metaDescription || post.excerpt || post.title;
 
   const heroImage = post.heroImage || post.image;
 
   const absoluteHeroImage = getAbsoluteUrl(heroImage);
 
-  const articleImage = post.articleImage
-    ? getAbsoluteUrl(post.articleImage)
-    : undefined;
+  const articleImage = getAbsoluteUrl(post.articleImage);
 
   const publishedDate = post.datePublished || undefined;
   const modifiedDate = post.dateModified || publishedDate;
 
+  // Article SEO structured data.
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: articleDescription,
     url: `${SITE_URL}${path}`,
+
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${SITE_URL}${path}`,
     },
+
     ...(absoluteHeroImage && {
       image: [absoluteHeroImage],
     }),
+
     ...(publishedDate && {
       datePublished: publishedDate,
     }),
+
     ...(modifiedDate && {
       dateModified: modifiedDate,
     }),
+
     author: {
       "@type": "Organization",
       name: "Dynamic Solar",
       url: SITE_URL,
     },
+
     publisher: {
       "@type": "Organization",
       name: "Dynamic Solar",
       url: SITE_URL,
     },
-    articleSection: post.category,
+
+    ...(post.category && {
+      articleSection: post.category,
+    }),
+
     inLanguage: "en-IN",
   };
 
-  // FAQ schema is included only when the blog post has valid FAQs.
   const faqs = Array.isArray(post.faqs)
     ? post.faqs.filter(
         (faq) =>
@@ -187,7 +312,6 @@ function BlogPost() {
 
       <section className="blogpost-body">
         <div className="container">
-          {/* Hero Image */}
           {heroImage && (
             <div className="blogpost-hero-image">
               <img
@@ -197,26 +321,27 @@ function BlogPost() {
                 decoding="async"
               />
 
-              <span
-                className="blogpost-hero-tag"
-                style={{
-                  background: post.accent || "#f59e0b",
-                }}
-              >
-                {post.category}
-              </span>
+              {post.category && (
+                <span
+                  className="blogpost-hero-tag"
+                  style={{
+                    background: post.accent || "#f97316",
+                  }}
+                >
+                  {post.category}
+                </span>
+              )}
             </div>
           )}
 
-          {/* Article Title and Metadata */}
           <header className="blogpost-header">
-            <h1 className="blogpost-title">{post.title}</h1>
+            <h1 className="blogpost-title">
+              {post.title}
+            </h1>
 
             {post.date && (
               <p className="blogpost-date">
-                <time
-                  dateTime={publishedDate || undefined}
-                >
+                <time dateTime={publishedDate}>
                   {post.date}
                 </time>
               </p>
@@ -229,35 +354,22 @@ function BlogPost() {
             )}
           </header>
 
-          {/* Article Content */}
+          {/* IMPORTANT: Render article content only once. */}
           <article className="blogpost-article">
-            {content.map((paragraph, index) => (
-              <div key={`${post.slug}-${index}`}>
-                {/* Display an optional image after paragraph 3 */}
-                {index === 3 && articleImage && (
-                  <figure className="blogpost-inline-image">
-                    <img
-                      src={post.articleImage}
-                      alt={
-                        post.articleImageAlt ||
-                        `${post.title} - solar energy`
-                      }
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </figure>
-                )}
-
-                <p
-                  className="blogpost-paragraph"
-                  dangerouslySetInnerHTML={{
-                    __html: formatArticleContent(paragraph),
-                  }}
+            {content.map((block, index) => (
+              <div
+                key={`${post.slug}-${index}`}
+                className="blogpost-content-block"
+              >
+                <ArticleContentBlock
+                  block={block}
+                  index={index}
+                  post={post}
+                  articleImage={articleImage}
                 />
               </div>
             ))}
 
-            {/* Show FAQs when available in blogPosts.js */}
             {faqs.length > 0 && (
               <section
                 className="blogpost-faq"
@@ -280,7 +392,6 @@ function BlogPost() {
             )}
           </article>
 
-          {/* Back to Blog */}
           <div className="blogpost-back">
             <Link
               to="/blog/"

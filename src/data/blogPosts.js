@@ -1,4 +1,4 @@
-
+import solarPanelInstallationTambaram from "./solarPanelInstallationTambaram";
 export const allPosts = [
   {
     slug: "top-5-benefits-solar-panels-tamil-nadu",
@@ -24,7 +24,6 @@ export const allPosts = [
       "At Dynamic Solar, we've helped over 500 families across Tamil Nadu make the switch to clean energy. Our turnkey service covers everything from site assessment and system design to installation, commissioning, and after-sales support. Ready to start saving? Contact us for a free solar assessment today."
     ],
   },
-
   {
     slug: "government-subsidies-solar-affordable-2025",
     category: "Policy & Subsidies",
@@ -49,7 +48,6 @@ export const allPosts = [
       "Don't let the subsidy window pass you by. Contact Dynamic Solar today, and we'll guide you through every step of the process — from application to installation to subsidy disbursement."
     ],
   },
-
   {
     slug: "solar-water-heaters-vs-traditional-geysers",
     category: "Product Guide",
@@ -74,8 +72,7 @@ export const allPosts = [
       "Dynamic Solar offers a complete range of solar water heaters — from 100-litre systems for small families to 500-litre commercial units. All our systems come with a 5-year warranty and free installation. Get in touch for a personalised recommendation."
     ],
   },
-
-  {
+    {
     slug: "net-metering-tamil-nadu-everything-you-need-to-know",
     category: "Industry Insights",
     date: "December 10, 2024",
@@ -99,7 +96,6 @@ export const allPosts = [
       "Dynamic Solar handles the entire net metering application process for our customers. From feasibility assessment to TANGEDCO liaison to bidirectional meter installation, we ensure a smooth, hassle-free experience. Call us to learn more."
     ],
   },
-
   {
     slug: "tambaram-factory-cut-energy-costs-80-percent-solar",
     category: "Case Study",
@@ -124,7 +120,6 @@ export const allPosts = [
       "This project demonstrates that commercial and industrial solar is not just environmentally responsible — it's a powerful competitive advantage. If your business spends more than ₹50,000 per month on electricity, we can likely design a system that pays for itself within 4 years. Reach out for a free commercial solar assessment."
     ],
   },
-
   {
     slug: "solar-panel-maintenance-6-tips-maximise-efficiency",
     category: "Maintenance",
@@ -150,7 +145,6 @@ export const allPosts = [
       "Remember, a well-maintained solar system doesn't just perform better — it lasts longer. Our customers who follow these tips consistently see 25+ years of reliable performance from their installations."
     ],
   },
-
   {
     slug: "monocrystalline-vs-polycrystalline-solar-panels",
     category: "Technology",
@@ -176,7 +170,6 @@ export const allPosts = [
       "Still unsure? Our solar consultants can run a detailed cost-benefit analysis for your specific rooftop and consumption pattern. Book a free consultation today."
     ],
   },
-
   {
     slug: "calculate-right-solar-system-size-home",
     category: "Solar Tips",
@@ -202,7 +195,6 @@ export const allPosts = [
       "Still unsure about the right size? Use our free Solar Calculator on this website, or call us for a personalised recommendation based on your actual consumption pattern."
     ],
   },
-
   {
     slug: "pm-surya-ghar-scheme-free-electricity-explained",
     category: "Policy & Subsidies",
@@ -228,58 +220,195 @@ export const allPosts = [
       "Dynamic Solar is an empanelled vendor under the PM Surya Ghar scheme. We handle the entire process — from application to installation to subsidy claim. Contact us today to check your eligibility and get started."
     ],
   },
-
-  {
-    slug: "solar-panel-installation-in-tambaram",
+  
+    {
+    slug: "how-many-solar-panels-does-a-home-need",
     category: "Solar Tips",
     date: "October 13, 2026",
-    title: "Solar Panel Installation in Tambaram: Complete Homeowner Guide",
-    metaTitle: "Solar Panel Installation in Tambaram: Complete Homeowner Guide",
-    metaDescription: "Learn about solar panel installation in Tambaram, costs, subsidy, net metering, installation time and choosing the right solar system.",
-    excerpt: "Planning rooftop solar in Tambaram? Understand installation costs, subsidies, net metering, roof space and how to choose the right solar system.",
-    readTime: "7 min read",
-    color: "#fff7ed",
-    accent: "#FF6B1A",
-    image: "https://tse1.mm.bing.net/th/id/OIP.Gm_HHiEZvLtqREHBakCMaQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
-    heroImage: "https://tse1.mm.bing.net/th/id/OIP.Gm_HHiEZvLtqREHBakCMaQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
-    articleImage: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=900&q=80",
     datePublished: "2026-10-13",
     dateModified: "2026-10-13",
+    title: "How Many Solar Panels Does a Home Need? A Simple Guide",
+    metaTitle: "How Many Solar Panels Does a Home Need? A Simple Guide | Dynamic Solar",
+    metaDescription: "Learn how to estimate the number of solar panels your home needs based on electricity usage, panel wattage, roof space and solar system capacity.",
+    excerpt: "Find out how many solar panels your home may need by considering electricity consumption, panel wattage, roof space and your household's energy requirements.",
+    readTime: "6 min read",
+    color: "#fff7ed",
+    accent: "#FF6B1A",
+    image: "/solar_panel.png",
+    heroImage: "/solar_panel.png",
+    articleImage: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=900&q=80",
+    imageAlt: "Solar panels installed on a residential rooftop",
+    articleImageAlt: "Rooftop solar panels generating electricity",
+
     content: [
-      "If you are considering solar panel installation in Tambaram, you may have questions about the cost, subsidy, roof space, installation process and the right system size for your home. Rooftop solar allows homeowners to generate electricity from sunlight and reduce dependence on grid electricity.",
-      "**Why Consider Solar Panels for Your Home?** — A properly designed rooftop solar system can make productive use of unused roof space. Your electricity consumption, available roof area, shading, system capacity and budget all play an important role.",
-      "**How Much Does Solar Panel Installation Cost?** — The supplied PDF gives indicative estimates of ₹70,000–₹85,000 for 1 kW, ₹1.30 lakh–₹1.55 lakh for 2 kW and ₹1.80 lakh–₹2.20 lakh for 3 kW, before applicable subsidies. Actual prices depend on equipment and installation requirements.",
-      "**Is Solar Subsidy Available in Tamil Nadu?** — Eligible residential consumers may qualify for assistance under PM Surya Ghar and applicable state schemes. Subsidy eligibility and amounts depend on current government guidelines. Verify the latest official rules before making an installation decision.",
-      "**How Does Net Metering Work in Tamil Nadu?** — For eligible residential rooftop solar systems, net metering allows electricity generated by the solar system and electricity consumed from the grid to be accounted for through the applicable metering arrangement. Approval and regulations apply.",
-      "**What Is the Solar Installation Process?** — The process generally includes site assessment, electricity consumption analysis, system design, installation, inspection, grid connection and commissioning. Approvals and grid connection may take additional time beyond physical installation.",
-      "**How Much Roof Space Is Required?** — As a general planning estimate, around 100 square feet of usable roof area per kW can be considered. A 3 kW system may require roughly 300 square feet, depending on the panels and layout. A site assessment is important before finalising the system.",
-      "**How Do You Choose Solar Panel Installers in Tambaram?** — Compare site assessment, equipment quality, professional installation, warranty information, government documentation support, net-metering assistance, maintenance and after-sales service.",
-      "**Solar Installation in Tambaram and Nearby Areas** — Homeowners in East Tambaram, West Tambaram, Selaiyur, Chromepet and Perungalathur can explore rooftop solar based on their individual property requirements. Electricity consumption, roof space, sunlight exposure and shading should all be considered.",
-      "**Is Solar Worth Considering for Your Home?** — Review your electricity bills, available roof space, expected system capacity, installation cost and applicable subsidy before deciding. Use the Dynamic Solar solar calculator as a starting point to understand your potential solar requirement and savings. Request a professional site assessment to find a suitable system for your home."
+      {
+        type: "paragraph",
+        text: "How many solar panels does a home need? The answer depends on your household's electricity consumption, the wattage of each panel, available roof space and the solar system capacity that suits your needs. This guide explains the main factors to consider before choosing a rooftop solar system.",
+      },
+      {
+        type: "paragraph",
+        text: "For homeowners in Chennai and across Tamil Nadu, rooftop solar can help generate electricity from sunlight. Before deciding how many panels to install, review your electricity bills and assess the roof for usable space, shade and installation access.",
+      },
+      {
+        type: "heading",
+        text: "1. Start With Your Electricity Consumption",
+      },
+      {
+        type: "paragraph",
+        text: "Check your recent electricity bills and note the units used each month. If possible, compare several months or a full year, because electricity usage may change with seasons, air-conditioner use and other appliances.",
+      },
+      {
+        type: "heading",
+        text: "2. Understand Solar System Capacity",
+      },
+      {
+        type: "paragraph",
+        text: "Solar systems are commonly described in kilowatts (kW). The number of panels required depends on each panel's wattage. For example, six 550-watt panels provide about 3.3 kW of panel capacity. The final design must also be compatible with the inverter and other system components.",
+      },
+      {
+        type: "heading",
+        text: "3. Estimate Solar Electricity Generation",
+      },
+      {
+        type: "paragraph",
+        text: "As a rough planning estimate, a 1 kW rooftop system may generate around 4 units per day under suitable conditions. On this basis, 3 kW may generate around 12 units per day and 5 kW around 20 units per day. Actual output varies with sunlight, shading, roof orientation, weather, equipment and system losses.",
+      },
+      {
+        type: "heading",
+        text: "4. Check Your Available Roof Space",
+      },
+      {
+        type: "paragraph",
+        text: "Roof-space needs depend on panel dimensions, mounting layout, roof shape, shading and safe maintenance access. A site assessment is needed to confirm how many panels can fit safely on your roof.",
+      },
+      {
+        type: "heading",
+        text: "5. Consider Chennai's Sunlight and Roof Shading",
+      },
+      {
+        type: "paragraph",
+        text: "Local sunlight conditions can support rooftop solar generation, but nearby buildings, trees, water tanks and other obstructions may cast shadows on panels. An installer should assess shading during relevant daylight hours and recommend a suitable layout.",
+      },
+      {
+        type: "heading",
+        text: "6. Choose the Right System Capacity",
+      },
+      {
+        type: "paragraph",
+        text: "A 3 kW system may suit some homes with moderate consumption, while homes using more electricity may need to consider a larger system. Review your bills, roof space, sanctioned load, budget and future plans before choosing the final capacity.",
+      },
+      {
+        type: "heading",
+        text: "7. Check Subsidy and Net-Metering Rules",
+      },
+      {
+        type: "paragraph",
+        text: "Eligible residential consumers may qualify for support under PM Surya Ghar and applicable rules. Eligibility, subsidy amounts and application procedures can change, so check the current official guidelines before making a decision. Grid-connection arrangements are subject to applicable electricity-board requirements and approvals.",
+      },
+      {
+        type: "heading",
+        text: "8. Understand the Main Components",
+      },
+      {
+        type: "paragraph",
+        text: "A rooftop solar installation generally includes solar panels, an inverter, mounting structures, electrical cables and protection equipment. Battery storage may be appropriate for certain backup or off-grid requirements. Ask the installer to explain equipment, warranties, safety measures and maintenance needs.",
+      },
+      {
+        type: "heading",
+        text: "9. Avoid Common Planning Mistakes",
+      },
+      {
+        type: "list",
+        items: [
+          "Choosing a system based only on panel count instead of panel wattage.",
+          "Ignoring roof shading and available space.",
+          "Overlooking inverter compatibility and equipment warranties.",
+          "Forgetting about future electricity consumption.",
+          "Relying on guaranteed generation or savings without a site assessment.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Explore Our Solar Products",
+      },
+      {
+        type: "paragraph",
+        text: "Explore the solar and power solutions available from Dynamic Solar.",
+        link: {
+          text: "Explore Our Products",
+          url: "/products/",
+        },
+      },
+      {
+        type: "heading",
+        text: "Calculate Your Solar Requirements",
+      },
+      {
+        type: "paragraph",
+        text: "Review your electricity consumption and estimate the system capacity that may suit your needs. Use the calculator as an initial guide, then confirm the design with a professional site assessment.",
+        link: {
+          text: "Calculate Your Solar Requirements",
+          url: "/solar-calculator/",
+        },
+      },
+      {
+        type: "heading",
+        text: "Solar Panel Installation in Tambaram",
+      },
+      {
+        type: "paragraph",
+        text: "For location-specific installation information, read our guide to residential solar installation in Tambaram.",
+        link: {
+          text: "Read the Tambaram Installation Guide",
+          url: "/blog/solar-panel-installation-in-tambaram/",
+        },
+      },
+      {
+        type: "heading",
+        text: "Conclusion",
+      },
+      {
+        type: "paragraph",
+        text: "There is no single panel count that suits every home. The right number depends on electricity usage, panel wattage, roof space, shading, system design and future requirements. Reviewing these factors with a qualified installer can help you choose a suitable rooftop solar system.",
+      },
+      {
+        type: "paragraph",
+        text: "Contact Dynamic Solar to discuss your home's requirements and request an assessment.",
+        link: {
+          text: "Contact Dynamic Solar",
+          url: "/contact/",
+        },
+      },
     ],
+
     faqs: [
       {
-        question: "Is solar subsidy available in Tamil Nadu?",
-        answer: "Eligible residential consumers may qualify for assistance under PM Surya Ghar and applicable state schemes. Check current official guidelines for eligibility and amounts."
+        question: "How many solar panels are needed for a 3 kW system?",
+        answer: "The number depends on the wattage of each panel. For example, six 550-watt panels provide approximately 3.3 kW of panel capacity. The final configuration depends on the system design and inverter compatibility."
       },
       {
-        question: "How much does a 3 kW solar system cost?",
-        answer: "The supplied PDF gives an indicative range of ₹1.80 lakh–₹2.20 lakh before applicable subsidies. Final pricing depends on equipment and installation requirements."
+        question: "How many solar panels are needed for a 5 kW system?",
+        answer: "The number depends on panel wattage. For example, ten 550-watt panels provide approximately 5.5 kW of panel capacity. Ask an installer to confirm the appropriate system configuration."
       },
       {
-        question: "How long does solar installation take in Tambaram?",
-        answer: "Physical installation time depends on project readiness. Approvals, inspections and grid connection may require additional time."
+        question: "How much roof space does a home solar system need?",
+        answer: "Roof-space requirements depend on panel dimensions, layout, shading, roof access and mounting requirements. A site survey is the best way to confirm the usable area."
       },
       {
-        question: "How much roof space is needed for a 3 kW system?",
-        answer: "Around 300 square feet is a general planning estimate. Actual space depends on panel size and installation layout."
+        question: "How much electricity can a rooftop solar system generate?",
+        answer: "Generation depends on system capacity, sunlight, shading, roof orientation, weather and equipment. A rough planning estimate is around 4 units per kW per day under suitable conditions, but actual output varies."
       },
       {
-        question: "How do I choose the right solar company?",
-        answer: "Compare installation experience, product quality, warranties, documentation support, net-metering assistance and after-sales service."
+        question: "Is a 3 kW solar system enough for a home?",
+        answer: "It may suit some homes, but the right size depends on electricity consumption, available roof space, shading, budget and future energy needs. Review your electricity bills and get a site assessment before deciding."
+      },
+      {
+        question: "Can homeowners in Tamil Nadu get a solar subsidy?",
+        answer: "Eligible residential consumers may qualify under current government schemes. Eligibility and amounts can change, so check the latest official guidelines and application requirements."
       }
     ],
   },
+  solarPanelInstallationTambaram,
 ];
 
 export const categories = [

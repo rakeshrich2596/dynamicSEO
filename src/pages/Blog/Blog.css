@@ -142,22 +142,26 @@
 }
 
 .blog-card-full-img {
-    height: 240px;
-    background: var(--card-bg, #fff7ed);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.3s ease;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .blog-card-full-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.5s ease;
 }
+
 
 .blog-card-full:hover .blog-card-full-photo {
     transform: scale(1.08);
