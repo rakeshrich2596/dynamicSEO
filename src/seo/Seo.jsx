@@ -1,6 +1,12 @@
+
 import { useEffect } from "react";
 
 const SITE_URL = "https://dynamicsolar.in";
+
+function normalizePath(path = "/") {
+  if (!path || path === "/") return "/";
+  return `/${path.replace(/^\/+|\/+$/g, "")}/`;
+}
 
 function upsertMeta(attribute, key, content) {
   if (!content) return;
@@ -28,17 +34,18 @@ function Seo({
   jsonLd = [],
 }) {
   useEffect(() => {
-    const canonicalUrl = `${SITE_URL}${
-      path === "/" ? "/" : path.replace(/\/$/, "") + "/"
-    }`;
+    const normalizedPath = normalizePath(path);
+    const canonicalUrl = `${SITE_URL}${normalizedPath}`;
 
     const imageUrl = image.startsWith("http")
       ? image
-      : `${SITE_URL}${image}`;
+      : `${SITE_URL}${image.startsWith("/") ? "" : "/"}${image}`;
 
-    document.title = title;
+    if (title) {
+      document.title = title;
+    }
 
-    // Basic SEO
+    // Meta description
     upsertMeta("name", "description", description);
 
     // Robots
@@ -77,11 +84,12 @@ function Seo({
 
     canonical.href = canonicalUrl;
 
-    // JSON-LD
+    // Remove schema added by this component on the previous page
     document.head
       .querySelectorAll('script[data-dynamic-seo="true"]')
       .forEach((node) => node.remove());
 
+    // Add current page schema
     jsonLd.filter(Boolean).forEach((data) => {
       const script = document.createElement("script");
 
@@ -149,16 +157,11 @@ export function breadcrumbSchema(items) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-
     itemListElement: items.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: `${SITE_URL}${
-        item.path === "/"
-          ? "/"
-          : item.path.replace(/\/$/, "") + "/"
-      }`,
+      item: `${SITE_URL}${normalizePath(item.path)}`,
     })),
   };
 }
@@ -172,29 +175,25 @@ export function itemListSchema(name, items) {
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      url: `${SITE_URL}${
-        item.path === "/"
-          ? "/"
-          : item.path.replace(/\/$/, "") + "/"
-      }`,
+      url: `${SITE_URL}${normalizePath(item.path)}`,
     })),
   };
 }
 
 export function serviceSchema(name, description, path) {
+  const normalizedPath = normalizePath(path);
+
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${SITE_URL}${path}#service`,
+    "@id": `${SITE_URL}${normalizedPath}#service`,
     name,
     serviceType: name,
     description,
-
     provider: {
       "@id": `${SITE_URL}/#organization`,
     },
-
-    url: `${SITE_URL}${path}`,
+    url: `${SITE_URL}${normalizedPath}`,
   };
 }
 
