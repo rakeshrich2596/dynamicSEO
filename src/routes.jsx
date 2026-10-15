@@ -8,7 +8,7 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 
 import Blog from "./pages/Blog/Blog";
-import Blogs from "./pages/Blog/Blogs";
+
 import BlogPost from "./pages/BlogPost/BlogPost";
 
 import Contact from "./pages/Contact/Contact";
@@ -62,10 +62,7 @@ const router = createBrowserRouter([
         element: <Blog />,
       },
 
-      {
-        path: "/blogs/",
-        element: <Blogs />,
-      },
+      
 
       {
         path: "/blog/:slug",

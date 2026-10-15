@@ -1,169 +1,781 @@
+/* =========================================
+   BOOK HOME VISIT - MAIN SECTION
+========================================= */
+
 .bhv-section {
-    background-color: var(--primary-orange);
-    padding: 60px 20px;
-    font-family: var(--font-body);
+    position: relative;
+    width: 100%;
+    padding: 76px 24px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    background: linear-gradient(
+        120deg,
+        #f87918 0%,
+        #f97316 55%,
+        #ed6508 100%
+    );
+
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+.bhv-section *,
+.bhv-section *::before,
+.bhv-section *::after {
+    box-sizing: border-box;
+}
+
+.bhv-section::before {
+    content: "";
+    position: absolute;
+    top: -180px;
+    left: -140px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.07);
+    pointer-events: none;
+}
+
+.bhv-section::after {
+    content: "";
+    position: absolute;
+    right: -120px;
+    bottom: -180px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    pointer-events: none;
 }
 
 .bhv-container {
-    max-width: 1000px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
 .bhv-header {
+    max-width: 760px;
+    margin: 0 auto 38px;
     text-align: center;
     color: #ffffff;
-    margin-bottom: 40px;
+}
+
+.bhv-section-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 17px;
+    padding: 9px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.14);
+
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
 }
 
 .bhv-header h2 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 10px;
+    margin: 0 0 15px;
     color: #ffffff;
+
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1.3px;
+}
+
+.bhv-header h2 span {
+    color: #fff1d9;
 }
 
 .bhv-header p {
-    font-size: 18px;
-    opacity: 0.9;
+    max-width: 680px;
+    margin: 0 auto;
+
+    color: rgba(255, 255, 255, 0.94);
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
 }
+
+
+/* =========================================
+   MAIN CARD
+========================================= */
 
 .bhv-content {
-    display: flex;
-    gap: 0;
-    background: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: stretch;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    width: 100%;
+    max-width: 1075px;
+    margin: 0 auto;
+
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 14px;
+
+    box-shadow: 0 20px 55px rgba(87, 37, 5, 0.18);
 }
 
+
+/* =========================================
+   LEFT IMAGE
+========================================= */
+
 .bhv-image-wrapper {
-    flex: 1.2;
+    position: relative;
+    min-width: 0;
+    min-height: 600px;
     overflow: hidden;
-    min-height: 100%;
+    background: #f4e4d4;
 }
 
 .bhv-image {
+    display: block;
     width: 100%;
     height: 100%;
+    min-height: 600px;
+
     object-fit: cover;
-    display: block;
+    object-position: center;
+
+    transition: transform 0.6s ease;
 }
 
-.bhv-form-wrapper {
-    flex: 1;
-    background: #ffffff;
-    padding: 40px;
+.bhv-image-wrapper:hover .bhv-image {
+    transform: scale(1.035);
 }
+
+.bhv-image-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(13, 25, 35, 0.86) 0%,
+        rgba(13, 25, 35, 0.42) 32%,
+        rgba(13, 25, 35, 0.03) 70%
+    );
+
+    pointer-events: none;
+}
+
+.bhv-image-overlay {
+    position: absolute;
+    z-index: 1;
+    right: 30px;
+    bottom: 34px;
+    left: 30px;
+
+    color: #ffffff;
+}
+
+.bhv-image-label {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 8px 12px;
+
+    border-radius: 5px;
+    background: #f97316;
+
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.bhv-image-overlay h3 {
+    margin: 0 0 13px;
+
+    color: #ffffff;
+    font-size: clamp(29px, 3vw, 39px);
+    font-weight: 800;
+    line-height: 1.16;
+    letter-spacing: -0.8px;
+}
+
+.bhv-image-overlay p {
+    max-width: 370px;
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   RIGHT FORM PANEL
+========================================= */
+
+.bhv-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-width: 0;
+    padding: 36px 38px;
+
+    background: #ffffff;
+}
+
+.bhv-form-heading {
+    margin-bottom: 25px;
+}
+
+.bhv-form-heading h3 {
+    margin: 0 0 8px;
+
+    color: #172033;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -0.6px;
+}
+
+.bhv-form-heading p {
+    margin: 0;
+
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   FORM LAYOUT
+========================================= */
 
 .bhv-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 17px;
+    width: 100%;
 }
 
 .bhv-input-group {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    min-width: 0;
     text-align: left;
 }
 
-.bhv-input-group label {
+.bhv-input-group > label,
+.bhv-bill-group legend {
+    color: #202938;
     font-size: 13px;
-    font-weight: 600;
-    color: #1a1a1a;
+    font-weight: 700;
+    line-height: 1.5;
 }
 
 .bhv-input-group input[type="text"],
 .bhv-input-group input[type="tel"] {
+    display: block;
     width: 100%;
-    padding: 10px 14px;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    font-size: 14px;
+    min-width: 0;
+    height: 45px;
+    padding: 0 14px;
+
+    border: 1px solid #dfe3e8;
+    border-radius: 6px;
     outline: none;
-    transition: border-color 0.2s;
-    box-sizing: border-box;
+
+    background: #ffffff;
+    color: #202938;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.bhv-input-group input::placeholder {
+    color: #8a94a3;
+    opacity: 1;
+}
+
+.bhv-input-group input:hover {
+    border-color: #c4cad2;
 }
 
 .bhv-input-group input:focus {
-    border-color: var(--primary-orange);
+    border-color: #f97316;
+    background: #fffdfa;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.12);
+}
+
+
+/* =========================================
+   ELECTRICITY BILL OPTIONS
+========================================= */
+
+.bhv-bill-group {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.bhv-bill-group legend {
+    width: 100%;
+    margin-bottom: 11px;
+    padding: 0;
 }
 
 .bhv-radio-buttons {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
 }
 
-.bhv-radio-buttons button {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #e0e0e0;
-    background: #f9f9f9;
-    border-radius: 4px;
+.bhv-radio-buttons label {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+    min-height: 45px;
+    padding: 9px 6px;
+
+    border: 1px solid #dfe3e8;
+    border-radius: 6px;
+
+    background: #f9fafb;
+    color: #394150;
+
+    text-align: center;
     cursor: pointer;
-    font-size: 13px;
-    color: #333;
-    transition: all 0.2s;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
 }
 
-.bhv-radio-buttons button:hover {
-    background: #f0f0f0;
+.bhv-radio-buttons label:hover {
+    border-color: #f97316;
+    background: #fff7ed;
 }
 
-.bhv-radio-buttons button.active {
-    background: var(--primary-orange-light);
-    border-color: var(--primary-orange);
-    color: var(--primary-orange);
+.bhv-radio-buttons label.active {
+    border-color: #f97316;
+    background: #fff1e5;
+    color: #c65108;
+    box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.1);
+}
+
+.bhv-radio-buttons input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.bhv-radio-buttons label:focus-within {
+    outline: 2px solid #f97316;
+    outline-offset: 2px;
+}
+
+.bhv-radio-buttons span {
+    font-family: inherit;
+    font-size: 11px;
     font-weight: 600;
+    line-height: 1.45;
+}
+
+
+/* =========================================
+   TERMS AND CONDITIONS
+========================================= */
+
+.bhv-checkbox-group {
+    margin-top: 1px;
 }
 
 .bhv-checkbox-group label {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
-    font-size: 12px;
-    color: #666;
-    cursor: pointer;
+
+    color: #667085;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.7;
+
     text-align: left;
+    cursor: pointer;
 }
 
 .bhv-checkbox-group input[type="checkbox"] {
-    width: 14px;
-    height: 14px;
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    margin: 2px 0 0;
+
+    accent-color: #f97316;
     cursor: pointer;
 }
 
+
+/* =========================================
+   WHATSAPP SUBMIT BUTTON
+========================================= */
+
 .bhv-submit-btn {
-    background: var(--primary-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: 100%;
+    min-height: 49px;
+    margin-top: 2px;
+    padding: 13px 18px;
+
+    border: 1px solid #e96808;
+    border-radius: 7px;
+
+    background: #ed6b0b;
     color: #ffffff;
-    border: none;
-    padding: 12px;
-    border-radius: var(--radius-sm);
-    font-size: 15px;
-    font-weight: 600;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.4;
+
     cursor: pointer;
-    transition: var(--transition);
-    margin-top: 10px;
+
+    box-shadow: 0 5px 12px rgba(237, 107, 11, 0.13);
+
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
 }
 
 .bhv-submit-btn:hover {
-    background: var(--primary-orange-dark);
+    transform: translateY(-2px);
+    background: #d95b00;
+    box-shadow: 0 8px 18px rgba(237, 107, 11, 0.22);
 }
 
-@media (max-width: 900px) {
+.bhv-submit-btn:focus-visible {
+    outline: 3px solid rgba(249, 115, 22, 0.35);
+    outline-offset: 3px;
+}
+
+.bhv-submit-btn svg {
+    flex-shrink: 0;
+}
+
+.bhv-form-note {
+    margin: -3px 0 0;
+
+    color: #8a94a3;
+    font-size: 11px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+    .bhv-section {
+        padding: 65px 22px;
+    }
+
     .bhv-content {
-        flex-direction: column;
+        grid-template-columns: 0.9fr 1.1fr;
     }
-    
+
     .bhv-image-wrapper,
-    .bhv-form-wrapper {
-        width: 100%;
-        box-sizing: border-box;
+    .bhv-image {
+        min-height: 620px;
     }
-    
+
+    .bhv-form-wrapper {
+        padding: 30px 25px;
+    }
+
+    .bhv-form-heading h3 {
+        font-size: 23px;
+    }
+
     .bhv-radio-buttons {
-        flex-direction: column;
+        gap: 6px;
+    }
+
+    .bhv-radio-buttons label {
+        padding: 8px 4px;
+    }
+
+    .bhv-radio-buttons span {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================
+   SMALL TABLET / MOBILE
+========================================= */
+
+@media (max-width: 760px) {
+    .bhv-section {
+        padding: 55px 18px;
+    }
+
+    .bhv-header {
+        margin-bottom: 28px;
+    }
+
+    .bhv-header h2 {
+        font-size: clamp(28px, 5vw, 36px);
+        letter-spacing: -0.7px;
+    }
+
+    .bhv-header p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .bhv-content {
+        grid-template-columns: 1fr;
+        max-width: 540px;
+        border-radius: 12px;
+    }
+
+    .bhv-image-wrapper {
+        min-height: 0;
+        height: 360px;
+    }
+
+    .bhv-image {
+        height: 100%;
+        min-height: 0;
+    }
+
+    .bhv-image-overlay {
+        right: 24px;
+        bottom: 24px;
+        left: 24px;
+    }
+
+    .bhv-image-overlay h3 {
+        font-size: 32px;
+    }
+
+    .bhv-image-overlay p {
+        max-width: 400px;
+        font-size: 13px;
+    }
+
+    .bhv-form-wrapper {
+        padding: 30px 28px;
+    }
+
+    .bhv-form-heading {
+        margin-bottom: 23px;
+    }
+
+    .bhv-form-heading h3 {
+        font-size: 24px;
+    }
+
+    .bhv-form {
+        gap: 17px;
+    }
+
+    .bhv-radio-buttons span {
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+    .bhv-section {
+        padding: 43px 14px;
+    }
+
+    .bhv-section-tag {
+        margin-bottom: 13px;
+        padding: 8px 13px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .bhv-header {
+        margin-bottom: 23px;
+    }
+
+    .bhv-header h2 {
+        font-size: 29px;
+        line-height: 1.25;
+    }
+
+    .bhv-header p {
+        font-size: 13px;
+    }
+
+    .bhv-content {
+        border-radius: 10px;
+    }
+
+    .bhv-image-wrapper {
+        height: 300px;
+    }
+
+    .bhv-image-overlay {
+        right: 19px;
+        bottom: 20px;
+        left: 19px;
+    }
+
+    .bhv-image-label {
+        margin-bottom: 10px;
+        padding: 7px 9px;
+        font-size: 9px;
+        letter-spacing: 0.8px;
+    }
+
+    .bhv-image-overlay h3 {
+        margin-bottom: 9px;
+        font-size: 28px;
+    }
+
+    .bhv-image-overlay p {
+        font-size: 12px;
+        line-height: 1.65;
+    }
+
+    .bhv-form-wrapper {
+        padding: 25px 18px;
+    }
+
+    .bhv-form-heading h3 {
+        font-size: 22px;
+    }
+
+    .bhv-form-heading p {
+        font-size: 12px;
+    }
+
+    .bhv-form {
+        gap: 16px;
+    }
+
+    .bhv-input-group > label,
+    .bhv-bill-group legend {
+        font-size: 12px;
+    }
+
+    .bhv-input-group input[type="text"],
+    .bhv-input-group input[type="tel"] {
+        height: 44px;
+        padding: 0 12px;
+        font-size: 13px;
+    }
+
+    .bhv-radio-buttons {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .bhv-radio-buttons label {
+        justify-content: flex-start;
+        min-height: 43px;
+        padding: 11px 13px;
+        text-align: left;
+    }
+
+    .bhv-radio-buttons span {
+        font-size: 12px;
+    }
+
+    .bhv-checkbox-group label {
+        font-size: 11px;
+    }
+
+    .bhv-submit-btn {
+        min-height: 47px;
+        font-size: 13px;
+    }
+
+    .bhv-form-note {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================
+   EXTRA SMALL DEVICES
+========================================= */
+
+@media (max-width: 350px) {
+    .bhv-section {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .bhv-header h2 {
+        font-size: 25px;
+    }
+
+    .bhv-form-wrapper {
+        padding: 22px 13px;
+    }
+
+    .bhv-image-wrapper {
+        height: 270px;
+    }
+
+    .bhv-image-overlay h3 {
+        font-size: 25px;
+    }
+}
+
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .bhv-section *,
+    .bhv-section *::before,
+    .bhv-section *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
     }
 }

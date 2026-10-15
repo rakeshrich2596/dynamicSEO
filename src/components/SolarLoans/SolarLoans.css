@@ -3,51 +3,105 @@
    ========================================================= */
 
 .solar-loans-section {
-    padding: 80px 20px;
+  padding: 80px 20px;
+  background: #ffffff;
+  font-family: "Inter", var(--font-body, sans-serif);
+  box-sizing: border-box;
+}
 
-    background: #ffffff;
-
-    font-family: 'Inter', var(--font-body);
+.solar-loans-section *,
+.solar-loans-section *::before,
+.solar-loans-section *::after {
+  box-sizing: border-box;
 }
 
 
 /* =========================================================
-   HEADER
+   SECTION HEADER
    ========================================================= */
 
 .sl-header {
-    text-align: center;
-
-    margin-bottom: 50px;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto 52px;
+  padding: 0 12px;
+  text-align: center;
 }
 
+
+/* Small label */
+
+.sl-section-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 20px;
+  margin-bottom: 20px;
+
+  border-radius: 50px;
+  background: #fff0e4;
+  color: #ff791c;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 2px;
+}
+
+
+/* Main heading */
 
 .sl-title {
-    font-size: 42px;
+  margin: 0 0 18px;
 
-    font-weight: 800;
+  color: #1c1c1c;
 
-    color: var(--dark);
+  font-family: "Inter", var(--font-heading, sans-serif);
+  font-size: clamp(32px, 3.2vw, 46px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -1.3px;
 
-    margin: 0 0 15px;
-
-    font-family: 'Inter', var(--font-heading);
+  text-align: center;
+  overflow-wrap: break-word;
 }
 
+
+/* Orange heading text */
+
+.sl-title span {
+  color: #ff791c;
+}
+
+
+/* Subtitle */
 
 .sl-subtitle {
-    font-size: 24px;
+  width: 100%;
+  max-width: 690px;
 
-    color: var(--dark);
+  margin: 0 auto 28px;
+  padding: 0 8px;
 
-    margin: 0 0 30px;
+  color: #64748b;
+
+  font-family: "Inter", var(--font-body, sans-serif);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.85;
+
+  text-align: center;
+  text-wrap: pretty;
 }
 
 
-.sl-subtitle span {
-    font-weight: 700;
+/* Interest rate */
 
-    color: var(--primary-orange);
+.sl-subtitle span {
+  color: #ff791c;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 
@@ -56,34 +110,44 @@
    ========================================================= */
 
 .sl-get-quote {
-    display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-    text-decoration: none;
+  min-height: 50px;
+  padding: 14px 32px;
 
-    background: var(--primary-orange);
+  border: 1px solid #ff791c;
+  border-radius: 8px;
 
-    color: #ffffff;
+  background: #ff791c;
+  color: #ffffff;
 
-    border: none;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-decoration: none;
 
-    border-radius: 8px;
-
-    padding: 14px 36px;
-
-    font-size: 16px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: all 0.3s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-
 .sl-get-quote:hover {
-    background: var(--primary-orange-dark);
+  background: #e9650b;
+  border-color: #e9650b;
+  color: #ffffff;
 
-    transform: translateY(-2px);
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(255, 121, 28, 0.2);
+}
+
+.sl-get-quote:focus-visible {
+  outline: 3px solid rgba(255, 121, 28, 0.35);
+  outline-offset: 4px;
 }
 
 
@@ -92,17 +156,17 @@
    ========================================================= */
 
 .sl-grid {
-    display: grid;
+  display: grid;
 
-    grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
-    gap: 30px;
+  gap: 32px;
 
-    max-width: 1100px;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
 
-    margin: 0 auto;
-
-    align-items: stretch;
+  align-items: stretch;
 }
 
 
@@ -111,28 +175,24 @@
    ========================================================= */
 
 .sl-left-card {
-    border-radius: 20px;
+  min-width: 0;
+  min-height: 600px;
 
-    overflow: hidden;
+  overflow: hidden;
+  border-radius: 20px;
 
-    background: var(--primary-orange-light);
-
-    min-height: 600px;
+  background: #fff0e4;
 }
 
-
 .sl-left-image {
-    width: 100%;
+  display: block;
 
-    height: 100%;
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
 
-    min-height: 600px;
-
-    display: block;
-
-    object-fit: cover;
-
-    object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 
 
@@ -141,34 +201,13 @@
    ========================================================= */
 
 .sl-right-col {
-    display: flex;
+  display: flex;
+  flex-direction: column;
 
-    flex-direction: column;
+  gap: 32px;
 
-    gap: 30px;
-
-    min-height: 600px;
-}
-
-
-/* =========================================================
-   COMMON RIGHT CARD
-   ========================================================= */
-
-.sl-right-card {
-    background: var(--primary-orange-light);
-
-    border-radius: 20px;
-
-    padding: 35px 40px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    box-sizing: border-box;
+  min-width: 0;
+  min-height: 600px;
 }
 
 
@@ -176,72 +215,78 @@
    EASY EMI CARD
    ========================================================= */
 
-.sl-card-banks {
-    flex: 1;
+.sl-right-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+
+  min-width: 0;
+  padding: 36px 42px;
+
+  border-radius: 22px;
+  background: #fff0e4;
 }
 
+
+/* Heading row */
 
 .sl-card-heading-row {
-    display: flex;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 
-    align-items: center;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 8px;
 }
 
+
+/* Easy EMI heading */
 
 .sl-card-text h3 {
-    font-size: 28px;
+  margin: 0;
 
-    line-height: 1.3;
+  color: #171717;
 
-    color: var(--dark);
-
-    margin: 0 0 8px;
-
-    font-family: 'Inter', var(--font-heading);
+  font-family: "Inter", var(--font-heading, sans-serif);
+  font-size: 28px;
+  font-weight: 750;
+  line-height: 1.3;
 }
 
+
+/* Description */
 
 .sl-card-text p {
-    font-size: 15px;
+  max-width: 520px;
 
-    line-height: 1.6;
+  margin: 0;
 
-    color: var(--gray);
+  color: #536176;
 
-    margin: 0;
-
-    max-width: 520px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
 }
 
 
-/* =========================================================
-   SMALL BADGE
-   ========================================================= */
+/* EASY badge */
 
 .sl-badge-new {
-    display: inline-flex;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-    align-items: center;
+  padding: 8px 11px;
 
-    justify-content: center;
+  border-radius: 7px;
+  background: #ff791c;
+  color: #ffffff;
 
-    background: var(--primary-orange);
-
-    color: #ffffff;
-
-    font-size: 11px;
-
-    padding: 5px 9px;
-
-    border-radius: 6px;
-
-    font-weight: 700;
-
-    letter-spacing: 0.5px;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.4px;
 }
 
 
@@ -250,53 +295,40 @@
    ========================================================= */
 
 .sl-emi-badge {
-    display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    align-items: center;
+  gap: 12px;
 
-    justify-content: center;
+  width: 100%;
+  min-height: 58px;
+  margin-top: 28px;
+  padding: 15px 18px;
 
-    gap: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 50px;
 
-    margin-top: 28px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #252525;
 
-    padding: 14px 24px;
+  font-family: "Inter", var(--font-body, sans-serif);
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.5;
+  text-align: center;
 
-    background: rgba(255, 255, 255, 0.72);
-
-    border: 1px solid rgba(0, 0, 0, 0.07);
-
-    border-radius: 50px;
-
-    font-size: 15px;
-
-    font-weight: 600;
-
-    color: var(--dark);
-
-    letter-spacing: 0.3px;
-
-    font-family: 'Inter', var(--font-body);
-
-    backdrop-filter: blur(4px);
-
-    box-shadow:
-        0 2px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.05);
 }
 
-
 .sl-emi-badge-dot {
-    width: 6px;
+  width: 6px;
+  height: 6px;
 
-    height: 6px;
+  flex-shrink: 0;
 
-    border-radius: 50%;
-
-    background: var(--primary-orange);
-
-    flex-shrink: 0;
-
-    opacity: 0.85;
+  border-radius: 50%;
+  background: #ff791c;
 }
 
 
@@ -305,89 +337,81 @@
    ========================================================= */
 
 .sl-benefits-card {
-    flex: 1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
 
-    background: var(--primary-orange-light);
+  min-width: 0;
+  padding: 32px 42px;
 
-    border-radius: 20px;
-
-    padding: 32px 40px;
-
-    box-sizing: border-box;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
+  border-radius: 22px;
+  background: #fff0e4;
 }
 
 
-/* =========================================================
-   BENEFITS HEADER
-   ========================================================= */
+/* Benefits header */
 
 .sl-benefits-header {
-    display: flex;
+  display: flex;
+  align-items: center;
 
-    align-items: center;
-
-    gap: 18px;
-
-    margin-bottom: 25px;
+  gap: 18px;
+  margin-bottom: 24px;
 }
 
+
+/* Header icon */
 
 .sl-benefits-icon {
-    width: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    height: 52px;
+  width: 56px;
+  height: 56px;
 
-    flex-shrink: 0;
+  flex-shrink: 0;
 
-    display: flex;
+  border-radius: 15px;
+  background: #ffffff;
 
-    align-items: center;
-
-    justify-content: center;
-
-    background: #ffffff;
-
-    border-radius: 14px;
-
-    box-shadow:
-        0 5px 18px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
 }
-
 
 .sl-benefits-icon svg {
-    width: 36px;
+  width: 30px;
+  height: 30px;
 
-    height: 36px;
+  color: #ff791c;
 }
 
+
+/* Header text */
+
+.sl-benefits-heading-text {
+  min-width: 0;
+}
 
 .sl-benefits-header h3 {
-    margin: 0 0 5px;
+  margin: 0 0 5px;
 
-    font-size: 22px;
+  color: #171717;
 
-    line-height: 1.25;
-
-    color: var(--dark);
-
-    font-family: 'Inter', var(--font-heading);
+  font-family: "Inter", var(--font-heading, sans-serif);
+  font-size: 22px;
+  font-weight: 750;
+  line-height: 1.3;
 }
 
-
 .sl-benefits-header p {
-    margin: 0;
+  margin: 0;
 
-    font-size: 13px;
+  color: #64748b;
 
-    line-height: 1.5;
-
-    color: var(--gray);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 
@@ -396,108 +420,95 @@
    ========================================================= */
 
 .sl-benefits-grid {
-    display: grid;
+  display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    gap: 14px;
+  gap: 14px;
 }
 
 
 /* =========================================================
-   SINGLE BENEFIT
+   SINGLE BENEFIT CARD
    ========================================================= */
 
 .sl-benefit-item {
-    display: flex;
+  display: flex;
+  align-items: center;
 
-    align-items: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: 72px;
+  padding: 13px 14px;
 
-    gap: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 13px;
 
-    padding: 14px;
+  background: rgba(255, 255, 255, 0.62);
 
-    background: rgba(255, 255, 255, 0.58);
-
-    border: 1px solid rgba(0, 0, 0, 0.05);
-
-    border-radius: 12px;
-
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
-
 
 .sl-benefit-item:hover {
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 
-    background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.95);
+
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.04);
 }
 
 
-/* =========================================================
-   BENEFIT ICON
-   ========================================================= */
+/* Benefit icon */
 
 .sl-benefit-icon {
-    width: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    height: 38px;
+  width: 40px;
+  height: 40px;
 
-    flex-shrink: 0;
+  flex-shrink: 0;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: #ffffff;
-
-    border-radius: 10px;
+  border-radius: 10px;
+  background: #ffffff;
 }
-
 
 .sl-benefit-icon svg {
-    width: 25px;
+  width: 23px;
+  height: 23px;
 
-    height: 25px;
+  color: #ff791c;
 }
 
 
-/* =========================================================
-   BENEFIT TEXT
-   ========================================================= */
+/* Benefit text */
 
-.sl-benefit-item div:last-child {
-    display: flex;
+.sl-benefit-text {
+  display: flex;
+  flex-direction: column;
 
-    flex-direction: column;
-
-    gap: 3px;
-
-    min-width: 0;
+  gap: 4px;
+  min-width: 0;
 }
 
+.sl-benefit-text strong {
+  color: #171717;
 
-.sl-benefit-item strong {
-    color: var(--dark);
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    line-height: 1.25;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.35;
 }
 
+.sl-benefit-text span {
+  color: #64748b;
 
-.sl-benefit-item span {
-    color: var(--gray);
-
-    font-size: 11px;
-
-    line-height: 1.35;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.45;
 }
 
 
@@ -505,97 +516,278 @@
    TABLET
    ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
+  .sl-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 22px;
+  }
 
-    .sl-grid {
-        grid-template-columns: 1fr;
-    }
+  .sl-left-card,
+  .sl-left-image {
+    min-height: 520px;
+  }
 
+  .sl-right-col {
+    min-height: 520px;
+    gap: 22px;
+  }
 
-    .sl-left-card {
-        min-height: 450px;
-    }
+  .sl-right-card {
+    padding: 30px 26px;
+  }
 
+  .sl-benefits-card {
+    padding: 28px 26px;
+  }
 
-    .sl-left-image {
-        min-height: 450px;
-    }
+  .sl-card-text h3 {
+    font-size: 24px;
+  }
 
+  .sl-benefits-header h3 {
+    font-size: 20px;
+  }
 
-    .sl-right-col {
-        min-height: auto;
-    }
+  .sl-benefits-grid {
+    gap: 10px;
+  }
 
+  .sl-benefit-item {
+    gap: 9px;
+    padding: 11px;
+  }
 
-    .sl-title {
-        font-size: 34px;
-    }
+  .sl-benefit-icon {
+    width: 35px;
+    height: 35px;
+  }
 
+  .sl-benefit-icon svg {
+    width: 21px;
+    height: 21px;
+  }
 }
 
 
 /* =========================================================
-   MOBILE
+   MOBILE / SMALL TABLET
    ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 760px) {
+  .solar-loans-section {
+    padding: 65px 18px;
+  }
 
-    .solar-loans-section {
-        padding: 60px 16px;
-    }
+  .sl-header {
+    margin-bottom: 38px;
+    padding: 0;
+  }
+
+  .sl-title {
+    font-size: clamp(30px, 6vw, 40px);
+    letter-spacing: -0.8px;
+    line-height: 1.2;
+  }
+
+  .sl-subtitle {
+    max-width: 580px;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .sl-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+    max-width: 580px;
+  }
+
+  .sl-left-card {
+    min-height: 420px;
+  }
+
+  .sl-left-image {
+    height: 100%;
+    min-height: 420px;
+    max-height: 520px;
+  }
+
+  .sl-right-col {
+    min-height: auto;
+    gap: 22px;
+  }
+
+  .sl-right-card,
+  .sl-benefits-card {
+    padding: 30px 26px;
+    border-radius: 18px;
+  }
+
+  .sl-card-banks,
+  .sl-benefits-card {
+    flex: initial;
+  }
+
+  .sl-card-text h3 {
+    font-size: 25px;
+  }
+
+  .sl-benefits-header h3 {
+    font-size: 21px;
+  }
+
+  .sl-benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 
 
-    .sl-title {
-        font-size: 30px;
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
 
-        line-height: 1.2;
-    }
+@media (max-width: 480px) {
+  .solar-loans-section {
+    padding: 50px 16px;
+  }
+
+  .sl-section-tag {
+    margin-bottom: 16px;
+    padding: 9px 16px;
+    font-size: 11px;
+    letter-spacing: 1.6px;
+  }
+
+  .sl-title {
+    margin-bottom: 15px;
+    font-size: 30px;
+    letter-spacing: -0.7px;
+  }
+
+  .sl-subtitle {
+    margin-bottom: 23px;
+    padding: 0;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .sl-get-quote {
+    min-height: 47px;
+    padding: 13px 27px;
+    font-size: 14px;
+  }
+
+  .sl-grid {
+    gap: 18px;
+  }
+
+  .sl-left-card {
+    min-height: 340px;
+    border-radius: 16px;
+  }
+
+  .sl-left-image {
+    min-height: 340px;
+    border-radius: 16px;
+  }
+
+  .sl-right-col {
+    gap: 18px;
+  }
+
+  .sl-right-card,
+  .sl-benefits-card {
+    padding: 25px 20px;
+    border-radius: 16px;
+  }
+
+  .sl-card-heading-row {
+    gap: 10px;
+  }
+
+  .sl-card-text h3 {
+    font-size: 23px;
+  }
+
+  .sl-card-text p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .sl-badge-new {
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+
+  .sl-emi-badge {
+    gap: 9px;
+    min-height: 54px;
+    margin-top: 22px;
+    padding: 12px 10px;
+    font-size: 12px;
+  }
+
+  .sl-benefits-header {
+    align-items: flex-start;
+    gap: 13px;
+    margin-bottom: 20px;
+  }
+
+  .sl-benefits-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+  }
+
+  .sl-benefits-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .sl-benefits-header h3 {
+    font-size: 18px;
+  }
+
+  .sl-benefits-header p {
+    font-size: 12px;
+  }
+
+  .sl-benefits-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .sl-benefit-item {
+    min-height: 66px;
+    padding: 12px;
+  }
+
+  .sl-benefit-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .sl-benefit-text strong {
+    font-size: 13px;
+  }
+
+  .sl-benefit-text span {
+    font-size: 12px;
+  }
+}
 
 
-    .sl-subtitle {
-        font-size: 19px;
-    }
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
 
+@media (prefers-reduced-motion: reduce) {
+  .sl-get-quote,
+  .sl-benefit-item {
+    transition: none;
+  }
 
-    .sl-left-card {
-        min-height: 360px;
-
-        border-radius: 16px;
-    }
-
-
-    .sl-left-image {
-        min-height: 360px;
-    }
-
-
-    .sl-right-card,
-    .sl-benefits-card {
-        padding: 28px 24px;
-
-        border-radius: 16px;
-    }
-
-
-    .sl-card-text h3 {
-        font-size: 24px;
-    }
-
-
-    .sl-benefits-header h3 {
-        font-size: 20px;
-    }
-
-
-    .sl-benefits-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    .sl-emi-badge {
-        font-size: 13px;
-
-        padding: 13px 16px;
-    }
-
+  .sl-get-quote:hover,
+  .sl-benefit-item:hover {
+    transform: none;
+  }
 }

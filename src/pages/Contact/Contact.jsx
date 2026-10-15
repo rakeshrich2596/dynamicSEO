@@ -336,19 +336,15 @@ function Contact() {
         <div className="container contact-intro">
           <span className="section-tag">Reach Us</span>
 
-          {/* <h2 className="contact-info-heading">
-            Let's Build Your{" "}
-            <span>Solar Future</span>{" "}
-            Together
+          <h2 className="contact-info-heading">
+            Let's Build Your <span>Solar Future</span> Together
           </h2>
 
           <p className="contact-info-body">
-            Whether you're exploring solar for the
-            first time or looking to expand an existing
-            system, our certified solar consultants are
-            ready to assist with a free assessment and
-            personalised quote.
-          </p> */}
+            Whether you're exploring solar for the first time or planning to
+            upgrade an existing system, our team can help you choose a solution
+            that fits your property, energy needs, and budget.
+          </p>
         </div>
 
         {/* =================================================
@@ -497,9 +493,9 @@ function Contact() {
                 <h3>Thank You!</h3>
 
                 <p>
-                  Your inquiry has been received. A Dynamic Solar consultant
-                  will contact you within 24 hours to schedule your free site
-                  assessment.
+                  Your details have been prepared for WhatsApp. If the WhatsApp window
+                  opened, send the pre-filled message to share your inquiry with
+                  the Dynamic Solar team.
                 </p>
 
                 <button className="btn-primary" onClick={resetForm}>

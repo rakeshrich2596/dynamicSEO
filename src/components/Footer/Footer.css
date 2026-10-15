@@ -1,15 +1,27 @@
+
 /* =========================================================
-   FOOTER
+   FOOTER - GLOBAL
 ========================================================= */
 
 .footer {
-  background: var(--bg-dark);
-  color: rgba(255, 255, 255, 0.7);
-  font-family: var(--font-body);
+  width: 100%;
+  position: relative;
+  isolation: isolate;
+  background: #0b1220;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-body, system-ui, "Segoe UI", sans-serif);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer,
+.footer * {
+  box-sizing: border-box;
 }
 
 .footer .container {
-  width: min(97%, 1620px);
+  width: 94%;
+  max-width: 1620px;
   margin: 0 auto;
 }
 
@@ -20,7 +32,7 @@
 
 .footer-top {
   padding: 55px 0 40px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 
@@ -30,90 +42,66 @@
 
 .footer-grid {
   display: grid;
-
-  grid-template-columns:
-    1.5fr
-    1fr
-    1.2fr
-    1.25fr;
-
+  grid-template-columns: 1.5fr 1fr 1.2fr 1.25fr;
   gap: 2.5rem;
-
-  align-items: stretch;
+  align-items: start;
 }
-
-
-/* =========================================================
-   COMMON COLUMN
-========================================================= */
 
 .footer-col {
   display: flex;
   flex-direction: column;
-
-  height: 100%;
-  min-height: 300px;
-
   min-width: 0;
+  min-height: 300px;
 }
 
 .footer-col-content {
   flex: 1;
+  min-width: 0;
 }
 
 
 /* =========================================================
-   COLUMN 1 - BRAND
+   BRAND COLUMN
 ========================================================= */
 
 .footer-brand {
   display: flex;
   flex-direction: column;
-
   min-height: 300px;
 }
 
 
-/* =========================================================
-   LOGO
-========================================================= */
+/* Logo */
 
 .footer-logo {
   display: inline-flex;
   align-items: center;
-
   width: fit-content;
-
+  max-width: 100%;
   margin-bottom: 16px;
+  text-decoration: none;
 }
 
 .footer-logo img {
-  height: 64px;
+  display: block;
   width: auto;
-
+  max-width: 100%;
+  height: 64px;
   object-fit: contain;
-
-  background: rgba(255, 255, 255, 0.95);
-
+  background: #ffffff;
   padding: 7px 16px;
-
   border-radius: 6px;
 }
 
 
-/* =========================================================
-   DESCRIPTION
-========================================================= */
+/* Description */
 
 .footer-tagline {
   max-width: 340px;
-
   margin: 0;
-
-  color: rgba(255, 255, 255, 0.65);
-
+  color: rgba(255, 255, 255, 0.72);
   font-size: 13px;
-  line-height: 1.65;
+  line-height: 1.75;
 }
 
 
@@ -121,45 +109,42 @@
    SOCIAL MEDIA
 ========================================================= */
 
-.socials {
+.footer .socials {
   display: flex;
   align-items: center;
-
+  flex-wrap: wrap;
   gap: 9px;
-
   margin-top: 18px;
 }
 
-.social-link {
-  width: 36px;
-  height: 36px;
-
+.footer .social-link {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  border: 1px solid rgba(255, 255, 255, 0.18);
-
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-
-  color: rgba(255, 255, 255, 0.8);
-
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-
-  transition: all 0.3s ease;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
 }
 
-.social-link svg {
+.footer .social-link svg {
+  display: block;
   width: 17px;
   height: 17px;
 }
 
-.social-link:hover {
-  background: #fff;
-  color: #111;
-
-  border-color: #fff;
-
+.footer .social-link:hover {
+  background: #ffffff;
+  color: #111827;
+  border-color: #ffffff;
   transform: translateY(-2px);
 }
 
@@ -168,171 +153,135 @@
    BRAND CONTACT ROWS
 ========================================================= */
 
-.brand-contact-row {
+.footer .brand-contact-row {
   display: flex;
   align-items: center;
-
   gap: 10px;
-
   width: fit-content;
-
+  max-width: 100%;
   margin-top: 14px;
-
-  color: rgba(255, 255, 255, 0.7);
-
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-
+  overflow-wrap: anywhere;
   transition: color 0.25s ease;
 }
 
-.brand-contact-row:hover {
-  color: #fff;
+.footer .brand-contact-row:hover {
+  color: #ffffff;
 }
 
-
-/* =========================================================
-   WHATSAPP ICON
-========================================================= */
-
-.whatsapp-icon {
-  width: 19px;
-  height: 19px;
-
+.footer .whatsapp-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  color: #f59e0b;
-
   flex-shrink: 0;
+  width: 19px;
+  height: 19px;
+  color: #f59e0b;
 }
 
-.whatsapp-icon svg {
+.footer .whatsapp-icon svg {
+  display: block;
   width: 19px;
   height: 19px;
 }
 
-
-/* =========================================================
-   BRAND CONTACT ICON
-========================================================= */
-
-.brand-contact-row > svg {
+.footer .brand-contact-row > svg {
   flex-shrink: 0;
-
   color: #f59e0b;
 }
 
-
-/* =========================================================
-   BRAND CONTACT TEXT
-========================================================= */
-
-.brand-contact-text {
+.footer .brand-contact-text {
   display: flex;
   flex-direction: column;
-
+  min-width: 0;
   gap: 1px;
 }
 
-.brand-contact-text small {
-  color: #fff;
-
+.footer .brand-contact-text small {
+  color: #ffffff;
   font-size: 10.5px;
-
   font-weight: 600;
 }
 
-.brand-contact-text strong {
-  color: rgba(255, 255, 255, 0.68);
-
+.footer .brand-contact-text strong {
+  color: rgba(255, 255, 255, 0.8);
   font-size: 12px;
-
   font-weight: 500;
+  overflow-wrap: anywhere;
 }
 
-.brand-contact-row:hover .brand-contact-text strong {
-  color: #fff;
+.footer .brand-contact-row:hover .brand-contact-text strong {
+  color: #ffffff;
 }
 
 
 /* =========================================================
-   FOOTER TITLE
+   FOOTER HEADINGS
 ========================================================= */
 
-.footer-title {
+.footer .footer-title {
   position: relative;
-
   display: inline-block;
-
+  width: fit-content;
+  max-width: 100%;
   margin: 0 0 20px;
-
   padding-bottom: 8px;
-
-  color: #fff;
-
+  color: #ffffff;
   font-size: 14px;
-
   font-weight: 700;
-
+  line-height: 1.5;
   text-transform: uppercase;
-
   letter-spacing: 0.7px;
 }
 
-.footer-title::after {
+.footer .footer-title::after {
   content: "";
-
   position: absolute;
-
   left: 0;
   bottom: 0;
-
   width: 32px;
   height: 2px;
-
   background: #f59e0b;
 }
 
 
 /* =========================================================
-   FOOTER LIST
+   QUICK LINKS AND PRODUCTS
 ========================================================= */
 
-.footer-list {
+.footer .footer-list {
   display: flex;
   flex-direction: column;
-
+  align-items: flex-start;
   gap: 9px;
-
   list-style: none;
-
   margin: 0;
   padding: 0;
 }
 
-.footer-list li {
+.footer .footer-list li {
+  display: block;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
-.footer-link {
+.footer .footer-link {
   display: inline-block;
-
-  color: rgba(255, 255, 255, 0.68);
-
+  max-width: 100%;
+  color: rgba(255, 255, 255, 0.78);
   text-decoration: none;
-
   font-size: 13px;
-
-  line-height: 1.45;
-
-  transition: all 0.25s ease;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
-.footer-link:hover {
-  color: #fff;
-
+.footer .footer-link:hover {
+  color: #ffffff;
   transform: translateX(3px);
 }
 
@@ -341,85 +290,74 @@
    CONTACT COLUMN
 ========================================================= */
 
-.footer-contact {
+.footer .footer-contact {
   min-height: 300px;
 }
 
-.footer-contact .footer-col-content {
+.footer .footer-contact .footer-col-content {
   display: flex;
   flex-direction: column;
-
-  gap: 11px;
+  align-items: flex-start;
+  gap: 13px;
 }
 
 
-/* =========================================================
-   CONTACT ROW
-========================================================= */
+/* Contact rows */
 
-.contact-row {
+.footer .contact-row {
   display: flex;
   align-items: flex-start;
-
   gap: 9px;
-
-  color: rgba(255, 255, 255, 0.68);
-
+  width: 100%;
+  color: rgba(255, 255, 255, 0.8);
   font-size: 12px;
-
-  line-height: 1.4;
-
+  line-height: 1.6;
   text-decoration: none;
-
+  overflow-wrap: anywhere;
   transition: color 0.25s ease;
 }
 
-.contact-row svg {
+.footer .contact-row svg {
   flex-shrink: 0;
-
+  width: 16px;
+  height: 16px;
   margin-top: 2px;
-
   color: #f59e0b;
 }
 
-.contact-row > span {
+.footer .contact-row > span {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
-.contact-row small {
-  margin-bottom: 1px;
-
-  color: #fff;
-
+.footer .contact-row small {
+  margin-bottom: 2px;
+  color: #ffffff;
   font-size: 10.5px;
-
   font-weight: 600;
 }
 
-.contact-row:hover {
-  color: #fff;
+.footer .contact-row:hover {
+  color: #ffffff;
 }
 
-.contact-row:hover > span {
-  color: #fff;
+.footer .contact-row:hover > span {
+  color: #ffffff;
 }
 
 
-/* =========================================================
-   WORKING HOURS
-========================================================= */
+/* Working hours */
 
-.working-hours {
+.footer .working-hours {
   margin-top: 2px;
 }
 
-.working-hours > span {
-  color: rgba(255, 255, 255, 0.65);
-
+.footer .working-hours > span {
+  color: rgba(255, 255, 255, 0.75);
   font-size: 11.5px;
-
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
 
@@ -427,36 +365,27 @@
    QUOTE BUTTON
 ========================================================= */
 
-.quote-btn {
+.footer .quote-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 100%;
-
   margin-top: auto;
-
   padding: 10px 16px;
-
   background: #f59e0b;
-
-  color: #111;
-
+  color: #111827;
   border-radius: 5px;
-
   text-decoration: none;
-
   font-size: 12px;
-
   font-weight: 700;
-
-  transition: all 0.3s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
-.quote-btn:hover {
-  background: #fff;
-
-  color: #111;
+.footer .quote-btn:hover {
+  background: #ffffff;
+  color: #111827;
 }
 
 
@@ -466,66 +395,55 @@
 
 .footer-bottom {
   padding: 18px 0;
+  background: #080e19;
 }
 
-.footer-bottom-inner {
+.footer .footer-bottom-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 20px;
 }
 
-.footer-bottom p {
+.footer .footer-bottom-inner > p {
   margin: 0;
-
-  color: rgba(255, 255, 255, 0.5);
-
+  color: rgba(255, 255, 255, 0.68);
   font-size: 11px;
+  line-height: 1.7;
 }
 
-.footer-bottom-links {
+.footer .footer-bottom-links {
   display: flex;
   align-items: center;
-
+  flex-wrap: wrap;
   gap: 18px;
 }
 
-.footer-bottom-links a {
-  color: rgba(255, 255, 255, 0.5);
-
+.footer .footer-bottom-links a {
+  color: rgba(255, 255, 255, 0.68);
   text-decoration: none;
-
   font-size: 11px;
-
   transition: color 0.25s ease;
 }
 
-.footer-bottom-links a:hover {
-  color: #fff;
+.footer .footer-bottom-links a:hover {
+  color: #ffffff;
 }
 
 
 /* =========================================================
-   LARGE TABLET
+   LARGE TABLET / SMALL DESKTOP
 ========================================================= */
 
 @media (max-width: 1200px) {
-
   .footer-grid {
-    grid-template-columns:
-      1.4fr
-      1fr
-      1.1fr
-      1.3fr;
-
+    grid-template-columns: 1.4fr 1fr 1.1fr 1.3fr;
     gap: 2rem;
   }
 
   .footer-tagline {
     max-width: 290px;
   }
-
 }
 
 
@@ -534,23 +452,24 @@
 ========================================================= */
 
 @media (max-width: 1024px) {
-
   .footer-top {
     padding: 50px 0 40px;
   }
 
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 35px 30px;
   }
 
   .footer-col,
   .footer-brand,
   .footer-contact {
-    min-height: 280px;
+    min-height: 260px;
   }
 
+  .footer-tagline {
+    max-width: 100%;
+  }
 }
 
 
@@ -559,14 +478,16 @@
 ========================================================= */
 
 @media (max-width: 600px) {
+  .footer .container {
+    width: 90%;
+  }
 
   .footer-top {
     padding: 40px 0 30px;
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
-
+    grid-template-columns: minmax(0, 1fr);
     gap: 32px;
   }
 
@@ -576,34 +497,45 @@
     min-height: auto;
   }
 
+  .footer .footer-col-content {
+    min-width: 0;
+  }
+
   .footer-tagline {
     max-width: 100%;
   }
 
-  .socials {
+  .footer .socials {
     margin-top: 18px;
   }
 
-  .brand-contact-row {
+  .footer .brand-contact-row {
     margin-top: 13px;
   }
 
-  .quote-btn {
+  .footer .footer-title {
+    margin-bottom: 16px;
+  }
+
+  .footer .footer-contact .footer-col-content {
+    gap: 13px;
+  }
+
+  .footer .quote-btn {
     margin-top: 22px;
   }
 
-  .footer-bottom-inner {
+  .footer .footer-bottom-inner {
     flex-direction: column;
-
-    text-align: center;
-  }
-
-  .footer-bottom-links {
     justify-content: center;
-
-    flex-wrap: wrap;
+    text-align: center;
+    gap: 12px;
   }
 
+  .footer .footer-bottom-links {
+    justify-content: center;
+    gap: 12px 18px;
+  }
 }
 
 
@@ -612,34 +544,37 @@
 ========================================================= */
 
 @media (max-width: 380px) {
-
   .footer .container {
-    width: 92%;
+    width: 90%;
   }
 
   .footer-grid {
     gap: 28px;
   }
 
-  .footer-title {
+  .footer .footer-title {
     font-size: 13px;
   }
 
-  .footer-link {
+  .footer .footer-link {
     font-size: 12px;
   }
 
   .footer-logo img {
     height: 58px;
+    padding: 6px 12px;
   }
 
-  .social-link {
+  .footer .social-link {
     width: 34px;
     height: 34px;
   }
 
-  .brand-contact-text strong {
+  .footer .brand-contact-text strong {
     font-size: 11.5px;
   }
 
+  .footer .footer-bottom-links {
+    gap: 10px 14px;
+  }
 }

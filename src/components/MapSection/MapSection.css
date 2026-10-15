@@ -1,918 +1,951 @@
-/* =========================================================
-   MAP SECTION
-========================================================= */
+/* ==========================================
+   MAP SECTION — REFERENCE DESIGN
+   Matches the first screenshot
+========================================== */
 
 .map-section {
+  position: relative;
   width: 100%;
-  padding: 5rem 0;
+  margin: 0;
+  padding: 40px 24px 60px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1a1a1a;
 
   background-color: #ffffff;
-
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
-
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.035) 1px,
+      transparent 1px
+    );
   background-size: 40px 40px;
-
-  overflow: hidden;
 }
 
-/* =========================================================
-   HEADER
-========================================================= */
-
-.map-header {
-  text-align: center;
-  margin-bottom: 3.2rem;
-}
-
-.map-header h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 0;
-}
-
-.map-header h2 span {
-  color: #f47b20;
-}
-
-/* =========================================================
-   MAIN LAYOUT
-========================================================= */
-
-.map-content {
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 4rem;
-
-  max-width: 1250px;
-  margin: 0 auto;
-}
-
-/* =========================================================
-   LEFT MAP AREA
-========================================================= */
-
-.map-image-wrap {
-  flex: 1.15;
-
-  position: relative;
-
-  width: 100%;
-  max-width: 680px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* =========================================================
-   MAP VISUAL
-
-   IMPORTANT:
-   City labels can extend outside this box.
-   Pins are restricted to .map-image-stage.
-========================================================= */
-
-.map-visual {
-  position: relative;
-
-  width: 100%;
-  max-width: 680px;
-
-  padding: 0 70px;
-
+.map-section *,
+.map-section *::before,
+.map-section *::after {
   box-sizing: border-box;
 }
 
-/* =========================================================
-   ACTUAL IMAGE STAGE
+/* Main container */
 
-   Same aspect ratio as your Tamil Nadu map image.
-========================================================= */
+.map-section > .container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+}
 
-.map-image-stage {
+/* ==========================================
+   HEADING SECTION
+========================================== */
+
+.map-section .map-header {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 76px;
+  padding: 0 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  opacity: 1;
+  transform: none;
+}
+
+/* Our Reach badge */
+
+.map-section .map-header .section-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  min-height: 36px;
+  margin: 0;
+  padding: 9px 20px;
+
+  background: #fff0e4;
+  color: #f47b20;
+
+  border: none;
+  border-radius: 30px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Main heading */
+
+.map-section .map-header .section-title,
+.map-section .map-header h2 {
+  position: relative;
+  display: block;
+
+  width: 100%;
+  margin: 18px 0 0;
+  padding: 0 0 25px;
+
+  color: #1a1a1a;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(30px, 3vw, 44px);
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -1px;
+
+  text-align: center;
+  text-transform: none;
+}
+
+/* Orange heading text */
+
+.map-section .map-header .section-title span,
+.map-section .map-header h2 span {
+  color: #f47b20;
+  font-weight: 750;
+}
+
+/* Orange underline */
+
+.map-section .map-header .section-title::after,
+.map-section .map-header h2::after {
+  content: "";
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 64px;
+  height: 4px;
+
+  background: #f47b20;
+  border-radius: 10px;
+
+  transform: translateX(-50%);
+}
+
+/* ==========================================
+   MAP + STATISTICS LAYOUT
+========================================== */
+
+.map-section .map-content {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 48px;
+}
+
+/* ==========================================
+   LEFT MAP COLUMN
+========================================== */
+
+.map-section .map-image-wrap {
+  flex: 1 1 0;
+  min-width: 0;
+  width: 100%;
+  max-width: 680px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 1;
+  transform: none;
+}
+
+.map-section .map-visual {
   position: relative;
 
   width: 100%;
+  max-width: 680px;
+  min-width: 0;
 
+  margin: 0 auto;
+  padding: 0 35px;
+}
+
+/* Map image stage */
+
+.map-section .map-image-stage {
+  position: relative;
+
+  width: 100%;
   aspect-ratio: 736 / 981;
 
   overflow: hidden;
-
   isolation: isolate;
 }
 
-/* =========================================================
-   MAP IMAGE
-========================================================= */
+/* Tamil Nadu map image */
 
-.map-image {
+.map-section .map-image {
   position: absolute;
-
   inset: 0;
 
+  display: block;
   width: 100%;
   height: 100%;
 
   object-fit: contain;
-
-  display: block;
+  object-position: center;
 
   z-index: 1;
-
-  user-select: none;
-
   pointer-events: none;
 }
 
-/* =========================================================
-   PIN LAYER
+/* ==========================================
+   MAP PINS
+========================================== */
 
-   VERY IMPORTANT:
-   This layer has exactly the same dimensions
-   as the map image.
-========================================================= */
-
-.map-pin-layer {
+.map-section .map-pin-layer {
   position: absolute;
-
   inset: 0;
 
   width: 100%;
   height: 100%;
 
   z-index: 5;
-
   overflow: hidden;
-
   pointer-events: none;
 }
 
-/* =========================================================
-   MAP PIN
-========================================================= */
-
-/* =========================================================
-   MAP PIN — PIN ONLY
-   ========================================================= */
-
-.map-pin {
+.map-section .map-pin {
   position: absolute;
 
   width: 18px;
   height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 
   transform: translate(-50%, -100%);
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-
   pointer-events: auto;
   z-index: 6;
-
-  animation: pin-float 3s ease-in-out infinite;
 }
 
-/* Stop any inherited pseudo-element from creating the white oval */
-.map-pin::before,
-.map-pin::after {
-  content: none !important;
-  display: none !important;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-}
-
-/* Actual orange location pin */
-.map-pin-icon {
+.map-section .map-pin-icon {
   position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   width: 18px;
   height: 22px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 
   filter: drop-shadow(0 2px 3px rgba(180, 80, 0, 0.22));
-
-  z-index: 3;
 }
 
-.map-pin-icon::before,
-.map-pin-icon::after {
-  content: none !important;
-  display: none !important;
-}
-
-.map-pin-icon svg {
+.map-section .map-pin-icon svg {
+  display: block;
   width: 100%;
   height: 100%;
-  display: block;
-  overflow: visible;
 }
 
-/* Pulse and Chennai ring are intentionally disabled */
-.map-pin-pulse,
-.chennai-highlight,
-.chennai-ring {
-  display: none !important;
+/* Major installation pins */
+
+.map-section .map-pin-major .map-pin-icon {
+  filter: drop-shadow(0 2px 4px rgba(244, 123, 32, 0.3));
 }
 
-.map-pin-major {
-  width: 19px;
-  height: 23px;
-}
+/* ==========================================
+   CITY LABELS
+========================================== */
 
-.map-pin-major .map-pin-icon {
-  width: 19px;
-  height: 23px;
-}
-
-/* Small natural movement only */
-@keyframes pin-float {
-  0%,
-  100% {
-    transform: translate(-50%, -100%) translateY(0);
-  }
-
-  50% {
-    transform: translate(-50%, -100%) translateY(-1px);
-  }
-}
-
-/* =========================================================
-   CITY LABELS LAYER
-
-   This is separate from the map-pin layer.
-   Therefore labels won't get clipped.
-========================================================= */
-
-.city-labels-layer {
+.map-section .city-labels-layer {
   position: absolute;
-
   inset: 0;
-
+  z-index: 7;
   pointer-events: none;
-
-  z-index: 20;
 }
 
-/* =========================================================
-   CITY LABEL
-========================================================= */
-
-.city-label {
+.map-section .city-label {
   position: absolute;
 
   display: flex;
-
   align-items: center;
-
-  gap: 8px;
-
-  transform: translateY(-50%);
+  gap: 6px;
 
   white-space: nowrap;
 }
 
-/* LEFT */
-
-.city-label-left {
+.map-section .city-label-left {
   left: 0;
 }
 
-/* RIGHT */
-
-.city-label-right {
+.map-section .city-label-right {
   right: 0;
 }
 
-/* =========================================================
-   LABEL BOX
-========================================================= */
-
-.city-label-box {
-  display: inline-flex;
-
+.map-section .city-label-line {
+  display: flex;
   align-items: center;
   justify-content: center;
 
-  min-height: 34px;
-
-  padding: 7px 12px;
-
-  background: rgba(255, 255, 255, 0.97);
-
-  border: 1px solid rgba(244, 123, 32, 0.18);
-
-  border-radius: 8px;
-
-  color: #3b3b3b;
-
-  font-size: 0.72rem;
-
-  font-weight: 700;
-
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
-}
-
-/* =========================================================
-   LABEL LINE
-========================================================= */
-
-.city-label-line {
-  width: 42px;
+  width: 20px;
   height: 1px;
 
   background: #f47b20;
-
-  position: relative;
-
-  display: block;
 }
 
-/* Small dot */
-
-.city-label-dot {
-  position: absolute;
-
+.map-section .city-label-dot {
   width: 7px;
   height: 7px;
 
-  top: 50%;
-
-  border-radius: 50%;
-
   background: #f47b20;
-
-  transform: translateY(-50%);
+  border: 2px solid #ffffff;
+  border-radius: 50%;
 }
 
-/* LEFT dot */
-
-.city-label-left .city-label-dot {
-  right: -1px;
-}
-
-/* RIGHT dot */
-
-.city-label-right .city-label-dot {
-  left: -1px;
-}
-
-/* =========================================================
-   MAP LEGEND
-========================================================= */
-
-.map-legend {
-  position: absolute;
-
-  left: 72px;
-  bottom: 15px;
-
-  z-index: 30;
-
-  background: rgba(255, 255, 255, 0.96);
-
-  border: 1px solid rgba(244, 123, 32, 0.15);
-
-  border-radius: 10px;
-
-  padding: 10px 13px;
-
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-}
-
-.legend-row {
+.map-section .city-label-box {
   display: flex;
-
   align-items: center;
 
-  gap: 7px;
+  min-height: 30px;
+  padding: 6px 10px;
 
-  margin: 4px 0;
+  color: #c45a0b;
+  background: #fff7f0;
 
-  color: #69758a;
+  border: 1px solid #ffdfc4;
+  border-radius: 8px;
 
-  font-size: 0.68rem;
+  font-size: 11px;
+  font-weight: 700;
+}
 
+/* ==========================================
+   MAP LEGEND
+========================================== */
+
+.map-section .map-legend {
+  position: absolute;
+  left: 35px;
+  bottom: 8px;
+
+  z-index: 8;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding: 11px 13px;
+
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #f3e3d6;
+  border-radius: 10px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.map-section .legend-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #666666;
+  font-size: 11px;
   font-weight: 600;
 }
 
-.legend-pin {
-  width: 8px;
-  height: 8px;
+.map-section .legend-pin {
+  flex: 0 0 9px;
+
+  width: 9px;
+  height: 9px;
 
   border-radius: 50%;
-
-  display: inline-block;
-}
-
-.legend-pin.major {
-  width: 10px;
-  height: 10px;
-
-  background: #e85d04;
-
-  box-shadow: 0 0 0 3px rgba(232, 93, 4, 0.12);
-}
-
-.legend-pin.normal {
   background: #f47b20;
 }
 
-/* =========================================================
-   RIGHT SIDE STATS
-========================================================= */
+.map-section .legend-pin.major {
+  width: 11px;
+  height: 11px;
 
-.map-stats {
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px #f47b20;
+}
+
+.map-section .legend-pin.normal {
+  background: #ffbd87;
+}
+
+/* ==========================================
+   RIGHT STATISTICS COLUMN
+========================================== */
+
+.map-section .map-stats {
   flex: 0 0 430px;
 
   width: 100%;
   max-width: 430px;
+  min-width: 0;
 
   display: flex;
-
   flex-direction: column;
+  gap: 20px;
 
-  gap: 1.15rem;
+  opacity: 1;
+  transform: none;
 }
 
-/* =========================================================
-   HERO CARD
-========================================================= */
+/* ==========================================
+   FEATURED ORANGE CARD
+========================================== */
 
-.map-stat-hero {
+.map-section .map-stat-hero {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   width: 100%;
+  min-height: 230px;
 
-  box-sizing: border-box;
-
-  background: linear-gradient(135deg, #ff7a18 0%, #ed680d 55%, #d95705 100%);
-
-  border-radius: 20px;
-
-  padding: 2rem 2rem 2.2rem;
+  margin: 0;
+  padding: 30px 34px;
 
   color: #ffffff;
 
-  box-shadow: 0 18px 40px rgba(244, 123, 32, 0.28);
+  background: linear-gradient(
+    135deg,
+    #ff7a18 0%,
+    #ed680d 55%,
+    #dc5805 100%
+  );
 
-  min-height: 230px;
+  border: none;
+  border-radius: 22px;
 
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
+  box-shadow: 0 18px 40px rgba(244, 123, 32, 0.2);
 }
 
-/* Hero top */
+/* Hero card top row */
 
-.hero-top {
+.map-section .hero-top {
   display: flex;
-
   align-items: center;
+  gap: 11px;
 
-  gap: 10px;
+  margin: 0 0 15px;
 
-  margin-bottom: 1.1rem;
+  color: #ffffff;
 
-  font-size: 0.9rem;
-
+  font-size: 15px;
   font-weight: 700;
+  line-height: 1.4;
 }
 
-.hero-star {
-  width: 40px;
-  height: 40px;
+/* Star icon box */
 
-  border-radius: 12px;
-
-  background: rgba(255, 255, 255, 0.18);
+.map-section .hero-star {
+  flex: 0 0 43px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
-  font-size: 1.35rem;
+  width: 43px;
+  height: 43px;
+
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+
+  border-radius: 13px;
+
+  font-size: 25px;
 }
 
 /* Hero number */
 
-.map-stat-hero-number {
-  font-size: 3.2rem;
+.map-section .map-stat-hero-number {
+  margin: 0 0 8px;
 
+  color: #ffffff;
+
+  font-size: clamp(44px, 3.5vw, 60px);
   font-weight: 800;
-
-  line-height: 1;
-
-  letter-spacing: -1px;
-
-  margin-bottom: 0.65rem;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
 }
 
-/* PROJECTS */
+/* Projects label */
 
-.map-stat-hero-label {
-  font-size: 1.1rem;
+.map-section .map-stat-hero-label {
+  margin: 0 0 12px;
 
+  color: #ffffff;
+
+  font-size: 19px;
   font-weight: 800;
-
-  letter-spacing: 1px;
-
-  margin-bottom: 0.65rem;
+  line-height: 1.3;
+  letter-spacing: 0.8px;
 }
 
-/* Subtitle */
+/* Hero description */
 
-.map-stat-hero-sub {
-  font-size: 0.9rem;
+.map-section .map-stat-hero-sub {
+  margin: 0;
 
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.95);
+
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
-/* =========================================================
-   NORMAL STAT CARDS
-========================================================= */
+/* ==========================================
+   WHITE STATISTIC CARDS
+========================================== */
 
-.map-stat-card {
+.map-section .map-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+
   width: 100%;
+  min-height: 120px;
 
-  min-height: 112px;
-
-  box-sizing: border-box;
+  margin: 0;
+  padding: 22px 25px;
 
   background: #ffffff;
+  border: 1px solid rgba(244, 123, 32, 0.17);
+  border-radius: 20px;
 
-  border: 1px solid rgba(244, 123, 32, 0.15);
-
-  border-radius: 18px;
-
-  padding: 1.25rem 1.45rem;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 1rem;
-
-  box-shadow: 0 5px 20px rgba(244, 123, 32, 0.07);
+  box-shadow: 0 5px 20px rgba(244, 123, 32, 0.055);
 
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
 }
 
-.map-stat-card:hover {
-  transform: translateY(-4px);
+.map-section .map-stat-card:hover {
+  transform: translateY(-3px);
 
-  box-shadow: 0 12px 28px rgba(244, 123, 32, 0.14);
+  box-shadow: 0 12px 28px rgba(244, 123, 32, 0.12);
 }
 
-/* =========================================================
-   STAT ICON
-========================================================= */
+/* Card icons */
 
-.map-stat-icon {
-  flex: 0 0 52px;
-
-  width: 52px;
-  height: 52px;
-
-  border-radius: 14px;
-
-  background: #fff0e3;
-
-  color: #f47b20;
+.map-section .map-stat-icon {
+  flex: 0 0 56px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
+
+  width: 56px;
+  height: 56px;
+
+  color: #f47b20;
+  background: #fff0e4;
+
+  border-radius: 15px;
 }
 
-.map-stat-icon svg {
+.map-section .map-stat-icon svg {
+  display: block;
   width: 25px;
   height: 25px;
 }
 
-.rupee-icon {
-  font-size: 1.6rem;
-
-  font-weight: 800;
+.map-section .rupee-icon {
+  color: #f47b20;
+  font-size: 26px;
+  font-weight: 700;
 }
 
-/* =========================================================
-   STAT CONTENT
-========================================================= */
+/* Card text */
 
-.map-stat-content {
+.map-section .map-stat-content {
   flex: 1;
-
   min-width: 0;
 }
 
-.map-stat-card-label {
+.map-section .map-stat-card-label {
+  margin: 0 0 5px;
+
   color: #858585;
 
-  font-size: 0.83rem;
-
+  font-size: 14px;
   font-weight: 600;
-
-  margin-bottom: 0.35rem;
+  line-height: 1.5;
 }
 
-.map-stat-card-value {
+.map-section .map-stat-card-value {
+  margin: 0;
+
   color: #c25c0c;
 
-  font-size: 1.7rem;
-
+  font-size: clamp(22px, 2vw, 29px);
   font-weight: 800;
+  line-height: 1.3;
 
-  line-height: 1.15;
-
-  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
-/* =========================================================
-   FADE ANIMATIONS
-========================================================= */
+/* ==========================================
+   ANIMATIONS
+========================================== */
 
-.fade-in-up {
-  opacity: 0;
-
-  transform: translateY(30px);
-
-  transition:
-    opacity 0.8s ease-out,
-    transform 0.8s ease-out;
-}
-
-.fade-in-left {
-  opacity: 0;
-
-  transform: translateX(-40px);
-
-  transition:
-    opacity 0.8s ease-out 0.2s,
-    transform 0.8s ease-out 0.2s;
-}
-
-.fade-in-right {
-  opacity: 0;
-
-  transform: translateX(40px);
-
-  transition:
-    opacity 0.8s ease-out 0.4s,
-    transform 0.8s ease-out 0.4s;
-}
-
-.visible {
+.map-section .fade-in-up,
+.map-section .fade-in-left,
+.map-section .fade-in-right {
   opacity: 1;
-
-  transform: translate(0);
+  transform: none;
 }
 
-/* =========================================================
-   TABLET
-========================================================= */
+.map-section .map-pin {
+  animation: mapPinAppear 0.45s ease both;
+}
 
-@media (max-width: 1100px) {
-  .map-content {
-    gap: 2rem;
+@keyframes mapPinAppear {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -80%) scale(0.7);
   }
 
-  .map-stats {
-    flex-basis: 390px;
-    max-width: 390px;
-  }
-
-  .map-visual {
-    padding-left: 55px;
-    padding-right: 55px;
-  }
-
-  .city-label-line {
-    width: 30px;
-  }
-
-  .city-label-box {
-    font-size: 0.65rem;
-    padding: 6px 9px;
+  to {
+    opacity: 1;
+    transform: translate(-50%, -100%) scale(1);
   }
 }
 
-/* =========================================================
-   MOBILE / TABLET
-========================================================= */
+/* ==========================================
+   LARGE DESKTOP
+========================================== */
 
-@media (max-width: 992px) {
+@media (min-width: 1400px) {
   .map-section {
-    padding: 4rem 0;
+    padding: 40px 30px 65px;
   }
 
-  .map-content {
-    flex-direction: column;
-
-    gap: 3.5rem;
+  .map-section .map-content {
+    max-width: 1250px;
+    gap: 55px;
   }
 
-  .map-image-wrap {
-    width: 100%;
-
+  .map-section .map-image-wrap {
     max-width: 680px;
   }
 
-  .map-stats {
-    width: 100%;
-
-    max-width: 520px;
-
-    flex-basis: auto;
+  .map-section .map-stats {
+    flex-basis: 430px;
+    max-width: 430px;
   }
 }
 
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
+/* ==========================================
+   LAPTOP
+========================================== */
+
+@media (max-width: 1200px) {
+  .map-section {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .map-section .map-content {
+    gap: 35px;
+  }
+
+  .map-section .map-stats {
+    flex: 0 0 390px;
+    max-width: 390px;
+  }
+
+  .map-section .map-visual {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .map-section .map-stat-hero {
+    min-height: 215px;
+    padding: 28px;
+  }
+
+  .map-section .map-stat-card {
+    padding: 20px;
+  }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 992px) {
+  .map-section {
+    padding: 40px 22px 50px;
+  }
+
+  .map-section .map-header {
+    margin-bottom: 45px;
+  }
+
+  .map-section .map-header .section-title,
+  .map-section .map-header h2 {
+    font-size: clamp(28px, 4vw, 38px);
+  }
+
+  .map-section .map-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+  }
+
+  .map-section .map-image-wrap {
+    flex: none;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .map-section .map-visual {
+    width: 100%;
+    max-width: 600px;
+    padding: 0 35px;
+  }
+
+  .map-section .map-stats {
+    flex: none;
+    width: 100%;
+    max-width: 600px;
+    gap: 16px;
+  }
+
+  .map-section .map-stat-hero {
+    min-height: 215px;
+  }
+
+  .map-section .map-stat-card {
+    min-height: 105px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
 
 @media (max-width: 576px) {
   .map-section {
-    padding: 3rem 0;
+    padding: 32px 15px 40px;
+    background-size: 30px 30px;
   }
 
-  .map-header {
-    margin-bottom: 2rem;
+  .map-section .map-header {
+    margin-bottom: 30px;
+    padding: 0;
   }
 
-  .map-header h2 {
-    font-size: 2rem;
+  .map-section .map-header .section-tag {
+    min-height: 32px;
+    padding: 8px 16px;
+    font-size: 11px;
+    letter-spacing: 1.6px;
   }
 
-  .map-visual {
-    padding: 0 42px;
+  .map-section .map-header .section-title,
+  .map-section .map-header h2 {
+    margin-top: 15px;
+    padding-bottom: 22px;
+
+    font-size: 28px;
+    line-height: 1.35;
+    letter-spacing: -0.6px;
   }
 
-  .map-image-stage {
+  .map-section .map-header .section-title::after,
+  .map-section .map-header h2::after {
+    width: 55px;
+    height: 4px;
+  }
+
+  .map-section .map-content {
+    gap: 25px;
+  }
+
+  .map-section .map-image-wrap {
+    max-width: 100%;
+  }
+
+  .map-section .map-visual {
+    max-width: 100%;
+    padding: 0 22px;
+  }
+
+  .map-section .map-image-stage {
     aspect-ratio: 736 / 981;
   }
 
-  /* Smaller pins */
-
-  .map-pin {
+  .map-section .map-pin {
     width: 15px;
     height: 19px;
   }
 
-  .map-pin-icon {
+  .map-section .map-pin-icon {
     width: 15px;
     height: 19px;
   }
 
-  .map-pin-major {
-    width: 16px;
-    height: 20px;
-  }
-
-  .map-pin-major .map-pin-icon {
-    width: 16px;
-    height: 20px;
-  }
-
-  /* City labels */
-
-  .city-label {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    z-index: 20;
-  }
-
-  .city-label-left {
-    left: 30%;
-  }
-
-  .city-label-right {
-    right: 30%;
-  }
-
-  .city-label-line {
-    width: 18px;
-  }
-
-  .city-label-box {
-    min-height: 27px;
-
-    padding: 4px 6px;
-
-    border-radius: 6px;
-
-    font-size: 0.52rem;
-  }
-
-  .city-label-dot {
-    width: 5px;
-    height: 5px;
-  }
-
-  /* Legend */
-
-  .map-legend {
-    left: 43px;
+  .map-section .map-legend {
+    left: 22px;
     bottom: 5px;
-
-    padding: 7px 8px;
+    gap: 6px;
+    padding: 8px 9px;
   }
 
-  .legend-row {
-    font-size: 0.52rem;
-
-    gap: 5px;
+  .map-section .legend-row {
+    gap: 6px;
+    font-size: 9px;
   }
 
-  /* Hero */
-
-  .map-stat-hero {
-    min-height: 210px;
-
-    padding: 1.7rem;
+  .map-section .map-stats {
+    gap: 13px;
   }
 
-  .map-stat-hero-number {
-    font-size: 2.7rem;
+  .map-section .map-stat-hero {
+    min-height: 195px;
+    padding: 23px;
+    border-radius: 18px;
   }
 
-  /* Cards */
-
-  .map-stat-card {
-    min-height: 95px;
-
-    padding: 1rem;
+  .map-section .hero-top {
+    margin-bottom: 12px;
+    font-size: 14px;
   }
 
-  .map-stat-icon {
-    flex-basis: 45px;
+  .map-section .hero-star {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+    font-size: 22px;
+  }
 
-    width: 45px;
-    height: 45px;
+  .map-section .map-stat-hero-number {
+    font-size: 44px;
+  }
 
+  .map-section .map-stat-hero-label {
+    font-size: 17px;
+  }
+
+  .map-section .map-stat-hero-sub {
+    font-size: 13px;
+  }
+
+  .map-section .map-stat-card {
+    min-height: 92px;
+    gap: 12px;
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  .map-section .map-stat-icon {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
     border-radius: 12px;
   }
 
-  .map-stat-card-value {
-    font-size: 1.4rem;
+  .map-section .map-stat-icon svg {
+    width: 22px;
+    height: 22px;
   }
 
-  .map-stat-card-label {
-    font-size: 0.72rem;
+  .map-section .map-stat-card-label {
+    font-size: 12px;
+  }
+
+  .map-section .map-stat-card-value {
+    font-size: 21px;
   }
 }
 
-/* =========================================================
-   EXTRA SMALL MOBILE
-========================================================= */
+/* ==========================================
+   SMALL MOBILE
+========================================== */
 
-@media (max-width: 576px) {
+@media (max-width: 380px) {
+  .map-section {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
 
-    .city-label {
-        gap: 4px;
-    }
+  .map-section .map-header .section-title,
+  .map-section .map-header h2 {
+    font-size: 24px;
+  }
 
-    .city-label-line {
-        width: 18px;
-    }
+  .map-section .map-visual {
+    padding: 0 15px;
+  }
 
-    .city-label-box {
-        min-height: 27px;
-        padding: 4px 6px;
-        border-radius: 6px;
-        font-size: 0.52rem;
-    }
+  .map-section .map-legend {
+    left: 15px;
+  }
 
-    .city-label-dot {
-        width: 5px;
-        height: 5px;
-    }
+  .map-section .map-stat-hero {
+    padding: 19px;
+  }
 
+  .map-section .map-stat-card {
+    padding: 12px;
+  }
+
+  .map-section .map-stat-card-value {
+    font-size: 18px;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .map-section .map-pin {
+    animation: none;
+  }
+
+  .map-section .map-stat-card {
+    transition: none;
+  }
+
+  .map-section .map-stat-card:hover {
+    transform: none;
+  }
 }

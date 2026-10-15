@@ -1,242 +1,354 @@
-/* ── ProductCards — Sticky Stacking Cards ── */
+
+/* =========================================
+   PRODUCT CARDS — MATCH REFERENCE DESIGN
+   ========================================= */
+
 .pc-section {
-    background: #fff;
-    /* No padding — cards handle their own spacing */
+    width: 100%;
+    background: #ffffff;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-/* Section heading above the cards */
-.pc-heading-wrap {
-    text-align: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
+/* Apply consistent box sizing */
+.pc-section *,
+.pc-section *::before,
+.pc-section *::after {
+    box-sizing: border-box;
 }
 
-.pc-main-title {
-    margin: 16px 0 14px;
-}
 
-.pc-subtitle {
-    margin: 0 auto;
-}
+/* =========================================
+   CARDS CONTAINER
+   ========================================= */
 
-/* Cards container */
 .pc-cards-container {
     position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-/* Individual sticky card */
+/* =========================================
+   INDIVIDUAL CARD
+   ========================================= */
+
 .pc-card {
     position: sticky;
-    border-radius: 28px 28px 0 0;
-    padding: 56px 0 64px;
-    margin-bottom: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 60px 0 64px;
+    border-radius: 30px 30px 0 0;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    isolation: isolate;
+    transition: none;
 }
 
-/* Subtle top glow line */
+/* Top accent line */
 .pc-card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 5%;
     right: 5%;
-    height: 1.5px;
-    background: linear-gradient(90deg, transparent, var(--accent, #f47b20), transparent);
-    opacity: 0.6;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent, #f47b20),
+        transparent
+    );
+    opacity: 0.65;
+    pointer-events: none;
 }
+
+/* =========================================
+   MAIN INNER LAYOUT
+   Important: left and right outer spacing
+   ========================================= */
 
 .pc-card-inner {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
+
+    width: 100%;
+    max-width: 1640px;
+
+    /* Left and right gaps */
+    padding-left: clamp(28px, 7.8vw, 130px);
+    padding-right: clamp(28px, 7.8vw, 130px);
+
+    /* Gap between content and image */
+    column-gap: clamp(36px, 5vw, 80px);
+
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* ── Left: Content ── */
+/* =========================================
+   LEFT CONTENT
+   ========================================= */
+
 .pc-content {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 20px;
+
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .pc-top-row {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 16px;
+    width: 100%;
 }
 
 .pc-num {
-    font-family: var(--font-heading);
+    font-family: var(--font-heading, Arial, sans-serif);
     font-size: 3rem;
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.1);
     line-height: 1;
     letter-spacing: -2px;
+    color: rgba(255, 255, 255, 0.12);
+    flex-shrink: 0;
 }
 
 .pc-tag {
+    display: inline-flex;
+    align-items: center;
+
+    font-family: var(--font-body, Arial, sans-serif);
     font-size: 0.72rem;
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.4px;
+    line-height: 1.4;
+
     color: var(--accent, #f47b20);
     background: rgba(244, 123, 32, 0.12);
-    border: 1px solid rgba(244, 123, 32, 0.25);
-    padding: 5px 14px;
-    border-radius: 20px;
+    border: 1px solid rgba(244, 123, 32, 0.3);
+
+    padding: 7px 15px;
+    border-radius: 30px;
 }
 
 .pc-title {
-    font-family: var(--font-heading);
-    font-size: clamp(1.8rem, 3vw, 2.6rem);
-    font-weight: 800;
-    color: #fff;
-    line-height: 1.15;
+    width: 100%;
     margin: 0;
+
+    font-family: var(--font-heading, Arial, sans-serif);
+    font-size: clamp(2rem, 2.8vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.7px;
+
+    color: #ffffff;
 }
 
 .pc-desc {
-    font-size: 0.97rem;
-    color: rgba(255, 255, 255, 0.68);
-    line-height: 1.85;
-    max-width: 480px;
+    width: 100%;
+    max-width: 500px;
     margin: 0;
+
+    font-family: var(--font-body, Arial, sans-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.9;
+
+    color: rgba(255, 255, 255, 0.74);
 }
 
 .pc-points {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
 }
 
 .pc-points li {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    font-size: 0.93rem;
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 1.5;
+
+    width: 100%;
+    margin: 0;
+
+    font-family: var(--font-body, Arial, sans-serif);
+    font-size: 0.96rem;
+    font-weight: 400;
+    line-height: 1.65;
+
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .pc-arrow {
-    color: var(--accent, #f47b20);
-    font-weight: 700;
-    font-size: 1.05rem;
     flex-shrink: 0;
     margin-top: 1px;
+
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.5;
+
+    color: var(--accent, #f47b20);
 }
 
-/* CTA button row */
+/* =========================================
+   CTA BUTTONS
+   ========================================= */
+
 .pc-cta-row {
     display: flex;
-    gap: 8px;
-    margin-top: 8px;
+    align-items: center;
     flex-wrap: wrap;
+    gap: 8px;
+
+    width: 100%;
+    margin-top: 8px;
 }
 
 .pc-cta {
     display: inline-flex;
+    justify-content: center;
     align-items: center;
     gap: 6px;
-    padding: 7px 14px;
-    border-radius: 8px;
-    font-size: 0.78rem;
+
+    min-height: 36px;
+    padding: 9px 14px;
+
+    border-radius: 9px;
+    font-family: var(--font-body, Arial, sans-serif);
+    font-size: 0.8rem;
     font-weight: 700;
-    font-family: var(--font-body);
+    line-height: 1.2;
     text-decoration: none;
-    transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
     white-space: nowrap;
-    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
-/* Get a Quote — solid orange */
+/* Quote */
 .pc-cta--quote {
+    color: #ffffff;
     background: var(--accent, #f47b20);
-    color: #fff;
+    border: 1px solid var(--accent, #f47b20);
 }
 
 .pc-cta--quote:hover {
     background: #d96b10;
+    border-color: #d96b10;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(244, 123, 32, 0.4);
+    box-shadow: 0 8px 20px rgba(244, 123, 32, 0.3);
 }
 
-/* WhatsApp button — green */
+/* WhatsApp */
 .pc-cta--whatsapp {
-    background: rgba(37, 211, 102, 0.15);
     color: #25d366;
-    border: 1px solid rgba(37, 211, 102, 0.35);
+    background: rgba(37, 211, 102, 0.1);
+    border: 1px solid rgba(37, 211, 102, 0.4);
 }
 
 .pc-cta--whatsapp:hover {
+    color: #ffffff;
     background: #25d366;
-    color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
 }
 
-/* Call button — outlined accent */
+/* Call */
 .pc-cta--call {
+    color: rgba(255, 255, 255, 0.9);
     background: transparent;
-    color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.28);
 }
 
 .pc-cta--call:hover {
-    background: rgba(255, 255, 255, 0.12);
-    color: #fff;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.6);
     transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.5);
 }
 
-/* ── Right: Image ── */
+/* =========================================
+   RIGHT IMAGE
+   ========================================= */
+
 .pc-img-wrap {
     position: relative;
-    border-radius: 20px;
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 4 / 3;
+
+    border-radius: 22px;
     overflow: hidden;
-    aspect-ratio: 4/3;
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+
+    background: #ffffff;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.16);
 }
 
 .pc-img {
+    display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: block;
+
+    object-fit: contain;
+    object-position: center;
+
     transition: transform 0.6s ease;
-    image-rendering: -webkit-optimize-contrast;
+    image-rendering: auto;
 }
 
 .pc-card:hover .pc-img {
-    transform: scale(1.04);
+    transform: scale(1.025);
 }
 
+/* Image label */
 .pc-img-badge {
     position: absolute;
-    bottom: 16px;
     left: 16px;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    color: #fff;
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 7px 14px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    bottom: 16px;
+    z-index: 2;
+
+    max-width: calc(100% - 32px);
+    padding: 9px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 9px;
+
+    color: #ffffff;
+    background: rgba(35, 35, 35, 0.68);
+
+    font-family: var(--font-body, Arial, sans-serif);
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.4;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
-/* Spacer to push content after sticky cards */
-.pc-spacer {
-    height: 60px;
-    background: #fff;
-}
+/* =========================================
+   IMAGE SLIDER
+   ========================================= */
 
-/* ── Image Slider (for multi-image cards) ── */
 .pc-slider {
     position: relative;
     width: 100%;
@@ -247,13 +359,20 @@
 .pc-slider-img {
     position: absolute;
     inset: 0;
+
+    display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+
+    object-fit: contain;
+    object-position: center;
+
     opacity: 0;
-    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-    transform: scale(1.04);
-    image-rendering: -webkit-optimize-contrast;
+    transform: scale(1.02);
+
+    transition:
+        opacity 0.8s ease-in-out,
+        transform 0.8s ease-in-out;
 }
 
 .pc-slider-img--active {
@@ -263,65 +382,340 @@
 
 .pc-slider-dots {
     position: absolute;
-    bottom: 54px;
     right: 16px;
-    display: flex;
-    gap: 6px;
+    bottom: 24px;
     z-index: 5;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
 }
 
 .pc-slider-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: none;
-    background: rgba(255, 255, 255, 0.4);
-    cursor: pointer;
+    width: 9px;
+    height: 9px;
     padding: 0;
-    transition: background 0.3s, transform 0.3s;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(80, 80, 80, 0.3);
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
 }
 
 .pc-slider-dot--active {
     background: #f47b20;
-    transform: scale(1.3);
+    transform: scale(1.2);
 }
 
+/* Space after the cards */
+.pc-spacer {
+    width: 100%;
+    height: 60px;
+    background: #ffffff;
+}
 
+/* =========================================
+   TABLET
+   ========================================= */
 
-/* ── Responsive ── */
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
     .pc-card {
-        position: relative !important;
-        top: auto !important;
-        border-radius: 20px;
-        margin-bottom: 16px;
-        padding: 44px 0 48px;
+        padding-top: 48px;
+        padding-bottom: 52px;
     }
 
     .pc-card-inner {
-        grid-template-columns: 1fr;
-        gap: 32px;
+        padding-left: 40px;
+        padding-right: 40px;
+        column-gap: 36px;
     }
 
-    .pc-img-wrap {
-        order: -1;
+    .pc-title {
+        font-size: clamp(1.8rem, 3vw, 2.3rem);
+    }
+
+    .pc-num {
+        font-size: 2.5rem;
+    }
+
+    .pc-desc {
+        font-size: 0.95rem;
+    }
+
+    .pc-points li {
+        font-size: 0.9rem;
+    }
+}
+
+/* =========================================
+   MOBILE / SMALL TABLET
+   ========================================= */
+
+@media (max-width: 760px) {
+    .pc-heading-wrap {
+        padding: 48px 20px 36px;
+    }
+
+    .pc-main-title {
+        font-size: 2rem;
+    }
+
+    .pc-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.75;
     }
 
     .pc-cards-container {
         display: flex;
         flex-direction: column;
         gap: 16px;
+
         padding: 0 12px 20px;
     }
 
+    .pc-card {
+        position: relative !important;
+        top: auto !important;
+
+        width: 100%;
+        padding: 32px 0 36px;
+        margin: 0;
+
+        border-radius: 20px;
+    }
+
+    .pc-card-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 28px;
+
+        width: 100%;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .pc-img-wrap {
+        order: -1;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        border-radius: 16px;
+    }
+
+    .pc-content {
+        gap: 16px;
+    }
+
+    .pc-top-row {
+        gap: 12px;
+    }
+
     .pc-num {
-        font-size: 2rem;
+        font-size: 2.1rem;
+    }
+
+    .pc-tag {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+        padding: 6px 11px;
+    }
+
+    .pc-title {
+        font-size: clamp(1.65rem, 6vw, 2rem);
+        line-height: 1.25;
+    }
+
+    .pc-desc {
+        font-size: 0.94rem;
+        line-height: 1.8;
+    }
+
+    .pc-points {
+        gap: 10px;
+    }
+
+    .pc-points li {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .pc-cta-row {
+        gap: 8px;
+    }
+
+    .pc-cta {
+        padding: 9px 11px;
+        font-size: 0.75rem;
+    }
+
+    .pc-spacer {
+        height: 32px;
     }
 }
 
+
+
+/* =========================================
+   PRODUCT SECTION HEADING
+   ========================================= */
+
+.pc-section {
+    background: #ffffff;
+}
+
+/* Heading container */
+.pc-heading-wrap {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 72px 24px 52px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Our Products tag */
+.pc-heading-wrap .section-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    margin: 0 auto 20px;
+    border-radius: 30px;
+    background: #fff0e5;
+    color: #f47721;
+    font-family: var(--font-body, inherit);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+/* Main heading */
+.pc-heading-wrap .pc-main-title {
+    display: block;
+    width: 100%;
+    margin: 14px auto 20px;
+    padding: 0;
+    color: #1b1b1b;
+    font-family: var(--font-heading, inherit);
+    font-size: clamp(2.2rem, 3.2vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+/* Orange text inside heading */
+.pc-heading-wrap .pc-main-title span {
+    color: #f47721;
+}
+
+/* Description below heading */
+.pc-heading-wrap .pc-subtitle {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0;
+    color: #64748b;
+    font-family: var(--font-body, inherit);
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.8;
+    letter-spacing: 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+    .pc-heading-wrap {
+        padding: 60px 24px 44px;
+    }
+
+    .pc-heading-wrap .pc-main-title {
+        font-size: 2.25rem;
+        line-height: 1.25;
+    }
+
+    .pc-heading-wrap .pc-subtitle {
+        max-width: 600px;
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+   ========================================= */
+
 @media (max-width: 560px) {
-    .pc-title {
-        font-size: 1.6rem;
+    .pc-heading-wrap {
+        padding: 44px 20px 36px;
+    }
+
+    .pc-heading-wrap .section-tag {
+        margin-bottom: 16px;
+        padding: 8px 16px;
+        font-size: 0.7rem;
+        letter-spacing: 1.5px;
+    }
+
+    .pc-heading-wrap .pc-main-title {
+        margin: 12px auto 16px;
+        font-size: 1.8rem;
+        line-height: 1.3;
+        letter-spacing: -0.5px;
+    }
+
+    .pc-heading-wrap .pc-subtitle {
+        max-width: 100%;
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+}
+
+
+/* =========================================
+   EXTRA SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 400px) {
+    .pc-card-inner {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .pc-heading-wrap {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .pc-main-title {
+        font-size: 1.75rem;
+    }
+
+    .pc-top-row {
+        gap: 9px;
+    }
+
+    .pc-num {
+        font-size: 1.8rem;
+    }
+
+    .pc-tag {
+        font-size: 0.6rem;
+        padding: 5px 9px;
     }
 
     .pc-cta-row {
@@ -329,12 +723,43 @@
     }
 
     .pc-cta {
-        font-size: 0.72rem;
-        padding: 6px 11px;
+        padding: 8px 9px;
+        font-size: 0.7rem;
+    }
+}
+/* Tablet */
+@media (max-width: 900px) {
+    .pc-heading-wrap {
+        padding: 52px 24px 44px;
     }
 
+    .pc-main-title {
+        font-size: 2.25rem;
+    }
+
+    .pc-subtitle {
+        max-width: 600px;
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+}
+
+/* Mobile */
+@media (max-width: 560px) {
     .pc-heading-wrap {
-        padding-top: 56px;
-        padding-bottom: 36px;
+        padding: 44px 20px 36px;
+    }
+
+    .pc-main-title {
+        font-size: 1.8rem;
+        line-height: 1.3;
+        margin: 14px 0 16px;
+    }
+
+    .pc-subtitle {
+        max-width: 100%;
+        padding: 0;
+        font-size: 0.95rem;
+        line-height: 1.75;
     }
 }

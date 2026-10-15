@@ -1,47 +1,16 @@
 import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
-
 import "./Navbar.css";
 
-/* =========================================================
-   PRODUCT CATEGORIES
-========================================================= */
-
 const PRODUCTS = [
-  {
-    slug: "solar-inverter-battery",
-    label: "Solar Inverter & Battery",
-  },
-  {
-    slug: "solar-power-plant",
-    label: "Solar Power Plant",
-  },
-  {
-    slug: "solar-panels",
-    label: "Solar Panels",
-  },
-  {
-    slug: "solar-water-heater",
-    label: "Solar Water Heater",
-  },
-  {
-    slug: "solar-water-pumping",
-    label: "Solar Water Pumping",
-  },
-  {
-    slug: "solar-street-light",
-    label: "Solar Street Light",
-  },
-  {
-    slug: "solar-home-ups",
-    label: "Solar Home UPS",
-  },
-  
+  { slug: "solar-inverter-battery", label: "Solar Inverter & Battery" },
+  { slug: "solar-power-plant", label: "Solar Power Plant" },
+  { slug: "solar-panels", label: "Solar Panels" },
+  { slug: "solar-water-heater", label: "Solar Water Heater" },
+  { slug: "solar-water-pumping", label: "Solar Water Pumping" },
+  { slug: "solar-street-light", label: "Solar Street Light" },
+  { slug: "solar-home-ups", label: "Solar Home UPS" },
 ];
-
-/* =========================================================
-   LOCATIONS
-========================================================= */
 
 const LOCATIONS = [
   {
@@ -62,490 +31,389 @@ const LOCATIONS = [
   },
 ];
 
-/* =========================================================
-   NAVBAR
-========================================================= */
+function Chevron({ open = false }) {
+  return (
+    <svg
+      className={`nav-chevron ${open ? "is-open" : ""}`}
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M2 4l4 4 4-4"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
+  const [locationsOpen, setLocationsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(
-    () => window.scrollY > 50
+    () => window.scrollY > 20
   );
 
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const [locationDropdownOpen, setLocationDropdownOpen] =
-    useState(false);
-
-  const [mobileProdOpen, setMobileProdOpen] =
-    useState(false);
-
-  const [mobileLocationOpen, setMobileLocationOpen] =
-    useState(false);
-
-  /* =========================================================
-     SCROLL
-  ========================================================= */
-
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener("scroll", onScroll, {
+    window.addEventListener("scroll", handleScroll, {
       passive: true,
     });
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  /* =========================================================
-     CLOSE ALL MENUS
-  ========================================================= */
-
-  const closeAll = () => {
+  const closeMenu = () => {
     setMenuOpen(false);
-
-    setMobileProdOpen(false);
-
-    setMobileLocationOpen(false);
-
-    setDropdownOpen(false);
-
-    setLocationDropdownOpen(false);
+    setProductsOpen(false);
+    setLocationsOpen(false);
   };
 
-  return (
-    <nav
-      className={`navbar ${
-        scrolled ? "navbar--scrolled" : ""
-      }`}
-    >
-      <div className="container navbar-inner">
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    };
 
-        {/* =====================================================
-            LOGO
-        ===================================================== */}
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle("mobile-nav-open", menuOpen);
+
+    return () => {
+      document.body.classList.remove("mobile-nav-open");
+    };
+  }, [menuOpen]);
+
+  const navLinkClass = ({ isActive }) =>
+    `nav-link${isActive ? " active" : ""}`;
+
+  return (
+    <header
+      className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}
+    >
+      <div className="navbar-inner">
+
+        {/* LOGO */}
 
         <Link
           to="/"
-          className="logo"
-          onClick={closeAll}
+          className="navbar-logo"
+          onClick={closeMenu}
+          aria-label="Dynamic Power Systems Home"
         >
           <img
             src="/logo.png"
-            alt="Dynamic Power Systems Logo"
-            className="logo-img"
+            alt="Dynamic Power Systems"
+            className="navbar-logo-img"
           />
         </Link>
 
-        {/* =====================================================
-            DESKTOP NAV
-        ===================================================== */}
+        {/* DESKTOP NAVIGATION */}
 
-        <ul className="nav-links">
+        <nav
+          className="desktop-nav"
+          aria-label="Main navigation"
+        >
+          <ul className="nav-list">
 
-          {/* HOME */}
-          <li>
-            <NavLink to="/" end>
-              Home
-            </NavLink>
-          </li>
+            <li>
+              <NavLink to="/" end className={navLinkClass}>
+                Home
+              </NavLink>
+            </li>
 
-          {/* ABOUT */}
-          <li>
-            <NavLink to="/about/">
-              About Us
-            </NavLink>
-          </li>
+            <li>
+              <NavLink to="/about/" className={navLinkClass}>
+                About Us
+              </NavLink>
+            </li>
 
-          {/* SERVICES */}
-          <li>
-            <NavLink to="/services/">
-              Services
-            </NavLink>
-          </li>
+            <li>
+              <NavLink to="/services/" className={navLinkClass}>
+                Services
+              </NavLink>
+            </li>
 
-          {/* ===================================================
-              PRODUCTS DROPDOWN
-          =================================================== */}
+            {/* PRODUCTS */}
 
-          <li
-            className={`nav-dropdown${
-              dropdownOpen
-                ? " nav-dropdown--open"
-                : ""
-            }`}
-            onMouseEnter={() =>
-              setDropdownOpen(true)
-            }
-            onMouseLeave={() =>
-              setDropdownOpen(false)
-            }
-          >
-            <NavLink to="/products/">
-              Products
+            <li className="nav-dropdown">
+              <div className="nav-dropdown-heading">
+                <NavLink
+                  to="/products/"
+                  className={navLinkClass}
+                >
+                  Products
+                </NavLink>
 
-              <svg
-                className="nav-dropdown-chevron"
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                aria-hidden="true"
+                <button
+                  type="button"
+                  className="desktop-dropdown-toggle"
+                  aria-label="Toggle products submenu"
+                  aria-expanded={productsOpen}
+                  onClick={() => {
+                    setProductsOpen((value) => !value);
+                    setLocationsOpen(false);
+                  }}
+                >
+                  <Chevron open={productsOpen} />
+                </button>
+              </div>
+
+              <div
+                className={`dropdown-menu ${
+                  productsOpen ? "dropdown-visible" : ""
+                }`}
               >
-                <path
-                  d="M2 4l4 4 4-4"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </NavLink>
-
-            {/* PRODUCT CATEGORY MENU */}
-
-            <div
-              className="nav-dropdown-menu"
-              role="menu"
-            >
-              {PRODUCTS.map(
-                ({ slug, label }) => (
+                {PRODUCTS.map(({ slug, label }) => (
                   <Link
                     key={slug}
                     to={`/products/${slug}/`}
-                    className="nav-dropdown-item"
-                    role="menuitem"
-                    onClick={closeAll}
+                    className="dropdown-link"
+                    onClick={closeMenu}
                   >
                     {label}
                   </Link>
-                )
-              )}
-            </div>
-          </li>
+                ))}
+              </div>
+            </li>
 
-          {/* ===================================================
-              LOCATIONS DROPDOWN
-          =================================================== */}
+            {/* LOCATIONS */}
 
-          <li
-            className={`nav-dropdown${
-              locationDropdownOpen
-                ? " nav-dropdown--open"
-                : ""
-            }`}
-            onMouseEnter={() =>
-              setLocationDropdownOpen(true)
-            }
-            onMouseLeave={() =>
-              setLocationDropdownOpen(false)
-            }
-          >
-            <NavLink to="/solar-panel-installation-tambaram/">
-              Locations
+            <li className="nav-dropdown">
+              <div className="nav-dropdown-heading">
+                <NavLink
+                  to="/solar-panel-installation-tambaram/"
+                  className={navLinkClass}
+                >
+                  Locations
+                </NavLink>
 
-              <svg
-                className="nav-dropdown-chevron"
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                aria-hidden="true"
+                <button
+                  type="button"
+                  className="desktop-dropdown-toggle"
+                  aria-label="Toggle locations submenu"
+                  aria-expanded={locationsOpen}
+                  onClick={() => {
+                    setLocationsOpen((value) => !value);
+                    setProductsOpen(false);
+                  }}
+                >
+                  <Chevron open={locationsOpen} />
+                </button>
+              </div>
+
+              <div
+                className={`dropdown-menu ${
+                  locationsOpen ? "dropdown-visible" : ""
+                }`}
               >
-                <path
-                  d="M2 4l4 4 4-4"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </NavLink>
-
-            <div
-              className="nav-dropdown-menu"
-              role="menu"
-            >
-              {LOCATIONS.map(
-                ({ path, label }) => (
+                {LOCATIONS.map(({ path, label }) => (
                   <Link
                     key={path}
                     to={path}
-                    className="nav-dropdown-item"
-                    role="menuitem"
-                    onClick={closeAll}
+                    className="dropdown-link"
+                    onClick={closeMenu}
                   >
                     {label}
                   </Link>
-                )
-              )}
-            </div>
-          </li>
+                ))}
+              </div>
+            </li>
 
-          {/* SOLAR CALCULATOR */}
-          <li>
-            <NavLink to="/solar-calculator/">
-              Solar Calculator
-            </NavLink>
-          </li>
+            <li>
+              <NavLink
+                to="/solar-calculator/"
+                className={navLinkClass}
+              >
+                Solar Calculator
+              </NavLink>
+            </li>
 
-          {/* BLOG */}
-          <li>
-            <NavLink to="/blog/">
-              Blog
-            </NavLink>
-          </li>
+            <li>
+              <NavLink to="/blog/" className={navLinkClass}>
+                Blog
+              </NavLink>
+            </li>
 
-          {/* CONTACT */}
-          <li>
-            <NavLink
-              className="nav-cta"
-              to="/contact/"
-            >
-              Contact
-            </NavLink>
-          </li>
-        </ul>
+          </ul>
+        </nav>
 
-        {/* =====================================================
-            HAMBURGER
-        ===================================================== */}
+        {/* DESKTOP QUOTE BUTTON */}
+
+        <Link
+          to="/contact/"
+          className="navbar-quote"
+          onClick={closeMenu}
+        >
+          Get a Quote
+        </Link>
+
+        {/* MOBILE HAMBURGER */}
 
         <button
+          type="button"
           className={`hamburger ${
-            menuOpen
-              ? "hamburger--open"
-              : ""
+            menuOpen ? "hamburger-open" : ""
           }`}
-          onClick={() =>
-            setMenuOpen((open) => !open)
-          }
-          aria-label="Toggle menu"
+          onClick={() => setMenuOpen((value) => !value)}
+          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
           aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
         >
           <span />
           <span />
           <span />
         </button>
+
       </div>
 
-      {/* =======================================================
-          MOBILE MENU
-      ======================================================= */}
+      {/* MOBILE NAVIGATION */}
 
-      <div
+      <nav
+        id="mobile-navigation"
         className={`mobile-menu ${
-          menuOpen
-            ? "mobile-menu--open"
-            : ""
+          menuOpen ? "mobile-menu-open" : ""
         }`}
+        aria-label="Mobile navigation"
+        aria-hidden={!menuOpen}
       >
-        <ul>
+        <ul className="mobile-nav-list">
 
-          {/* HOME */}
           <li>
-            <NavLink
-              to="/"
-              end
-              onClick={closeAll}
-            >
+            <NavLink to="/" end onClick={closeMenu}>
               Home
             </NavLink>
           </li>
 
-          {/* ABOUT */}
           <li>
-            <NavLink
-              to="/about/"
-              onClick={closeAll}
-            >
+            <NavLink to="/about/" onClick={closeMenu}>
               About Us
             </NavLink>
           </li>
 
-          {/* SERVICES */}
           <li>
-            <NavLink
-              to="/services/"
-              onClick={closeAll}
-            >
+            <NavLink to="/services/" onClick={closeMenu}>
               Services
             </NavLink>
           </li>
 
-          {/* =================================================
-              MOBILE PRODUCTS
-          ================================================= */}
+          {/* MOBILE PRODUCTS */}
 
-          <li className="mobile-products-item">
-
+          <li className="mobile-dropdown">
             <button
-              className="mobile-products-toggle"
-              onClick={() =>
-                setMobileProdOpen(
-                  (open) => !open
-                )
-              }
-              aria-expanded={
-                mobileProdOpen
-              }
+              type="button"
+              onClick={() => {
+                setProductsOpen((value) => !value);
+                setLocationsOpen(false);
+              }}
+              aria-expanded={productsOpen}
             >
               <span>Products</span>
-
-              <svg
-                className={`mobile-chevron${
-                  mobileProdOpen
-                    ? " rotated"
-                    : ""
-                }`}
-                width="14"
-                height="14"
-                viewBox="0 0 12 12"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M2 4l4 4 4-4"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <Chevron open={productsOpen} />
             </button>
 
-            {mobileProdOpen && (
-              <ul className="mobile-sub-menu">
-
-                {/* ALL PRODUCTS */}
+            {productsOpen && (
+              <ul className="mobile-submenu">
                 <li>
-                  <NavLink
-                    to="/products/"
-                    onClick={closeAll}
-                  >
+                  <NavLink to="/products/" onClick={closeMenu}>
                     All Products
                   </NavLink>
                 </li>
 
-                {/* PRODUCT CATEGORIES */}
-
-                {PRODUCTS.map(
-                  ({ slug, label }) => (
-                    <li key={slug}>
-                      <Link
-                        to={`/products/${slug}/`}
-                        className="mobile-sub-item"
-                        onClick={closeAll}
-                      >
-                        {label}
-                      </Link>
-                    </li>
-                  )
-                )}
+                {PRODUCTS.map(({ slug, label }) => (
+                  <li key={slug}>
+                    <Link
+                      to={`/products/${slug}/`}
+                      onClick={closeMenu}
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             )}
           </li>
 
-          {/* =================================================
-              MOBILE LOCATIONS
-          ================================================= */}
+          {/* MOBILE LOCATIONS */}
 
-          <li className="mobile-products-item">
-
+          <li className="mobile-dropdown">
             <button
-              className="mobile-products-toggle"
-              onClick={() =>
-                setMobileLocationOpen(
-                  (open) => !open
-                )
-              }
-              aria-expanded={
-                mobileLocationOpen
-              }
+              type="button"
+              onClick={() => {
+                setLocationsOpen((value) => !value);
+                setProductsOpen(false);
+              }}
+              aria-expanded={locationsOpen}
             >
               <span>Locations</span>
-
-              <svg
-                className={`mobile-chevron${
-                  mobileLocationOpen
-                    ? " rotated"
-                    : ""
-                }`}
-                width="14"
-                height="14"
-                viewBox="0 0 12 12"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M2 4l4 4 4-4"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <Chevron open={locationsOpen} />
             </button>
 
-            {mobileLocationOpen && (
-              <ul className="mobile-sub-menu">
-
-                {LOCATIONS.map(
-                  ({ path, label }) => (
-                    <li key={path}>
-                      <Link
-                        to={path}
-                        className="mobile-sub-item"
-                        onClick={closeAll}
-                      >
-                        {label}
-                      </Link>
-                    </li>
-                  )
-                )}
-
+            {locationsOpen && (
+              <ul className="mobile-submenu">
+                {LOCATIONS.map(({ path, label }) => (
+                  <li key={path}>
+                    <Link to={path} onClick={closeMenu}>
+                      {label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             )}
           </li>
 
-          {/* SOLAR CALCULATOR */}
           <li>
             <NavLink
               to="/solar-calculator/"
-              onClick={closeAll}
+              onClick={closeMenu}
             >
               Solar Calculator
             </NavLink>
           </li>
 
-          {/* BLOG */}
           <li>
-            <NavLink
-              to="/blog/"
-              onClick={closeAll}
-            >
+            <NavLink to="/blog/" onClick={closeMenu}>
               Blog
             </NavLink>
           </li>
 
-          {/* CONTACT */}
           <li>
-            <NavLink
-              to="/contact/"
-              onClick={closeAll}
-            >
+            <NavLink to="/contact/" onClick={closeMenu}>
               Contact
             </NavLink>
           </li>
 
+          <li className="mobile-quote-item">
+            <Link
+              to="/contact/"
+              className="mobile-quote"
+              onClick={closeMenu}
+            >
+              Get a Quote
+            </Link>
+          </li>
+
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }
 

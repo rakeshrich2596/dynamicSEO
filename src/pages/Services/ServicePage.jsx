@@ -259,7 +259,7 @@ function FAQ({ items }) {
           </summary>
 
           <div className="px-6 pb-6 sm:px-7">
-            <p className="max-w-4xl text-[15px] leading-7 text-slate-600">
+            <p className="max-w-4xl text-base leading-7 text-slate-600">
               {answer}
             </p>
           </div>
@@ -349,7 +349,7 @@ export function ServiceRoute({ path }) {
 
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/65 to-slate-950/30" />
 
-          <div className="relative z-10 mx-auto w-full max-w-7xl px-5 py-20 sm:px-8 lg:px-12">
+          <div className="relative z-10 mx-auto w-full max-w-7xl px-5 py-40 sm:px-8 lg:px-12">
 
             <div className="max-w-3xl">
 
@@ -357,7 +357,7 @@ export function ServiceRoute({ path }) {
 
               <nav
                 aria-label="Breadcrumb"
-                className="mb-8 flex flex-wrap items-center gap-2 text-sm text-slate-300"
+                className="mb-8 flex flex-wrap items-center gap-2 text-base text-slate-300"
               >
                 <Link
                   to="/"
@@ -387,20 +387,20 @@ export function ServiceRoute({ path }) {
               <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-orange-300/30 bg-orange-500/10 px-4 py-2 backdrop-blur-sm">
                 <span className="h-2 w-2 rounded-full bg-orange-400" />
 
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-200">
+                <span className="text-sm font-bold uppercase tracking-[0.2em] text-orange-200">
                   Dynamic Solar Services
                 </span>
               </div>
 
               {/* H1 */}
 
-              <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
+              <h1 className="text-5xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-6xl lg:text-7xl">
                 {data.h1}
               </h1>
 
               {/* Intro */}
 
-              <p className="mt-6 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg">
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200 sm:text-lg">
                 {data.intro}
               </p>
 
@@ -410,14 +410,14 @@ export function ServiceRoute({ path }) {
 
                 <a
                   href="tel:+919841582874"
-                  className="inline-flex items-center justify-center rounded-lg bg-orange-500 px-6 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-orange-600"
+                  className="inline-flex no-underline items-center justify-center rounded-lg bg-orange-500 px-6 py-3 text-base font-bold text-white shadow-lg transition hover:bg-orange-600"
                 >
                   Call 9841582874
                 </a>
 
                 <Link
                   to="/contact/"
-                  className="inline-flex items-center justify-center rounded-lg border border-white/30 bg-white/10 px-6 py-3 text-sm font-bold text-white backdrop-blur-sm transition hover:bg-white/20"
+                  className="inline-flex no-underline items-center justify-center rounded-lg border border-white/30 bg-white/10 px-6 py-3 text-base font-bold text-white backdrop-blur-sm transition hover:bg-white/20"
                 >
                   Request Consultation
                 </Link>
@@ -437,21 +437,21 @@ export function ServiceRoute({ path }) {
         ==================================================== */}
 
         <section className="bg-white">
-          <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 lg:py-16">
+          <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 lg:py-20">
 
             {/* Section heading */}
 
             <div className="mx-auto max-w-3xl text-center">
 
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-orange-600">
+              <p className="text-base font-bold uppercase tracking-[0.18em] text-orange-600">
                 Service Overview
               </p>
 
-              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              <h2 className="mt-3 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
                 {data.h1}
               </h2>
 
-              <p className="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
+              <p className="mt-5 text-lg leading-8 text-slate-600 sm:text-lg">
                 {data.intro}
               </p>
 
@@ -467,17 +467,17 @@ export function ServiceRoute({ path }) {
 
                 <div className="flex items-start gap-4">
 
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-orange-500 text-sm font-extrabold text-white">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-orange-500 text-base font-extrabold text-white">
                     01
                   </div>
 
                   <div>
 
-                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-orange-600">
+                    <p className="text-sm font-bold uppercase tracking-[0.16em] text-orange-600">
                       Suitable For
                     </p>
 
-                    <h3 className="mt-2 text-2xl font-extrabold text-slate-900">
+                    <h3 className="mt-2 text-3xl font-extrabold text-slate-900">
                       Who Is This For?
                     </h3>
 
@@ -485,7 +485,7 @@ export function ServiceRoute({ path }) {
 
                 </div>
 
-                <p className="mt-5 pl-[60px] text-[15px] leading-7 text-slate-600">
+                <p className="mt-5 pl-[60px] text-base leading-7 text-slate-600">
                   This service can be considered by customers whose property,
                   electricity, water or lighting requirements and site
                   conditions are suitable for the solution.
@@ -499,17 +499,17 @@ export function ServiceRoute({ path }) {
 
                 <div className="flex items-start gap-4">
 
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-900 text-sm font-extrabold text-white">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-900 text-base font-extrabold text-white">
                     02
                   </div>
 
                   <div>
 
-                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-orange-600">
+                    <p className="text-sm font-bold uppercase tracking-[0.16em] text-orange-600">
                       Site & Requirement
                     </p>
 
-                    <h3 className="mt-2 text-2xl font-extrabold text-slate-900">
+                    <h3 className="mt-2 text-3xl font-extrabold text-slate-900">
                       Assessment
                     </h3>
 
@@ -517,7 +517,7 @@ export function ServiceRoute({ path }) {
 
                 </div>
 
-                <p className="mt-5 pl-[60px] text-[15px] leading-7 text-slate-600">
+                <p className="mt-5 pl-[60px] text-base leading-7 text-slate-600">
                   The right solution depends on the site, required capacity,
                   equipment configuration, usage pattern and project
                   objectives. Dynamic Solar should confirm the final
@@ -538,7 +538,7 @@ export function ServiceRoute({ path }) {
                   Not sure which solution is suitable?
                 </p>
 
-                <p className="mt-1 text-sm text-slate-400">
+                <p className="mt-1 text-base text-slate-400">
                   Share your site information and requirements with our team.
                 </p>
 
@@ -546,7 +546,7 @@ export function ServiceRoute({ path }) {
 
               <Link
                 to="/contact/"
-                className="inline-flex shrink-0 items-center justify-center rounded-lg bg-orange-500 px-5 py-3 text-sm font-bold text-white transition hover:bg-orange-600"
+                className="inline-flex no-underline shrink-0 items-center justify-center rounded-lg bg-orange-500 px-5 py-3 text-base font-bold text-white transition hover:bg-orange-600"
               >
                 Discuss Your Requirement →
               </Link>
@@ -561,23 +561,23 @@ export function ServiceRoute({ path }) {
         ==================================================== */}
 
         <section className="bg-slate-50">
-          <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-12 lg:py-16">
+          <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12 lg:py-20">
 
             <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
 
               <div>
 
-                <p className="text-sm font-bold uppercase tracking-[0.18em] text-orange-600">
+                <p className="text-base font-bold uppercase tracking-[0.18em] text-orange-600">
                   Our Process
                 </p>
 
-                <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+                <h2 className="mt-2 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
                   How We Work
                 </h2>
 
               </div>
 
-              <p className="max-w-lg text-sm leading-7 text-slate-600">
+              <p className="max-w-lg text-base leading-7 text-slate-600">
                 A structured process from initial requirement discussion
                 through installation or commissioning as applicable.
               </p>
@@ -588,7 +588,7 @@ export function ServiceRoute({ path }) {
 
               <div className="absolute left-5 top-5 hidden h-px w-[calc(100%-40px)] bg-slate-200 lg:block" />
 
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
+              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
 
                 {PROCESS.map((step, index) => (
                   <div
@@ -596,11 +596,11 @@ export function ServiceRoute({ path }) {
                     className="relative"
                   >
 
-                    <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 text-sm font-extrabold text-white ring-8 ring-slate-50">
+                    <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 text-base font-extrabold text-white ring-8 ring-slate-50">
                       {index + 1}
                     </div>
 
-                    <h3 className="mt-5 text-sm font-bold leading-6 text-slate-900">
+                    <h3 className="mt-5 text-base font-bold leading-6 text-slate-900">
                       {step}
                     </h3>
 
@@ -625,11 +625,11 @@ export function ServiceRoute({ path }) {
 
               <div>
 
-                <h2 className="text-2xl font-extrabold text-white">
+                <h2 className="text-3xl font-extrabold text-white">
                   Need a Site-Specific Assessment?
                 </h2>
 
-                <p className="mt-1 text-sm leading-6 text-orange-50">
+                <p className="mt-1 text-base leading-6 text-orange-50">
                   Contact Dynamic Solar to discuss your requirement.
                 </p>
 
@@ -639,14 +639,14 @@ export function ServiceRoute({ path }) {
 
                 <a
                   href="tel:+919841582874"
-                  className="rounded-lg bg-white px-5 py-3 text-sm font-bold text-slate-900 transition hover:bg-slate-100"
+                  className="rounded-lg no-underline bg-white px-5 py-3 text-base font-bold text-slate-900 transition hover:bg-slate-100"
                 >
                   Call 9841582874
                 </a>
 
                 <Link
                   to="/contact/"
-                  className="rounded-lg border border-white/50 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+                  className="rounded-lg border border-white/50 px-5 py-3 text-base font-bold text-white transition hover:bg-white/10"
                 >
                   Contact Us
                 </Link>
@@ -664,15 +664,15 @@ export function ServiceRoute({ path }) {
 
         {path === "/services/solar-panel-installation/" && (
           <section className="bg-white">
-            <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-12">
+            <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12">
 
               <div className="mb-7">
 
-                <p className="text-sm font-bold uppercase tracking-[0.18em] text-orange-600">
+                <p className="text-base font-bold uppercase tracking-[0.18em] text-orange-600">
                   Service Areas
                 </p>
 
-                <h2 className="mt-2 text-3xl font-extrabold text-slate-900">
+                <h2 className="mt-2 text-4xl font-extrabold text-slate-900">
                   Solar Panel Installation Locations
                 </h2>
 
@@ -684,10 +684,10 @@ export function ServiceRoute({ path }) {
                   <Link
                     key={location.path}
                     to={location.path}
-                    className="group flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-5 py-4 transition hover:border-orange-300 hover:bg-orange-50"
+                    className="group flex items-center no-underline justify-between rounded-xl border border-slate-200 bg-slate-50 px-5 py-4 transition hover:border-orange-300 hover:bg-orange-50"
                   >
 
-                    <span className="font-semibold text-slate-900">
+                    <span className="font-semibold no-underline text-slate-900">
                       {location.title}
                     </span>
 
@@ -709,19 +709,19 @@ export function ServiceRoute({ path }) {
         ==================================================== */}
 
         <section className="border-t border-slate-200 bg-slate-50">
-          <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 lg:py-16">
+          <div className="mx-auto max-w-5xl px-5 py-16 sm:px-8 lg:py-20">
 
             <div className="mb-8 text-center">
 
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-orange-600">
+              <p className="text-base font-bold uppercase tracking-[0.18em] text-orange-600">
                 FAQ
               </p>
 
-              <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              <h2 className="mt-2 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
                 Frequently Asked Questions
               </h2>
 
-              <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-slate-600">
+              <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-slate-600">
                 Answers to common questions about this service and the
                 assessment process.
               </p>
@@ -738,17 +738,17 @@ export function ServiceRoute({ path }) {
         ==================================================== */}
 
         <section className="bg-white">
-          <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-12">
+          <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12">
 
             <div className="flex items-end justify-between gap-5">
 
               <div>
 
-                <p className="text-sm font-bold uppercase tracking-[0.18em] text-orange-600">
+                <p className="text-base font-bold uppercase tracking-[0.18em] text-orange-600">
                   Explore More
                 </p>
 
-                <h2 className="mt-2 text-3xl font-extrabold text-slate-900">
+                <h2 className="mt-2 text-4xl font-extrabold text-slate-900">
                   Other Solar Services
                 </h2>
 
@@ -756,31 +756,31 @@ export function ServiceRoute({ path }) {
 
               <Link
                 to="/services/"
-                className="hidden text-sm font-bold text-orange-600 transition hover:text-orange-700 sm:block"
+                className="hidden text-base  no-underline font-bold text-orange-600 transition hover:text-orange-700 sm:block"
               >
                 View All Services →
               </Link>
 
             </div>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-8 grid gap-4 no-underline sm:grid-cols-2 lg:grid-cols-4">
 
               {relatedServices.slice(0, 4).map((service) => (
                 <Link
                   key={service.path}
                   to={service.path}
-                  className="group rounded-xl border border-slate-200 p-5 transition hover:-translate-y-1 hover:border-orange-300 hover:shadow-md"
+                  className="group rounded-xl no-underline border border-slate-200 p-5 transition hover:-translate-y-1 hover:border-orange-300 hover:shadow-md"
                 >
 
                   <h3 className="font-bold text-slate-900">
                     {service.title}
                   </h3>
 
-                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                  <p className="mt-2 text-base leading-6 text-slate-600">
                     {service.description}
                   </p>
 
-                  <span className="mt-4 inline-block text-sm font-bold text-orange-600">
+                  <span className="mt-4 inline-block text-base font-bold text-orange-600">
                     Explore →
                   </span>
 
@@ -803,7 +803,7 @@ export function ServiceRoute({ path }) {
 
               <div className="max-w-2xl">
 
-                <p className="text-sm font-bold uppercase tracking-[0.18em] text-orange-400">
+                <p className="text-base font-bold uppercase tracking-[0.18em] text-orange-400">
                   Get Started
                 </p>
 
@@ -811,7 +811,7 @@ export function ServiceRoute({ path }) {
                   Discuss Your Requirement with Dynamic Solar
                 </h2>
 
-                <p className="mt-3 text-sm leading-7 text-slate-400">
+                <p className="mt-3 text-base leading-7 text-slate-400">
                   Share your site information and requirements so the
                   appropriate configuration can be assessed.
                 </p>
@@ -822,21 +822,21 @@ export function ServiceRoute({ path }) {
 
                 <a
                   href="tel:+919841582874"
-                  className="rounded-lg bg-orange-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-orange-600"
+                  className="rounded-lg bg-orange-500 px-6 py-3 text-base font-bold text-white transition hover:bg-orange-600"
                 >
                   Call Now
                 </a>
 
                 <a
                   href="mailto:info@dynamicsolar.in"
-                  className="rounded-lg border border-slate-700 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-900"
+                  className="rounded-lg border border-slate-700 px-6 py-3 text-base font-bold text-white transition hover:bg-slate-900"
                 >
                   Email Us
                 </a>
 
                 <Link
                   to="/contact/"
-                  className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-slate-900 transition hover:bg-slate-100"
+                  className="rounded-lg bg-white px-6 py-3 text-base font-bold text-slate-900 transition hover:bg-slate-100"
                 >
                   Contact Us
                 </Link>
