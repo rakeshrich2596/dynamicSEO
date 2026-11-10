@@ -389,6 +389,16 @@
   transition: transform 0.55s ease;
 }
 
+/* These two designed banner images are 1983x793, not 16:9.
+   Match their native ratio so the embedded logo and text stay visible. */
+.blog-card-full-img.blog-card-full-img--wide {
+  aspect-ratio: 1983 / 793;
+}
+
+.blog-card-full-img--wide .blog-card-full-photo {
+  object-fit: cover;
+}
+
 .blog-card-link:hover .blog-card-full-photo {
   transform: scale(1.045);
 }

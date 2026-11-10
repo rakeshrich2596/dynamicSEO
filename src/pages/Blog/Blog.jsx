@@ -240,7 +240,14 @@ function Blog() {
                         "--card-accent": post.accent || "#f47b20",
                       }}
                     >
-                      <div className="blog-card-full-img">
+                      <div
+                        className={`blog-card-full-img ${
+                          post.image === "/solar_panel.png" ||
+                          post.image === "/solar_installation.png"
+                            ? "blog-card-full-img--wide"
+                            : ""
+                        }`}
+                      >
                         <img
                           src={post.image}
                           alt={post.imageAlt || post.title}
