@@ -27,14 +27,14 @@ export const solarPanelInstallationTambaram = {
   accent: "#FF6B1A",
 
   // Blog listing card image
-  image: "/solar_installation.png",
+  image: "/blogs/solar_installation.png",
   imageAlt: "Solar panel installation on a residential rooftop in Tambaram",
 
   // Blog article hero image
-  heroImage: "/solar_installation.png",
+  heroImage: "/blogs/solar_installation.png",
 
   // Main article image
-  articleImage: "https://static.vecteezy.com/system/resources/thumbnails/047/508/371/small_2x/close-up-of-solar-panels-on-roof-with-beautiful-blue-sky-and-sun-light-in-sunset-time-green-energy-concept-realistic-high-resolutiongraphy-free-photo.jpg",
+  articleImage: "/blogs/solar_installation.png",
   articleImageAlt: "Rooftop solar panels generating electricity for a home",
 
   content: [

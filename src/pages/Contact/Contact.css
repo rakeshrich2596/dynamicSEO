@@ -4,7 +4,7 @@
 
 .contact-hero {
   background:
-    linear-gradient(115deg, rgba(8, 22, 39, 0.82), rgba(12, 32, 48, 0.58)),
+    linear-gradient(115deg, rgba(8, 22, 39, 0.32), rgba(12, 32, 48, 0.38)),
     url("../../assets/images/hero/hero1.jpg");
   background-size: cover;
   background-position: center;

@@ -12,7 +12,6 @@
   height: auto !important;
   padding: clamp(100px, 10vw, 145px) 0 clamp(105px, 11vw, 150px);
   overflow: hidden;
-  background: #0b1726;
   color: #fff;
 }
 
@@ -39,7 +38,7 @@
 .blog-hero-overlay {
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(7, 17, 31, 0.96) 0%, rgba(7, 17, 31, 0.82) 48%, rgba(7, 17, 31, 0.42) 100%),
+    linear-gradient(90deg, rgba(7, 17, 31, 0.40) 0%, rgba(7, 17, 31, 0.20) 48%, rgba(7, 17, 31, 0.42) 100%),
     linear-gradient(0deg, rgba(7, 17, 31, 0.45), rgba(7, 17, 31, 0.12));
 }
 
@@ -375,38 +374,27 @@
 
 .blog-card-full-img {
   position: relative;
-  overflow: hidden;
+  width: 100%;
   aspect-ratio: 16 / 9;
-  background: var(--card-bg, #edf2f7);
+  overflow: hidden;
+  background: #ffffff;
 }
 
 .blog-card-full-photo {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   object-position: center;
-  transition: transform 0.55s ease;
+  transition: none;
 }
 
-/* These two designed banner images are 1983x793, not 16:9.
-   Match their native ratio so the embedded logo and text stay visible. */
-.blog-card-full-img.blog-card-full-img--wide {
-  aspect-ratio: 1983 / 793;
-}
-
-.blog-card-full-img--wide .blog-card-full-photo {
-  object-fit: cover;
-}
-
-.blog-card-link:hover .blog-card-full-photo {
-  transform: scale(1.045);
-}
+/* Do not zoom thumbnail images on hover: it can cut off text near the edges. */
 
 .blog-card-full-tag {
   position: absolute;
   top: 16px;
-  left: 16px;
+  right: 16px;
   max-width: calc(100% - 32px);
   overflow: hidden;
   padding: 8px 12px;
@@ -879,10 +867,6 @@
     grid-template-columns: minmax(0, 1fr);
     gap: 20px;
     margin-bottom: 54px;
-  }
-
-  .blog-card-full-img {
-    aspect-ratio: 16 / 9;
   }
 
   .blog-card-full-body {

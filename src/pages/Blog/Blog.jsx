@@ -29,7 +29,7 @@ function AnimSection({ children, className = "" }) {
     if (!element) return;
 
     const animatedElements = element.querySelectorAll(
-      ".fade-in-up, .fade-in-left, .fade-in-right, .scale-up"
+      ".fade-in-up, .fade-in-left, .fade-in-right, .scale-up",
     );
 
     if (!("IntersectionObserver" in window)) {
@@ -43,13 +43,13 @@ function AnimSection({ children, className = "" }) {
           if (entry.isIntersecting) {
             entry.target
               .querySelectorAll(
-                ".fade-in-up, .fade-in-left, .fade-in-right, .scale-up"
+                ".fade-in-up, .fade-in-left, .fade-in-right, .scale-up",
               )
               .forEach((item) => item.classList.add("visible"));
           }
         });
       },
-      { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -30px 0px" },
     );
 
     observer.observe(element);
@@ -121,9 +121,7 @@ function Blog() {
 
       <header
         ref={heroRef}
-        className={`page-hero blog-hero ${
-          heroInView ? "animate-typing" : ""
-        }`}
+        className={`page-hero blog-hero ${heroInView ? "animate-typing" : ""}`}
       >
         <div className="blog-hero-bg" aria-hidden="true">
           <img
@@ -240,14 +238,7 @@ function Blog() {
                         "--card-accent": post.accent || "#f47b20",
                       }}
                     >
-                      <div
-                        className={`blog-card-full-img ${
-                          post.image === "/solar_panel.png" ||
-                          post.image === "/solar_installation.png"
-                            ? "blog-card-full-img--wide"
-                            : ""
-                        }`}
-                      >
+                      <div className="blog-card-full-img">
                         <img
                           src={post.image}
                           alt={post.imageAlt || post.title}
@@ -255,7 +246,7 @@ function Blog() {
                           loading="lazy"
                           decoding="async"
                           width="640"
-                          height="400"
+                          height="360"
                         />
                         <span className="blog-card-full-tag">
                           {post.category}
@@ -288,7 +279,11 @@ function Blog() {
               </span>
               <h2>No articles found</h2>
               <p>Try another keyword or choose a different category.</p>
-              <button type="button" className="blog-reset-primary" onClick={resetFilters}>
+              <button
+                type="button"
+                className="blog-reset-primary"
+                onClick={resetFilters}
+              >
                 Reset filters
               </button>
             </div>

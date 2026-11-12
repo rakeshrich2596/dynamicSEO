@@ -20,9 +20,7 @@ function getAbsoluteUrl(imagePath) {
     return imagePath;
   }
 
-  return `${SITE_URL}${
-    imagePath.startsWith("/") ? "" : "/"
-  }${imagePath}`;
+  return `${SITE_URL}${imagePath.startsWith("/") ? "" : "/"}${imagePath}`;
 }
 
 function formatArticleContent(content = "") {
@@ -41,10 +39,7 @@ function ArticleLinkButton({ link }) {
 
   return (
     <div className="blogpost-content-action">
-      <Link
-        to={link.url}
-        className="blogpost-action-btn"
-      >
+      <Link to={link.url} className="blogpost-action-btn">
         {link.text}
         <span aria-hidden="true"> →</span>
       </Link>
@@ -52,29 +47,35 @@ function ArticleLinkButton({ link }) {
   );
 }
 
-function ArticleContentBlock({
-  block,
-  index,
-  post,
-  articleImage,
-}) {
-  // Support existing blogs that use string paragraphs.
+function FAQBlock({ items = [], postSlug }) {
+  if (!items.length) return null;
+
+  return (
+    <section
+      className="blogpost-faq"
+      aria-labelledby={`blogpost-faq-${postSlug}`}
+    >
+      <h2 id={`blogpost-faq-${postSlug}`}>
+        Frequently Asked Questions
+      </h2>
+
+      {items.map((faq, index) => (
+        <div
+          className="blogpost-faq-item"
+          key={`${postSlug}-faq-${index}`}
+        >
+          <h3>{faq.question}</h3>
+          <p>{faq.answer}</p>
+        </div>
+      ))}
+    </section>
+  );
+}
+
+function ArticleContentBlock({ block, index, post }) {
   if (typeof block === "string") {
     return (
       <>
-        {index === 3 && articleImage && (
-          <figure className="blogpost-inline-image">
-            <img
-              src={articleImage}
-              alt={
-                post.articleImageAlt ||
-                `${post.title} - solar energy`
-              }
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-        )}
 
         <p
           className="blogpost-paragraph"
@@ -86,16 +87,10 @@ function ArticleContentBlock({
     );
   }
 
-  if (!block || typeof block !== "object") {
-    return null;
-  }
+  if (!block || typeof block !== "object") return null;
 
   if (block.type === "heading") {
-    return (
-      <h2 className="blogpost-section-heading">
-        {block.text}
-      </h2>
-    );
+    return <h2 className="blogpost-section-heading">{block.text}</h2>;
   }
 
   if (block.type === "list") {
@@ -115,22 +110,13 @@ function ArticleContentBlock({
     );
   }
 
+  if (block.type === "faq") {
+    return <FAQBlock items={block.items || []} postSlug={`${post.slug}-${index}`} />;
+  }
+
   if (block.type === "paragraph") {
     return (
       <>
-        {index === 3 && articleImage && (
-          <figure className="blogpost-inline-image">
-            <img
-              src={articleImage}
-              alt={
-                post.articleImageAlt ||
-                `${post.title} - solar energy`
-              }
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-        )}
 
         <p
           className="blogpost-paragraph"
@@ -139,9 +125,7 @@ function ArticleContentBlock({
           }}
         />
 
-        {block.link && (
-          <ArticleLinkButton link={block.link} />
-        )}
+        {block.link && <ArticleLinkButton link={block.link} />}
       </>
     );
   }
@@ -152,9 +136,7 @@ function ArticleContentBlock({
 function BlogPost() {
   const { slug } = useParams();
 
-  const post = allPosts.find(
-    (item) => item.slug === slug
-  );
+  const post = allPosts.find((item) => item.slug === slug);
 
   if (!post) {
     return (
@@ -168,22 +150,13 @@ function BlogPost() {
           noIndex={true}
         />
 
-        <section
-          className="blogpost-body"
-          style={{ paddingTop: "140px" }}
-        >
+        <section className="blogpost-body blogpost-not-found">
           <div className="container">
             <h1>Article Not Found</h1>
-
             <p>
-              The article you're looking for doesn't exist
-              or may have been moved.
+              The article you're looking for doesn't exist or may have been moved.
             </p>
-
-            <Link
-              to="/blog/"
-              className="blogpost-back-btn"
-            >
+            <Link to="/blog/" className="blogpost-back-btn">
               ← Back to Blog
             </Link>
           </div>
@@ -195,76 +168,51 @@ function BlogPost() {
   }
 
   const path = `/blog/${post.slug}/`;
+  const articleTitle = post.metaTitle || `${post.title} | Dynamic Solar`;
+  const articleDescription = post.metaDescription || post.excerpt || post.title;
 
-  const articleTitle =
-    post.metaTitle || `${post.title} | Dynamic Solar`;
-
-  const articleDescription =
-    post.metaDescription || post.excerpt || post.title;
-
+  // Use the same image shown on the blog listing card as the article hero.
   const heroImage = post.heroImage || post.image;
-
   const absoluteHeroImage = getAbsoluteUrl(heroImage);
-
-  const articleImage = getAbsoluteUrl(post.articleImage);
 
   const publishedDate = post.datePublished || undefined;
   const modifiedDate = post.dateModified || publishedDate;
 
-  // Article SEO structured data.
+  const content = Array.isArray(post.content) ? post.content : [];
+  const contentFaqs = content.flatMap((block) =>
+    block?.type === "faq" && Array.isArray(block.items) ? block.items : []
+  );
+  const faqs =
+    Array.isArray(post.faqs) && post.faqs.length
+      ? post.faqs
+      : contentFaqs;
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: articleDescription,
     url: `${SITE_URL}${path}`,
-
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${SITE_URL}${path}`,
     },
-
-    ...(absoluteHeroImage && {
-      image: [absoluteHeroImage],
-    }),
-
-    ...(publishedDate && {
-      datePublished: publishedDate,
-    }),
-
-    ...(modifiedDate && {
-      dateModified: modifiedDate,
-    }),
-
+    ...(absoluteHeroImage && { image: [absoluteHeroImage] }),
+    ...(publishedDate && { datePublished: publishedDate }),
+    ...(modifiedDate && { dateModified: modifiedDate }),
     author: {
       "@type": "Organization",
       name: "Dynamic Solar",
       url: SITE_URL,
     },
-
     publisher: {
       "@type": "Organization",
       name: "Dynamic Solar",
       url: SITE_URL,
     },
-
-    ...(post.category && {
-      articleSection: post.category,
-    }),
-
+    ...(post.category && { articleSection: post.category }),
     inLanguage: "en-IN",
   };
-
-  const faqs = Array.isArray(post.faqs)
-    ? post.faqs.filter(
-        (faq) =>
-          faq &&
-          typeof faq.question === "string" &&
-          typeof faq.answer === "string" &&
-          faq.question.trim() &&
-          faq.answer.trim()
-      )
-    : [];
 
   const faqSchema =
     faqs.length > 0
@@ -293,8 +241,9 @@ function BlogPost() {
     ...(faqSchema ? [faqSchema] : []),
   ];
 
-  const content = Array.isArray(post.content)
-    ? post.content
+  const hasFaqBlock = content.some((block) => block?.type === "faq");
+  const relatedLinks = Array.isArray(post.relatedLinks)
+    ? post.relatedLinks.filter((item) => item?.text && item?.url)
     : [];
 
   return (
@@ -310,10 +259,10 @@ function BlogPost() {
         jsonLd={jsonLd}
       />
 
-      <section className="blogpost-body">
+      <main className="blogpost-body">
         <div className="container">
           {heroImage && (
-            <div className="blogpost-hero-image">
+            <figure className="blogpost-hero-image">
               <img
                 src={heroImage}
                 alt={post.imageAlt || post.title}
@@ -324,37 +273,28 @@ function BlogPost() {
               {post.category && (
                 <span
                   className="blogpost-hero-tag"
-                  style={{
-                    background: post.accent || "#f97316",
-                  }}
+                  style={{ background: post.accent || "#f97316" }}
                 >
                   {post.category}
                 </span>
               )}
-            </div>
+            </figure>
           )}
 
           <header className="blogpost-header">
-            <h1 className="blogpost-title">
-              {post.title}
-            </h1>
+            <h1 className="blogpost-title">{post.title}</h1>
 
             {post.date && (
               <p className="blogpost-date">
-                <time dateTime={publishedDate}>
-                  {post.date}
-                </time>
+                <time dateTime={publishedDate}>{post.date}</time>
               </p>
             )}
 
-            {post.excerpt && (
-              <p className="blogpost-excerpt">
-                {post.excerpt}
-              </p>
-            )}
+            {/* {post.excerpt && (
+              <p className="blogpost-excerpt">{post.excerpt}</p>
+            )} */}
           </header>
 
-          {/* IMPORTANT: Render article content only once. */}
           <article className="blogpost-article">
             {content.map((block, index) => (
               <div
@@ -365,43 +305,38 @@ function BlogPost() {
                   block={block}
                   index={index}
                   post={post}
-                  articleImage={articleImage}
                 />
               </div>
             ))}
 
-            {faqs.length > 0 && (
-              <section
-                className="blogpost-faq"
-                aria-labelledby="blogpost-faq-title"
-              >
-                <h2 id="blogpost-faq-title">
-                  Frequently Asked Questions
-                </h2>
-
-                {faqs.map((faq, index) => (
-                  <div
-                    className="blogpost-faq-item"
-                    key={`${post.slug}-faq-${index}`}
-                  >
-                    <h3>{faq.question}</h3>
-                    <p>{faq.answer}</p>
-                  </div>
-                ))}
-              </section>
+            {!hasFaqBlock && faqs.length > 0 && (
+              <FAQBlock items={faqs} postSlug={post.slug} />
             )}
           </article>
 
-          <div className="blogpost-back">
-            <Link
-              to="/blog/"
-              className="blogpost-back-btn"
+          {relatedLinks.length > 0 && (
+            <nav
+              className="blogpost-related"
+              aria-label="Related Dynamic Solar pages"
             >
+              <h2>Explore Related Solar Resources</h2>
+              <ul>
+                {relatedLinks.map((item, index) => (
+                  <li key={`${post.slug}-related-${index}`}>
+                    <Link to={item.url}>{item.text}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
+
+          <div className="blogpost-back">
+            <Link to="/blog/" className="blogpost-back-btn">
               ← Back to All Articles
             </Link>
           </div>
         </div>
-      </section>
+      </main>
 
       <Footer />
     </>

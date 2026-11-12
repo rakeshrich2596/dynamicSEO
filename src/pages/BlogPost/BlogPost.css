@@ -15,19 +15,20 @@
 .blogpost-hero-image {
   position: relative;
   width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 560px;
   overflow: hidden;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   margin-bottom: 36px;
-  background: #fff;
+  background: #eef2f6;
 }
 
 .blogpost-hero-image img {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: none;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -61,7 +62,7 @@
 }
 
 .blogpost-date {
-  margin-bottom: 14px;
+  margin-bottom: 1px;
   color: var(--gray);
   font-size: 0.92rem;
   font-weight: 500;
@@ -76,11 +77,11 @@
 
 /* Article */
 .blogpost-article {
-  margin-bottom: 48px;
+  margin-bottom: 30px;
 }
 
 .blogpost-content-block {
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 
 .blogpost-paragraph {
@@ -291,5 +292,106 @@
   .blogpost-action-btn {
     padding: 11px 18px;
     font-size: 14px;
+  }
+}
+
+/* =========================================================
+   PDF-based article pages: full card image + related links
+   ========================================================= */
+
+/* Keep the article hero image identical to the image on its blog card.
+   Do not crop wide or portrait source images. */
+.blogpost-hero-image {
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+
+.blogpost-hero-image img {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center;
+}
+
+/* Related internal links use only routes defined in routes.jsx. */
+.blogpost-related {
+  margin: 44px 0 36px;
+  padding: 28px;
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.blogpost-related h2 {
+  margin: 0 0 18px;
+  color: var(--dark, #17283d);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  line-height: 1.35;
+}
+
+.blogpost-related ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.blogpost-related li {
+  min-width: 0;
+}
+
+.blogpost-related a {
+  color: var(--primary-orange, #f97316);
+  font-weight: 650;
+  line-height: 1.6;
+  text-decoration: underline;
+  text-decoration-color: rgba(249, 115, 22, 0.35);
+  text-underline-offset: 4px;
+  overflow-wrap: anywhere;
+}
+
+.blogpost-related a:hover {
+  color: #c94f0a;
+  text-decoration-color: currentColor;
+}
+
+.blogpost-related a:focus-visible {
+  outline: 2px solid #f97316;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.blogpost-not-found {
+  min-height: 55vh;
+}
+
+@media (max-width: 768px) {
+  .blogpost-hero-image img {
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  .blogpost-related {
+    margin-top: 34px;
+    padding: 22px 18px;
+  }
+
+  .blogpost-related ul {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .blogpost-hero-image {
+    aspect-ratio: 4 / 3;
+    max-height: 380px;
+    margin-bottom: 24px;
   }
 }

@@ -15,14 +15,14 @@ export const solarPanelsHomeBlog = {
   category: "Solar Tips",
 
   // Blog listing card image
-  image: "/solar_panel.png",
+  image: "/blogs/solar_panel.png",
   imageAlt: "Residential rooftop solar panels",
 
   // Blog article hero image
-  heroImage: "/solar_panel.png",
+  heroImage: "/blogs/solar_panel.png",
 
   // Main article image
-  articleImage: "/solar_panel.png",
+  articleImage: "/blogs/solar_panel.png",
   articleImageAlt: "Solar panels installed on a home rooftop",
 
   color: "#fff7ed",
